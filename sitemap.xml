@@ -20,6 +20,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/posts/%E5%8D%9A%E5%AE%A2-copy/</loc>
+    <lastmod>2019-08-13T12:58:36+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/categories/</loc>
     <priority>0</priority>
   </url>
