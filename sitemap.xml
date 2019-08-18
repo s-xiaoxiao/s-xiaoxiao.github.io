@@ -3,34 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</loc>
+    <loc>http://s-xiaoxiao.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</loc>
     <lastmod>2019-08-18T12:58:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/posts/</loc>
-    <lastmod>2019-08-18T12:58:36+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/</loc>
+    <loc>http://s-xiaoxiao.github.io/posts/</loc>
     <lastmod>2019-08-18T12:58:36+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/posts/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://s-xiaoxiao.github.io/</loc>
+    <lastmod>2019-08-18T12:58:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://s-xiaoxiao.github.io/posts/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2019-08-14T12:58:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://s-xiaoxiao.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://s-xiaoxiao.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
