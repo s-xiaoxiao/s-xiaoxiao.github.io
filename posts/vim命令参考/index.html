@@ -7,16 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> | 笑笑</title>
-    <meta property="og:title" content=" - 笑笑">
+    <title>vim命令参考笔记 | 笑笑</title>
+    <meta property="og:title" content="vim命令参考笔记 - 笑笑">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2019-08-20T10:08:36&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-08-20T10:08:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="">
+    <meta name="description" content="vim命令参考笔记">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/">
+    <meta property="og:url" content="https://s-xiaoxiao.github.io/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +74,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title"></h1>
+                            <h1 class="post-title">vim命令参考笔记</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            1年1月1日
+                            2019年8月20日
                         </date>
                         
                         
@@ -81,110 +85,126 @@
                         <div class="post-content">
                             
 
-<p>1</p>
+<p>切记！切记！ 一切命令皆在英文状态输入！
+在命令行内输入 vimtutor 自带的 vim 教程</p>
 
-<h1 id="hugo-快速创建-blog-教程">hugo 快速创建 blog 教程</h1>
+<h1 id="vim-的基本操作">vim 的基本操作</h1>
 
-<h2 id="第一步-下载-hugo">第一步：下载 hugo</h2>
+<h4 id="进入-vi-or-vim-一-enter">进入：vi or vim 一&gt; enter</h4>
 
-<p><a href="https://github.com/gohugoio/hugo/releases">下载地址</a></p>
+<p>vi 文件名 enter or vim 文件名 enter 进入文件编辑</p>
 
-<h4 id="1-选择文件名为-hugo-版本号-系统-32bit-64-zip">1. 选择文件名为：hugo-版本号-系统-32bit/64/.zip</h4>
+<h4 id="退出-esc-一-一-q-一-enter-即可">退出：ESC 一&gt; : 一&gt; q 一&gt; enter 即可</h4>
 
-<p>根据系统选择对应的</p>
+<ul>
+<li><strong>q!<strong> 强制退出：丢失文件的改动</li>
+<li><strong>wq</strong> 保存退出</li>
+</ul>
 
-<p>例：windows-64 位：hugo_0.57.2_Windows-64bit.zip</p>
+<h4 id="编辑-在普通模式下">编辑：在普通模式下</h4>
 
-<h4 id="2-解压文件到你所知道的目录-路径你要知道-等下要用-你会得到一个-hugo-exe-文件">2. 解压文件到你所知道的目录(路径你要知道,等下要用)。你会得到一个 hugo.exe 文件</h4>
+<ul>
+<li><strong>i</strong> &amp;在当前光标下,即会进入编辑模式/插入模式</li>
+<li><strong>I</strong> 则会在行的开头进行编辑模式
+<br ></li>
+<li><strong>a</strong> 在当前下一个光标,即会进入编辑模式/插入模式</li>
+<li><strong>A</strong> 则会在行尾的进行编辑模式</li>
+</ul>
 
-<h4 id="3-把执行命令放到-path-变量-先复制-hugo-exe-的路径-右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里-系统变量-双击-path-新建-粘贴-有确定就点确定">3. 把执行命令放到 path 变量,先复制 hugo.exe 的路径;右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里(系统变量)-双击 Path-新建-粘贴-有确定就点确定。</h4>
+<h4 id="移动">移动：</h4>
 
-<p><img src="/images/3.png" alt="" /></p>
+<ul>
+<li>数字 w (number word) 移动几个单词开始处</li>
+<li>数字 e (number )移动几个单词的结尾处</li>
+</ul>
 
-<p>自检：重新打开 cmder(相关命令行工具)输入 hugo version(你会得到一个版本号)
-<img src="/images/4.png" alt="" /></p>
+<h4 id="删除">删除：</h4>
 
-<blockquote>
-<p>如果没有成功重新检查以上步骤!</p>
-</blockquote>
+<ul>
+<li>在普通模式下 x 就会删除当前光标后面一个</li>
+<li>dd 删除一行(可选参数：number delete delete 意味着连续删除几行)</li>
+<li>dw (delete a word) 删除单词 or 一串中文字符,须在单词 or 一串中文字符的起始处,删除后会到一下单词起始处</li>
+<li>db (delete back)删除单词 or 一串中文字符,须在单词 or 一串中文字符的结尾处</li>
+<li>di+() or {} (delete in () or {}) 删除 {} or () 内的字符,须在 () or {} 内</li>
+<li>da+() or {} (delete at () or {}) 删除包括 () or {} 的字符,须在 () or {} 内</li>
+<li>dit (delete in tag 删除标签内的内容)</li>
+<li>dat (delete at tag 删除标签包含内容)</li>
+<li>d\$ 从当前光标删到航末尾</li>
+<li>de 从当前光标删到单词结尾</li>
+<li>d number w (delete number word) 删除多个单词</li>
+</ul>
 
-<p>恭喜你，下载完成！
-<br/><br/></p>
+<h4 id="删除修改">删除修改:</h4>
 
-<h2 id="第二步-利用-hugo-快速搭建-blog-框架">第二步：利用 hugo 快速搭建 blog 框架</h2>
+<ul>
+<li>ci+ t or () or {} or &lt;&gt; (change in tag or () or {} or &lt;&gt;) 删除&lt;&gt; &lt;/&gt; 包含的内容并且进入 insert 模式</li>
+<li>ca+ t or () or {} or &lt;&gt; (change at tag or () or {} or &lt;&gt;) 删除标签包含你内容，并且进入 insert 模式</li>
+</ul>
 
-<h4 id="1-创建建站根一个目录">1. 创建建站根一个目录()</h4>
+<h4 id="撤销-在普通模式下-按住-u-即会撤销上一次修改">撤销：在普通模式下 按住 u 即会撤销上一次修改</h4>
 
-<p><img src="/images/6.png" alt="" /></p>
+<ul>
+<li>number u (number undo 撤销多次)</li>
+<li>U 可撤销整行的修改</li>
+</ul>
 
-<h4 id="2-该目录在-cmder-打开">2. 该目录在 cmder()打开</h4>
+<h4 id="还原-在普通模式下-按住-ctrl-r-就会还原上一次撤销">还原：在普通模式下 按住 ctrl+r 就会还原上一次撤销</h4>
 
-<p><img src="/images/5.png" alt="" /></p>
+<ul>
+<li>number ctrl+r (可多次还原上一次修改)</li>
+</ul>
 
-<h4 id="3-地址栏输入网址-回车进入-点击-quick-start">3. 地址栏输入网址,回车进入;点击 quick start：</h4>
+<h4 id="复制-按-v-进入复制选取模式-选择-按-y-可复制">复制：按 v 进入复制选取模式,选择 按 y 可复制</h4>
 
-<p><a href="https://gohugo.io/">hugo 官网</a>
-<img src="/images/1.png" alt="" />
-<img src="/images/2.png" alt="" /></p>
+<h4 id="粘贴-在普通模式下-p-可直接到下方粘贴">粘贴：在普通模式下,p 可直接到下方粘贴。</h4>
 
-<h4 id="4-从-step2-开始-复制-打开-cmder-一定要在第一步创建的目录里-粘贴-回车">4. 从 step2 开始 复制-打开 cmder(一定要在第一步创建的目录里)-粘贴-回车</h4>
+<ul>
+<li>P 是粘贴到上方</li>
+</ul>
 
-<p><img src="/images/7.png" alt="" /></p>
+<h4 id="快速上下翻页">快速上下翻页</h4>
 
-<h4 id="5-step3-复制-打开-cmder-粘贴-回车">5. step3 复制-打开(cmder)-粘贴-回车</h4>
+<ul>
+<li>ctrl+d (向下翻半页)</li>
+<li>ctrl+u (向上翻半页)</li>
+</ul>
 
-<p>本地仓库初始化和下载自带模板
-<img src="/images/8.png" alt="" /></p>
+<h4 id="光标移动">光标移动</h4>
 
-<h4 id="6-step4-复制-打开-cmder-粘贴-回车">6. step4 复制-打开(cmder)-粘贴-回车</h4>
+<ul>
+<li>k (上行键)</li>
+<li>l (右移)</li>
+<li>j (下行键)</li>
+<li>h (左移)</li>
+</ul>
 
-<p><img src="/images/9.png" alt="" />
-创建 blog 目录(posts 目录存放 blog)和第一个 blog 文件以.md 为后缀
-<img src="/images/14.png" alt="" />可以自己写点什么，注意时间不要来自未来！</p>
+<h2 id="vim-有四种模式">vim 有四种模式</h2>
 
-<h4 id="7-step5-复制-打开-cmder-粘贴-回车">7. step5 复制-打开(cmder)-粘贴-回车</h4>
+<ol>
+<li>按 ESC (处于正常模式 normal)</li>
+<li>按 i (处于编辑模式 insert)</li>
+<li>按 : (处于命令行模式)</li>
+<li>按 v (处于复制选取模式)</li>
+</ol>
 
-<p>启动服务器
-<img src="/images/10.png" alt="" />
-如果一样则成功启动.按住 Ctrl+左键就可以进入啦
-<img src="/images/11.jpg" alt="" /></p>
+<h2 id="基本单词">基本单词</h2>
 
-<p>如果出现以下情况
-<img src="/images/13.png" alt="" />
-继续往下做 ctrl+C 关闭掉配置一下再启动</p>
-
-<h4 id="8-step6">8. step6</h4>
-
-<p>这个是要需要配置以下:新建一个 config.toml 文件，把 step 的内容复制进来，保存关闭
-<img src="/images/15.png" alt="" /></p>
-
-<h4 id="8-step7">8. step7</h4>
-
-<p>构建静态页面,命令是 hugo
-<img src="/images/16.png" alt="" />
-弄完之后。再次启动 hugo server -D 返回 step6 看到<a href="http://localhost:54316">http://localhost:54316</a>; 主要是前缀，后面的数字无所谓。因为我打开了两个所以这次是 54316.ctrl+左键就可以进入了静态页面啦。具体页面见 step5。</p>
-
-<p>恭喜你,hugo 静态站点已经创建完毕。接下来是写 blog 了。</p>
-
-<h2 id="第三步-写博客">第三步：写博客</h2>
-
-<h4 id="1-在页面里-如果你的画面里跟我一样-你第一次是一个-我创建了两个-md-文件-则成功啦-点击-read-more-可进入阅读">1. 在页面里，如果你的画面里跟我一样(你第一次是一个,我创建了两个.md 文件)则成功啦。点击 read more 可进入阅读</h4>
-
-<p><img src="/images/12.png" alt="" />
-如果页面里,没有的话,你需要创建一个 content 目录(创建在根目录,我的是 hugo-demo),把 posts 目录放到 content 里。刷新一下就有啦
-如图：<img src="/images/17.png" alt="" />
-如果还没有怎么办!!.以上配置好
-你再重启服务器。就 ok 啦。</p>
-
-<p>hugo server -D (启动 hugo 服务器命令)</p>
-
-<hr style="width:100%">
-
-<h2 id="分割线">分割线</h2>
-
-<p>在 content/posts/目录下所有以.md 文件都是一篇博客。</p>
-
-<p>写多篇用 ctrl+c 复制 ctrl+v 粘贴,修改时间即可</p>
+<ul>
+<li>quit (退出)</li>
+<li>write/read (写/读)</li>
+<li>yank (复制)</li>
+<li>paste (粘贴)</li>
+<li>delete (删除)</li>
+<li>change (修改)</li>
+<li>line (一行)</li>
+<li>find (查找)</li>
+<li>word (单词)</li>
+<li>forward/backward (前进/后退)</li>
+<li>up/down (上/下)</li>
+<li>insert/append (插入/附加)</li>
+<li>undo (撤销)</li>
+<li>redo (还原)</li>
+</ul>
 
                         </div>
 
@@ -197,13 +217,13 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
-        
         <li><a href="/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">HTML常用标签</a></li>
         
         <li><a href="/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">html入门笔记1</a></li>
         
         <li><a href="/posts/%E5%8D%9A%E5%AE%A2/">博客</a></li>
+        
+        <li><a href="/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/"></a></li>
         
     </ul>
 </div>
