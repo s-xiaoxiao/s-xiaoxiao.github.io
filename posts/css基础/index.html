@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>hugo从入门到建站 | 笑笑</title>
-    <meta property="og:title" content="hugo从入门到建站 - 笑笑">
+    <title>css基础 | 笑笑</title>
+    <meta property="og:title" content="css基础 - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-08-18T12:58:36&#43;08:00">
+    <meta property="article:published_time" content="2019-08-22T14:10:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-08-18T12:58:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-08-22T14:10:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="hugo从入门到建站">
+    <meta name="description" content="css基础">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/">
+    <meta property="og:url" content="https://s-xiaoxiao.github.io/posts/css%E5%9F%BA%E7%A1%80/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -74,10 +74,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">hugo从入门到建站</h1>
+                            <h1 class="post-title">css基础</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年8月18日
+                            2019年8月22日
                         </date>
                         
                         
@@ -85,108 +85,123 @@
                         <div class="post-content">
                             
 
-<h1 id="hugo-快速创建-blog-教程">hugo 快速创建 blog 教程</h1>
+<h1 id="css-基础">css 基础</h1>
 
-<h2 id="第一步-下载-hugo">第一步：下载 hugo</h2>
+<h2 id="文档流-normal-flow">文档流(normal flow)</h2>
 
-<p><a href="https://github.com/gohugoio/hugo/releases">下载地址</a></p>
+<p>文档流里有块、内联以及内联块</p>
 
-<h4 id="1-选择文件名为-hugo-版本号-系统-32bit-64-zip">1. 选择文件名为：hugo-版本号-系统-32bit/64/.zip</h4>
+<h4 id="1-block-块-可自行设定宽度-width-高度-height-不设定情况下-由内部文档流决定-并且独占一行">1. block(块)：可自行设定宽度(width),高度(height)(不设定情况下,由内部文档流决定)并且独占一行</h4>
 
-<p>根据系统选择对应的</p>
+<p><img src="/CssBasic_images/block.png" alt="" /></p>
 
-<p>例：windows-64 位：hugo_0.57.2_Windows-64bit.zip</p>
+<h4 id="2-inline-内联-由内容限定宽度-高度由-line-height-间接确定-跟-height-无关-跟其他内联占满一行-多余另起一行">2. inline(内联)：由内容限定宽度,高度由 line-height 间接确定(跟 height 无关).跟其他内联占满一行(多余另起一行)</h4>
 
-<h4 id="2-解压文件到你所知道的目录-路径你要知道-等下要用-你会得到一个-hugo-exe-文件">2. 解压文件到你所知道的目录(路径你要知道,等下要用)。你会得到一个 hugo.exe 文件</h4>
+<p><img src="/CssBasic_images/inline.png" alt="" /></p>
 
-<h4 id="3-把执行命令放到-path-变量-先复制-hugo-exe-的路径-右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里-系统变量-双击-path-新建-粘贴-有确定就点确定">3. 把执行命令放到 path 变量,先复制 hugo.exe 的路径;右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里(系统变量)-双击 Path-新建-粘贴-有确定就点确定。</h4>
+<h4 id="3-inline-block-内联块-可自行设定宽度以及高度-但具有内联特性-不会独占一行-又具有块的特性-块不可分离">3. inline-block(内联块)：可自行设定宽度以及高度,但具有内联特性(不会独占一行)又具有块的特性(块不可分离)</h4>
 
-<p><img src="/hugo_images/3.png" alt="" /></p>
+<p><img src="/CssBasic_images/inline-block.png" alt="" /></p>
 
-<p>自检：重新打开 cmder(相关命令行工具)输入 hugo version(你会得到一个版本号)
-<img src="/hugo_images/4.png" alt="" /></p>
+<pre>
+注意要点:
+        width and height 默认是：auto(自动伸缩);
+        width 不可写：100%(会有 bug);
+        当内容大于宽度或者高度时,会发生溢出。overflow属性默认:visible(显示溢出部分)。hidden(溢出部分隐藏),auto(根据实际宽度和宽度出现滚动条),scroll(不管是否溢出直接除滚动条).当前是overflow:auto;
+        块级元素里没有content,height为0
+</pre>
+
+<h2 id="脱离文档流">脱离文档流</h2>
+
+<p>会使当前容器脱离父容器,父容器的宽高度计算则忽略有以下代码的子容器</p>
+
+<p>position:absolute/fixed; or float:left;</p>
+
+<h2 id="盒模型">盒模型</h2>
+
+<p>content padding border margin 共有 4 层。内容+内边距+边框+外边距</p>
+
+<h4 id="两种盒模型">两种盒模型</h4>
+
+<h4 id="1-content-box-内容盒-内容就是盒模型的边界">1. content box(内容盒) 内容就是盒模型的边界</h4>
+
+<p><img src="/CssBasic_images/content-box.png" alt="" /></p>
+
+<h4 id="2-border-box-边框盒-边框就是盒模型的边界">2. border box(边框盒) 边框就是盒模型的边界</h4>
+
+<p><img src="/CssBasic_images/border-box.png" alt="" /></p>
+
+<h2 id="margin-合并">margin 合并</h2>
+
+<p>当上下都有 margin 时(没有 border 等等),外边距会合并。</p>
+
+<ol>
+<li>父子合并(最上父子 margin 和最下父子 margin)</li>
+<li>兄弟合并(相邻的 margin 也会合并)</li>
+</ol>
 
 <blockquote>
-<p>如果没有成功重新检查以上步骤!</p>
+<p>以上情况都是在 Margin 和 Margin 之间没有其他属性存在,才会合并</p>
 </blockquote>
 
-<p>恭喜你，下载完成！
-<br/><br/></p>
+<ul>
+<li>消除父子之间合并 padding/border/overflow:hidden/display:flex;</li>
+<li>兄弟之间合并可以用 inline-block;</li>
+</ul>
 
-<h2 id="第二步-利用-hugo-快速搭建-blog-框架">第二步：利用 hugo 快速搭建 blog 框架</h2>
+<h2 id="基本单位">基本单位</h2>
 
-<h4 id="1-创建建站根一个目录">1. 创建建站根一个目录()</h4>
+<h4 id="1-长度单位">1. 长度单位</h4>
 
-<p><img src="/hugo_images/6.png" alt="" /></p>
+<ul>
+<li>px 像素</li>
+<li>em 相对于自身 font-size 大小的倍数</li>
+<li>百分数</li>
+<li>整数</li>
+<li>rem</li>
+<li>vw vh</li>
+</ul>
 
-<h4 id="2-该目录在-cmder-打开">2. 该目录在 cmder()打开</h4>
+<h4 id="2-颜色单位">2. 颜色单位</h4>
 
-<p><img src="/hugo_images/5.png" alt="" /></p>
+<ul>
+<li>十六进制(#000000 可缩写#000)</li>
+<li>rgb/rgba (rgb(0-255,0-255,0-255),a(0-1)透明)</li>
+<li>hsl/hsla(hsl(1-360,百分比,百分比),a(0-1)透明)</li>
+</ul>
 
-<h4 id="3-地址栏输入网址-回车进入-点击-quick-start">3. 地址栏输入网址,回车进入;点击 quick start：</h4>
+<h2 id="彩虹-只供参考">彩虹(只供参考)</h2>
 
-<p><a href="https://gohugo.io/">hugo 官网</a>
-<img src="/hugo_images/1.png" alt="" />
-<img src="/hugo_images/2.png" alt="" /></p>
+<div style="overflow:hidden;height:200px;width:500px;">
+    <div style="overflow:hidden;height:400px;height:400px;margin:10px;border-radius:50%;background:hsl(0,80%,50%);">
+        <div style="overflow:hidden;height:380px;margin:10px;border-radius:50%;background:hsl(60,80%,50%);">
+            <div style="overflow:hidden;height:360px;margin:10px;border-radius:50%;background:hsl(120,80%,50%);">
+                <div style="overflow:hidden;height:340px;margin:10px;border-radius:50%;background:hsl(180,80%,50%);">
+                      <div style="overflow:hidden;height:320px;margin:10px;border-radius:50%;background:hsl(240,80%,50%);">
+                        <div style="overflow:hidden;height:300px;margin:10px;border-radius:50%;background:hsl(300,80%,50%);">
+                            <div style="overflow:hidden;height:280px;margin:10px;border-radius:50%;background:hsl(330,80%,50%);">
+                                <div style="overflow:hidden;height:260px;margin:10px;border-radius:50%;background:hsl(330,80%,100%);">
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h4 id="4-从-step2-开始-复制-打开-cmder-一定要在第一步创建的目录里-粘贴-回车">4. 从 step2 开始 复制-打开 cmder(一定要在第一步创建的目录里)-粘贴-回车</h4>
+<!-- <div style="height:20px;"><div> -->
 
-<p><img src="/hugo_images/7.png" alt="" /></p>
+<h2 id="问题">问题</h2>
 
-<h4 id="5-step3-复制-打开-cmder-粘贴-回车">5. step3 复制-打开(cmder)-粘贴-回车</h4>
+<h4 id="1-第一问-css-是什么以及是谁发明的">1. 第一问！ CSS 是什么以及是谁发明的？</h4>
 
-<p>本地仓库初始化和下载自带模板
-<img src="/hugo_images/8.png" alt="" /></p>
+<blockquote>
+<p>css 全称为：Cascading style sheets(层叠样式表).是具有不同样式的一张表可被一调多层叠(如一人穿两件外套)</p>
 
-<h4 id="6-step4-复制-打开-cmder-粘贴-回车">6. step4 复制-打开(cmder)-粘贴-回车</h4>
-
-<p><img src="/hugo_images/9.png" alt="" />
-创建 blog 目录(posts 目录存放 blog)和第一个 blog 文件以.md 为后缀
-<img src="/hugo_images/14.png" alt="" />可以自己写点什么，注意时间不要来自未来！</p>
-
-<h4 id="7-step5-复制-打开-cmder-粘贴-回车">7. step5 复制-打开(cmder)-粘贴-回车</h4>
-
-<p>启动服务器
-<img src="/hugo_images/10.png" alt="" />
-如果一样则成功启动.按住 Ctrl+左键就可以进入啦
-<img src="/hugo_images/11.jpg" alt="" /></p>
-
-<p>如果出现以下情况
-<img src="/hugo_images/13.png" alt="" />
-继续往下做 ctrl+C 关闭掉配置一下再启动</p>
-
-<h4 id="8-step6">8. step6</h4>
-
-<p>这个是要需要配置以下:新建一个 config.toml 文件，把 step 的内容复制进来，保存关闭
-<img src="/hugo_images/15.png" alt="" /></p>
-
-<h4 id="8-step7">8. step7</h4>
-
-<p>构建静态页面,命令是 hugo
-<img src="/hugo_images/16.png" alt="" />
-弄完之后。再次启动 hugo server -D 返回 step6 看到<a href="http://localhost:54316">http://localhost:54316</a>; 主要是前缀，后面的数字无所谓。因为我打开了两个所以这次是 54316.ctrl+左键就可以进入了静态页面啦。具体页面见 step5。</p>
-
-<p>恭喜你,hugo 静态站点已经创建完毕。接下来是写 blog 了。</p>
-
-<h2 id="第三步-写博客">第三步：写博客</h2>
-
-<h4 id="1-在页面里-如果你的画面里跟我一样-你第一次是一个-我创建了两个-md-文件-则成功啦-点击-read-more-可进入阅读">1. 在页面里，如果你的画面里跟我一样(你第一次是一个,我创建了两个.md 文件)则成功啦。点击 read more 可进入阅读</h4>
-
-<p><img src="/hugo_images/12.png" alt="" />
-如果页面里,没有的话,你需要创建一个 content 目录(创建在根目录,我的是 hugo-demo),把 posts 目录放到 content 里。刷新一下就有啦
-如图：<img src="/hugo_images/17.png" alt="" />
-如果还没有怎么办!!.以上配置好
-你再重启服务器。就 ok 啦。</p>
-
-<p>hugo server -D (启动 hugo 服务器命令)</p>
-
-<hr style="width:100%">
-
-<h2 id="分割线">分割线</h2>
-
-<p>在 content/posts/目录下所有以.md 文件都是一篇博客。</p>
-
-<p>写多篇用 ctrl+c 复制 ctrl+v 粘贴,修改时间即可</p>
+<p>由哈肯·莱提出建议并且与伯特·波斯发布了 CSS 规范的第 1 个版本</p>
+</blockquote>
 
                         </div>
 
@@ -199,7 +214,13 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
+        
+        <li><a href="/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">HTML常用标签</a></li>
+        
         <li><a href="/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">html入门笔记1</a></li>
+        
+        <li><a href="/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/">hugo从入门到建站</a></li>
         
         <li><a href="/posts/%E5%8D%9A%E5%AE%A2/">博客</a></li>
         
