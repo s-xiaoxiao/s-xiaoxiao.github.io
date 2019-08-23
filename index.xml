@@ -37,6 +37,23 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     </item>
     
     <item>
+      <title>HTML 重难点</title>
+      <link>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</link>
+      <pubDate>Mon, 19 Aug 2019 12:58:36 +0800</pubDate>
+      
+      <guid>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</guid>
+      <description>a 标签 1. a 标签属性  href  网址：href=&amp;ldquo;https://www.google.com&amp;quot; or href=&amp;ldquo;http://www.google.com&amp;quot; or //google.com 路径：href=&amp;ldquo;/a/b/c.html&amp;rdquo; 伪协议：href=&amp;ldquo;javascript:alert(1);&amp;rdquo; (value 要小写,点击会执行 javascript 代码) or javascript:;相对于页面来说,不会有视觉上的刷新 ID 当某个标签有 id 之后.例 :id=&amp;ldquo;xx&amp;rdquo; href=&amp;ldquo;#xx&amp;rdquo;.会定位到 id 为 xx mailto：href=&amp;ldquo;mailto:460046653@qq.com&amp;rdquo; ; tel：href=&amp;ldquo;tel:11 位电话号&amp;rdquo; ; 点击时会打电话    总结：可跳转到其他页面,可跳转到子页面，可跳转到邮箱、电话.
+  target
+ _blank :target 取值为:_blank
+空白页面打开
+ _top ：在 iframe src 属性链接的页面里,a 标签 target 设置_top 会在最顶页面打开
+ _parent：在父级页面打开跳转页面
+ _self：target 取值为:_blank当前页面打开
+ window.name:target=&amp;ldquo;xx&amp;rdquo; 指定窗口(如果没有会新建一个窗口(在空白页))为打开
+ iframe.name:指定在 iframe 标签打开页面：当 iframe 属性 name 为：xx。 a 属性 target=&amp;ldquo;xx&amp;rdquo; 则会在 iframe 页面中打开跳转页面</description>
+    </item>
+    
+    <item>
       <title>HTML常用标签</title>
       <link>https://s-xiaoxiao.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 19 Aug 2019 10:00:36 +0800</pubDate>
@@ -68,15 +85,6 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
 2. 解压文件到你所知道的目录(路径你要知道,等下要用)。你会得到一个 hugo.exe 文件 3. 把执行命令放到 path 变量,先复制 hugo.exe 的路径;右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里(系统变量)-双击 Path-新建-粘贴-有确定就点确定。 自检：重新打开 cmder(相关命令行工具)输入 hugo version(你会得到一个版本号)  如果没有成功重新检查以上步骤!
  恭喜你，下载完成！ 
 第二步：利用 hugo 快速搭建 blog 框架 1. 创建建站根一个目录() 2. 该目录在 cmder()打开 3. 地址栏输入网址,回车进入;点击 quick start： hugo 官网 4. 从 step2 开始 复制-打开 cmder(一定要在第一步创建的目录里)-粘贴-回车 5. step3 复制-打开(cmder)-粘贴-回车 本地仓库初始化和下载自带模板 6. step4 复制-打开(cmder)-粘贴-回车 创建 blog 目录(posts 目录存放 blog)和第一个 blog 文件以.md 为后缀 可以自己写点什么，注意时间不要来自未来！</description>
-    </item>
-    
-    <item>
-      <title>博客</title>
-      <link>https://s-xiaoxiao.github.io/posts/%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Wed, 14 Aug 2019 12:58:36 +0800</pubDate>
-      
-      <guid>https://s-xiaoxiao.github.io/posts/%E5%8D%9A%E5%AE%A2/</guid>
-      <description>2019.8.14 创建</description>
     </item>
     
   </channel>
