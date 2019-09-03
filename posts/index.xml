@@ -2,21 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 笑笑</title>
-    <link>https://s-xiaoxiao.github.io/posts/</link>
+    <link>https://sunxiaochuang.top/posts/</link>
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Aug 2019 14:10:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2019 20:10:36 +0800</lastBuildDate>
     
-	<atom:link href="https://s-xiaoxiao.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>JavaScript的诞生</title>
+      <link>https://sunxiaochuang.top/posts/javasscript%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Tue, 03 Sep 2019 20:10:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/javasscript%E8%AF%9E%E7%94%9F/</guid>
+      <description> JavaScript 
+1. 1994年底一家名为网景公司发布第一个版本的网页浏览器Mosaic Netscape 0.9。 四个月内抢占当时浏览器市场份额四分之三,成为90年代互联网的主要浏览器。当时的网页只是静态页面的浏览，没有交互能力。网景预见到未来网络需要变得更加多态。 
+2. 1995.4 身为网景的程序员布兰登·艾克目标是把Scheme语言嵌入浏览器内。但在这之前浏览器就已经支持java。内部争论中，网景决定发明一种跟Java在语法上有相似的语言，这个决策导致把Perl、Python、Tcl或Scheme排除在外。 
+3. 1995.5 艾克受命于此，仅仅花了10天时间就把原型设计出来了。最初命名为Mocha,9月分更名为LiveScript。同年12月改为JavaScript(当时网景公司跟Sun公司组成的开发联盟为了让这门语言搭上Java这个编程语言的热度)当时Sun公司大肆宣传Java&amp;rdquo;一次编写 到处运行&amp;rdquo; 
+4. 由于当时仓促的时间设计，语言的一些细节考虑的不够严谨，后来导致很长一段时间，JavaScript写出来的程序混乱不堪。总的来说，他的设计思路借鉴以下语言:  (1) 借鉴C语言的基本语言 (2) 借鉴Java语言的数据类型和内存管理 (3) 借鉴Scheme语言，将函数提升到”第一等公民(first class)“的地位 (4) 借鉴Self语言，使用基于原型(prototype)的继承机制  5. 标准化  在1996年11月，网景公司向ECMA(欧洲计算机制造协会)提交语言标准。 1997年6月，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。 JavaScript成为了ECMAScript最著名的实现之一   所以，Javascript语言实际上是两种语言风格的混合产物&amp;mdash;-（简化的）函数式编程+（简化的）面向对象编程。这是由Brendan Eich（函数式编程）与网景公司（面向对象编程）共同决定的。
+ </description>
+    </item>
+    
+    <item>
       <title>css基础</title>
-      <link>https://s-xiaoxiao.github.io/posts/css%E5%9F%BA%E7%A1%80/</link>
+      <link>https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Thu, 22 Aug 2019 14:10:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/css%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/</guid>
       <description>css 基础 文档流(normal flow) 文档流里有块、内联以及内联块
 1. block(块)：可自行设定宽度(width),高度(height)(不设定情况下,由内部文档流决定)并且独占一行 2. inline(内联)：由内容限定宽度,高度由 line-height 间接确定(跟 height 无关).跟其他内联占满一行(多余另起一行) 3. inline-block(内联块)：可自行设定宽度以及高度,但具有内联特性(不会独占一行)又具有块的特性(块不可分离)  注意要点: width and height 默认是：auto(自动伸缩); width 不可写：100%(会有 bug); 当内容大于宽度或者高度时,会发生溢出。overflow属性默认:visible(显示溢出部分)。hidden(溢出部分隐藏),auto(根据实际宽度和宽度出现滚动条),scroll(不管是否溢出直接除滚动条).当前是overflow:auto; 块级元素里没有content,height为0  脱离文档流 会使当前容器脱离父容器,父容器的宽高度计算则忽略有以下代码的子容器
 position:absolute/fixed; or float:left;
@@ -27,10 +41,10 @@ position:absolute/fixed; or float:left;
     
     <item>
       <title>vim命令参考笔记</title>
-      <link>https://s-xiaoxiao.github.io/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</link>
+      <link>https://sunxiaochuang.top/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</link>
       <pubDate>Tue, 20 Aug 2019 10:08:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</guid>
+      <guid>https://sunxiaochuang.top/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</guid>
       <description> 切记！切记！ 一切命令皆在英文状态输入！ 在命令行内输入 vimtutor 自带的 vim 教程
 vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or vim 文件名 enter 进入文件编辑
 退出：ESC 一&amp;gt; : 一&amp;gt; q 一&amp;gt; enter 即可  q! 强制退出：丢失文件的改动 wq 保存退出  编辑：在普通模式下  i &amp;amp;在当前光标下,即会进入编辑模式/插入模式 I 则会在行的开头进行编辑模式  a 在当前下一个光标,即会进入编辑模式/插入模式 A 则会在行尾的进行编辑模式  移动：  数字 w (number word) 移动几个单词开始处 数字 e (number )移动几个单词的结尾处  删除：  在普通模式下 x 就会删除当前光标后面一个 dd 删除一行(可选参数：number delete delete 意味着连续删除几行) dw (delete a word) 删除单词 or 一串中文字符,须在单词 or 一串中文字符的起始处,删除后会到一下单词起始处 db (delete back)删除单词 or 一串中文字符,须在单词 or 一串中文字符的结尾处 di+() or {} (delete in () or {}) 删除 {} or () 内的字符,须在 () or {} 内 da+() or {} (delete at () or {}) 删除包括 () or {} 的字符,须在 () or {} 内 dit (delete in tag 删除标签内的内容) dat (delete at tag 删除标签包含内容) d\$ 从当前光标删到航末尾 de 从当前光标删到单词结尾 d number w (delete number word) 删除多个单词  删除修改:  ci+ t or () or {} or &amp;lt;&amp;gt; (change in tag or () or {} or &amp;lt;&amp;gt;) 删除&amp;lt;&amp;gt; &amp;lt;/&amp;gt; 包含的内容并且进入 insert 模式 ca+ t or () or {} or &amp;lt;&amp;gt; (change at tag or () or {} or &amp;lt;&amp;gt;) 删除标签包含你内容，并且进入 insert 模式  撤销：在普通模式下 按住 u 即会撤销上一次修改  number u (number undo 撤销多次) U 可撤销整行的修改  还原：在普通模式下 按住 ctrl+r 就会还原上一次撤销  number ctrl+r (可多次还原上一次修改)  复制：按 v 进入复制选取模式,选择 按 y 可复制 粘贴：在普通模式下,p 可直接到下方粘贴。  P 是粘贴到上方  快速上下翻页  ctrl+d (向下翻半页) ctrl+u (向上翻半页)  光标移动  k (上行键) l (右移) j (下行键) h (左移)  vim 有四种模式  按 ESC (处于正常模式 normal) 按 i (处于编辑模式 insert) 按 : (处于命令行模式) 按 v (处于复制选取模式)  基本单词  quit (退出) write/read (写/读) yank (复制) paste (粘贴) delete (删除) change (修改) line (一行) find (查找) word (单词) forward/backward (前进/后退) up/down (上/下) insert/append (插入/附加) undo (撤销) redo (还原)  </description>
@@ -38,10 +52,10 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>HTML 重难点</title>
-      <link>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</link>
+      <link>https://sunxiaochuang.top/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</link>
       <pubDate>Mon, 19 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</guid>
+      <guid>https://sunxiaochuang.top/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</guid>
       <description>a 标签 1. a 标签属性  href  网址：href=&amp;ldquo;https://www.google.com&amp;quot; or href=&amp;ldquo;http://www.google.com&amp;quot; or //google.com 路径：href=&amp;ldquo;/a/b/c.html&amp;rdquo; 伪协议：href=&amp;ldquo;javascript:alert(1);&amp;rdquo; (value 要小写,点击会执行 javascript 代码) or javascript:;相对于页面来说,不会有视觉上的刷新 ID 当某个标签有 id 之后.例 :id=&amp;ldquo;xx&amp;rdquo; href=&amp;ldquo;#xx&amp;rdquo;.会定位到 id 为 xx mailto：href=&amp;ldquo;mailto:460046653@qq.com&amp;rdquo; ; tel：href=&amp;ldquo;tel:11 位电话号&amp;rdquo; ; 点击时会打电话    总结：可跳转到其他页面,可跳转到子页面，可跳转到邮箱、电话.
   target
  _blank :target 取值为:_blank
@@ -55,19 +69,19 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>HTML常用标签</title>
-      <link>https://s-xiaoxiao.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <link>https://sunxiaochuang.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 19 Aug 2019 10:00:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <guid>https://sunxiaochuang.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
       <description> HTML常用标签 1. a标签的用法  最基本的属性是跳转到其他页面 达到target有_blank _top _parent _self herf:可以设置为网址如：google.com 子页面路径等等。可以跳到邮箱 还有id设置为#点击到某某id。设置为#。点击可以到页面top a还可以下载当前页面   2. img标签的用法  最基本的用于图片展示，可以设置图片的大小，如果图片加载失败可以又文字代表图片含义   3. table标签的用法  用作于表格展示。是具有网格的标签。使用table时，默认每个单元格之间有间隙。设置table的collapse   4. 其他感想  感觉看完视频，跟着敲完代码。标签和一些用法就会忘记。我觉得单单这样写blog还是不够。希望接下来继续总结归纳  </description>
     </item>
     
     <item>
       <title>html入门笔记1</title>
-      <link>https://s-xiaoxiao.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <link>https://sunxiaochuang.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Sun, 18 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://sunxiaochuang.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
       <description>  1. HTML 是谁发明的 蒂姆·伯纳斯-李(简称李爵士)
 2. HTML 起手应该写什么 emmet 插件：英文状态下输入“!” 回车 or tab 即可
 3. 常用有的表章节标签：  H1-H6(数字越小字体越大) section(章、节) article(文章) main(主要的) aside(旁边的) p(段落) header(头部) footer(脚部) div(划分 块级元素)  4. 全局属性有哪些？  class (引用 css 以.开头的样式) contenteditable(在浏览器可以编辑) hidden(隐藏) id(主要在 js 里,调取标签可用) style(内联样式) tabindex(增加用户体验多元化) title(增加可读性)  5. 常用的内容标签有哪些，分别是什么意思  a(anchor 超链接)：用作跳转其他页面 ol+li(ordered list 有序列表)：带有数字的列表 ul+li(unordered list 无序列表)：以·开头的列表 dl+dt+dd(description list 描述列表) pre(输出默认格式) hr(水平线) br(回车) em(强调语气,以斜体展示) strong(重要强调,以加粗展示) code(代码标签) quote(引用) blockquote(独自占一行块引用)  </description>
@@ -75,10 +89,10 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>hugo从入门到建站</title>
-      <link>https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</link>
+      <link>https://sunxiaochuang.top/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</link>
       <pubDate>Sun, 18 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</guid>
+      <guid>https://sunxiaochuang.top/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</guid>
       <description>hugo 快速创建 blog 教程 第一步：下载 hugo 下载地址
 1. 选择文件名为：hugo-版本号-系统-32bit/64/.zip 根据系统选择对应的
 例：windows-64 位：hugo_0.57.2_Windows-64bit.zip
