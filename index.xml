@@ -13,10 +13,10 @@
     
     <item>
       <title>JavaScript的诞生</title>
-      <link>https://sunxiaochuang.top/posts/javasscript%E8%AF%9E%E7%94%9F/</link>
+      <link>https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/</link>
       <pubDate>Tue, 03 Sep 2019 20:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/javasscript%E8%AF%9E%E7%94%9F/</guid>
+      <guid>https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/</guid>
       <description> JavaScript 
 1. 1994年底一家名为网景公司发布第一个版本的网页浏览器Mosaic Netscape 0.9。 四个月内抢占当时浏览器市场份额四分之三,成为90年代互联网的主要浏览器。当时的网页只是静态页面的浏览，没有交互能力。网景预见到未来网络需要变得更加多态。 
 2. 1995.4 身为网景的程序员布兰登·艾克目标是把Scheme语言嵌入浏览器内。但在这之前浏览器就已经支持java。内部争论中，网景决定发明一种跟Java在语法上有相似的语言，这个决策导致把Perl、Python、Tcl或Scheme排除在外。 
