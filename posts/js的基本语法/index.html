@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>hugo从入门到建站 | 笑笑</title>
-    <meta property="og:title" content="hugo从入门到建站 - 笑笑">
+    <title>JS的基本语法 | 笑笑</title>
+    <meta property="og:title" content="JS的基本语法 - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-08-18T12:58:36&#43;08:00">
+    <meta property="article:published_time" content="2019-10-14T11:10:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-08-18T12:58:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-10-14T11:10:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="hugo从入门到建站">
+    <meta name="description" content="JS的基本语法">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">hugo从入门到建站</h1>
+                            <h1 class="post-title">JS的基本语法</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年8月18日
+                            2019年10月14日
                         </date>
                         
                         
@@ -81,108 +81,129 @@
                         <div class="post-content">
                             
 
-<h1 id="hugo-快速创建-blog-教程">hugo 快速创建 blog 教程</h1>
+<h2 id="1-什么是表达式和语句">1. 什么是表达式和语句？</h2>
 
-<h2 id="第一步-下载-hugo">第一步：下载 hugo</h2>
+<p>在 JavaScript 的里面,如果后面带有&rsquo;;&lsquo;代表这是一条语句。表达式更容易区辨别,一般带有返回值的都可以称为表达式。</p>
 
-<p><a href="https://github.com/gohugoio/hugo/releases">下载地址</a></p>
+<pre><code class="language-JavaScript">var a = 1; //这是一个语句
+a + a;//这是一个表达式语句
+</code></pre>
 
-<h4 id="1-选择文件名为-hugo-版本号-系统-32bit-64-zip">1. 选择文件名为：hugo-版本号-系统-32bit/64/.zip</h4>
+<h2 id="2-标识符的规则">2. 标识符的规则</h2>
 
-<p>根据系统选择对应的</p>
+<p>在 JavaScript 里面标识符由&rsquo;字母&rsquo;和&rsquo;符号&rsquo;和&rsquo;中文&rsquo;组成.唯一特殊的是标识符开头不能是数字。</p>
 
-<p>例：windows-64 位：hugo_0.57.2_Windows-64bit.zip</p>
+<pre><code class="language-javaScript">var a123;  //字母开头
+var 中国;  //中文开头
+var _1;    //符号开头
+var 123;   //数字开头是错的！！！！！！
+</code></pre>
 
-<h4 id="2-解压文件到你所知道的目录-路径你要知道-等下要用-你会得到一个-hugo-exe-文件">2. 解压文件到你所知道的目录(路径你要知道,等下要用)。你会得到一个 hugo.exe 文件</h4>
+<h2 id="3-if-else-语句">3. if else 语句</h2>
 
-<h4 id="3-把执行命令放到-path-变量-先复制-hugo-exe-的路径-右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里-系统变量-双击-path-新建-粘贴-有确定就点确定">3. 把执行命令放到 path 变量,先复制 hugo.exe 的路径;右键桌面我的电脑-属性-高级系统设置-环境变量-下面框框里(系统变量)-双击 Path-新建-粘贴-有确定就点确定。</h4>
+<p>例子：在 JavaScript 里,if else 用作判断条件为真假执行不同语句的。</p>
 
-<p><img src="/hugo_images/3.png" alt="" /></p>
+<pre><code class="language-javaScript">if(如果今天下雨){
+  我就去淋雨
+}else{
+  我就去下雨
+}
+</code></pre>
 
-<p>自检：重新打开 cmder(相关命令行工具)输入 hugo version(你会得到一个版本号)
-<img src="/hugo_images/4.png" alt="" /></p>
+<p>本意：if else</p>
+
+<pre><code class="language-javaScript">if(表达式){
+  语句 //为真执行
+}else{
+  语句 //为假执行
+}
+</code></pre>
 
 <blockquote>
-<p>如果没有成功重新检查以上步骤!</p>
+<p>if else 只是最简单的用法,某些事情的不单是一个影响因素.</p>
 </blockquote>
 
-<p>恭喜你，下载完成！
-<br/><br/></p>
+<h2 id="4-while-for-语句">4. while for 语句</h2>
 
-<h2 id="第二步-利用-hugo-快速搭建-blog-框架">第二步：利用 hugo 快速搭建 blog 框架</h2>
+<p>例子:在现实的世界当中,汽车行驶中轮胎不停的转动.因何而动,因何而停？
+在 JavaScript 世界里,while 和 for 控制轮胎.</p>
 
-<h4 id="1-创建建站根一个目录">1. 创建建站根一个目录()</h4>
+<pre><code class="language-JavaScript">//假设是一道无障碍无人道路,只有一个距离500米红绿灯.while和for的区别
 
-<p><img src="/hugo_images/6.png" alt="" /></p>
+var 汽车=0;
+while(汽车前方20米没有红绿灯){
+  汽车=汽车+20;
+}
 
-<h4 id="2-该目录在-cmder-打开">2. 该目录在 cmder()打开</h4>
+for(var 汽车=0;汽车前方20米没有红绿灯;汽车=汽车+20){
 
-<p><img src="/hugo_images/5.png" alt="" /></p>
+}
+</code></pre>
 
-<h4 id="3-地址栏输入网址-回车进入-点击-quick-start">3. 地址栏输入网址,回车进入;点击 quick start：</h4>
+<blockquote>
+<p>上面代码中,var 汽车=0;只会执行一次,然后到&rsquo;汽车前方 20 米没有红绿灯&rsquo;判断为真就进入循环体。当判断汽车=480 的时候。循环完毕.(到汽车=汽车+20 时,会自身+20)</p>
+</blockquote>
 
-<p><a href="https://gohugo.io/">hugo 官网</a>
-<img src="/hugo_images/1.png" alt="" />
-<img src="/hugo_images/2.png" alt="" /></p>
+<p>本意：while for</p>
 
-<h4 id="4-从-step2-开始-复制-打开-cmder-一定要在第一步创建的目录里-粘贴-回车">4. 从 step2 开始 复制-打开 cmder(一定要在第一步创建的目录里)-粘贴-回车</h4>
+<pre><code class="language-javaScript">
+while(表达式){
+  循环体            //执行顺序：表达式 循环体
+}
 
-<p><img src="/hugo_images/7.png" alt="" /></p>
+for(语句1;表达式语句2;语句3){
+  循环体            //执行顺序 语句1 表达式语句2 循环体 语句3
+}
 
-<h4 id="5-step3-复制-打开-cmder-粘贴-回车">5. step3 复制-打开(cmder)-粘贴-回车</h4>
+</code></pre>
 
-<p>本地仓库初始化和下载自带模板
-<img src="/hugo_images/8.png" alt="" /></p>
+<h2 id="5-break-continue">5. break continue</h2>
 
-<h4 id="6-step4-复制-打开-cmder-粘贴-回车">6. step4 复制-打开(cmder)-粘贴-回车</h4>
+<p><strong>break 是跳出当前层的循环</strong>:例如本来有人要转 2 次 10 圈。他转完了一次。到第二次了说不转了。直接把第二次(层)直接忽略了,太耍赖了,大赖皮.</p>
 
-<p><img src="/hugo_images/9.png" alt="" />
-创建 blog 目录(posts 目录存放 blog)和第一个 blog 文件以.md 为后缀
-<img src="/hugo_images/14.png" alt="" />可以自己写点什么，注意时间不要来自未来！</p>
+<p>实例 break</p>
 
-<h4 id="7-step5-复制-打开-cmder-粘贴-回车">7. step5 复制-打开(cmder)-粘贴-回车</h4>
+<pre><code class="language-javaScript">for(var a=1;a&lt;=2;a++){
+  if(a===2){              //第二次时直接跳出
+    break;
+  }
+  for(var b=1;b&lt;=10;b++){
 
-<p>启动服务器
-<img src="/hugo_images/10.png" alt="" />
-如果一样则成功启动.按住 Ctrl+左键就可以进入啦
-<img src="/hugo_images/11.jpg" alt="" /></p>
+  }
+}
+</code></pre>
 
-<p>如果出现以下情况
-<img src="/hugo_images/13.png" alt="" />
-继续往下做 ctrl+C 关闭掉配置一下再启动</p>
+<p><strong>continue 是跳出当时的一次循环直接进入下一次循环</strong>：例如本来有人要转 2 次 5 圈。本该 10 圈。转到 2 次 4 圈时,说转完了。小赖皮
+用法：</p>
 
-<h4 id="8-step6">8. step6</h4>
+<p>实例 continue</p>
 
-<p>这个是要需要配置以下:新建一个 config.toml 文件，把 step 的内容复制进来，保存关闭
-<img src="/hugo_images/15.png" alt="" /></p>
+<pre><code class="language-javaScript">for(var a=1;a&lt;=2;a++){
 
-<h4 id="8-step7">8. step7</h4>
+  for(var b=1;b&lt;=5;b++){
 
-<p>构建静态页面,命令是 hugo
-<img src="/hugo_images/16.png" alt="" />
-弄完之后。再次启动 hugo server -D 返回 step6 看到<a href="http://localhost:54316">http://localhost:54316</a>; 主要是前缀，后面的数字无所谓。因为我打开了两个所以这次是 54316.ctrl+左键就可以进入了静态页面啦。具体页面见 step5。</p>
+    if(a===2){
 
-<p>恭喜你,hugo 静态站点已经创建完毕。接下来是写 blog 了。</p>
+      if(b===4){
 
-<h2 id="第三步-写博客">第三步：写博客</h2>
+        continue;
+      }
+    }
+  }
+}
+</code></pre>
 
-<h4 id="1-在页面里-如果你的画面里跟我一样-你第一次是一个-我创建了两个-md-文件-则成功啦-点击-read-more-可进入阅读">1. 在页面里，如果你的画面里跟我一样(你第一次是一个,我创建了两个.md 文件)则成功啦。点击 read more 可进入阅读</h4>
+<h2 id="6-标签-label">6. 标签(label)</h2>
 
-<p><img src="/hugo_images/12.png" alt="" />
-如果页面里,没有的话,你需要创建一个 content 目录(创建在根目录,我的是 hugo-demo),把 posts 目录放到 content 里。刷新一下就有啦
-如图：<img src="/hugo_images/17.png" alt="" />
-如果还没有怎么办!!.以上配置好
-你再重启服务器。就 ok 啦。</p>
+<p>label 是跳转的意思。例如:当对未拥有的一件事物发生强烈的希望时.当你得到却未有当初想象的美好.有可能会抛弃事物。当抛弃事物时,又回到了未拥有的状态.</p>
 
-<p>hugo server -D (启动 hugo 服务器命令)</p>
-
-<hr style="width:100%">
-
-<h2 id="分割线">分割线</h2>
-
-<p>在 content/posts/目录下所有以.md 文件都是一篇博客。</p>
-
-<p>写多篇用 ctrl+c 复制 ctrl+v 粘贴,修改时间即可</p>
+<pre><code class="language-javaScript">foo:{
+  console.log(目前心情还不错);
+  console.log(这是个啥阿,哎呀不要了);
+  break foo;
+  console.log(本来就是这样的阿)
+}
+</code></pre>
 
                         </div>
 
@@ -195,9 +216,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">html入门笔记1</a></li>
+        <li><a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">css知识总结</a></li>
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/posts/%E6%B5%85%E6%9E%90url/">浅析 URL</a></li>
+        
+        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        
+        <li><a href="/posts/css%E5%9F%BA%E7%A1%80/">css基础</a></li>
+        
+        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
         
     </ul>
 </div>
