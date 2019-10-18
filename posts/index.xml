@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Oct 2019 14:10:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2019 14:10:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS对象的基本用法</title>
+      <link>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 18 Oct 2019 14:10:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>前言  本文章仅仅自身学习需要,把目前所学已知的用文章记录下来，做一次归纳整理,达到理解和加强记忆的目的，如有不对,请联系: 460046653@qq.com
+ 1. 如果声明一个对象(Object)数据类型？ 什么是对象呢？对象是属性(由属性名和属性值组成一个属性,:隔开)的集合,用大括号括起来.称之为对象(没有属性名和属性值是空对象(null))
+//以下是规范写法 let obj = new Object({&#39;属性名&#39;:&#39;属性值&#39;,&#39;属性名&#39;:&#39;属性值&#39;}) //逗号隔开 //以下是简写写法 let obj2 = {&#39;属性名&#39;:&#39;属性值&#39;,&#39;属性名&#39;:&#39;属性值&#39;}  属性名：遵守标识符的规则,可不加引号。其他例外
+//如果属性名是数值也不可加引号,但自动转换为字符串 let obj = { 1: &#39;a&#39;, 3.2: &#39;b&#39;, 1e2: true, 1e-2: true, .234: true, 0xFF: true } //它们最终都会变成字符串！！ // obj { // 1: &amp;quot;a&amp;quot;, // 3.2: &amp;quot;b&amp;quot;, // 100: true, // 0.01: true, // 0.234: true, // 255: true // } //不符合标识符 报错 let obj = { 1+2:3, 1a:&#39;1a&#39; } //如果不符合标识符,请加上引号 let obj = { &#39;1+2&#39;:3, &#39;1a&#39;:&#39;1a&#39; }  变量可不可以当成属性名呢？ 答：可以的我们来看代码</description>
+    </item>
     
     <item>
       <title>JS的数据类型</title>
