@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Nov 2019 13:51:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Nov 2019 13:51:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法入门上</title>
+      <link>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</link>
+      <pubDate>Mon, 18 Nov 2019 13:51:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</guid>
+      <description>1. 用递归实现类似Math.prototype.min()方法:返回一个最小值 这是JS内置的一个方法.先从两个数实现开始,最后实现类似Math.min的方法 当我们调用Math.min()时,默认总会返回一个最小值
+两个数返回一个最小值
+let min = (numbers)=&amp;gt;numbers[0]&amp;gt;numbers[1]？numbers[1]:numbers[0]; min([2,3]) //2 //简化成——析构赋值 let min = ([a,b])=&amp;gt; a&amp;gt;b?b:a min([2,3]) //2  三个数返回一个最小值
+let min2 = ([a,b,c])=&amp;gt; min([a,min([b,c])]) min2([3,4,5]) //3  四个数返回一个最小值
+let min3 = ([a,b,c,d]) =&amp;gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会发现 min min2 min3是环环相扣的.你可以根据min min2 min3 写出min&amp;hellip;.既然每次调用都是min来计算两个数的大小,如果你学过递归的话并且用递归去写,这个代码量就少的很多
+简单实例: 实现1+2+3+4&amp;hellip;+100用for和递归做
+//for let num=0; for(let n=1;n&amp;lt;=100;n++){ num+=n; } //5050  //递归:总之就是不满足条件前一直去调用自身函数,满足条件后逐一释放调用自身函数.前者为递,后者为归 let num=0; let add = (n) =&amp;gt;{ if(n&amp;lt;=100){ add((num+=n,++n)) }else{ console.log(num) } } add(1) //5050 只要条件成立就会一直调用自身add()函数,条件满足逐一释放自身函数() //代码优化： let add = (n) =&amp;gt; n&amp;lt;=100?</description>
+    </item>
     
     <item>
       <title>JS总结之原型</title>
