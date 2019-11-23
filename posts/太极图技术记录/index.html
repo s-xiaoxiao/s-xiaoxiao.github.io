@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>浅析 URL | 笑笑</title>
-    <meta property="og:title" content="浅析 URL - 笑笑">
+    <title>太极图技术记录 | 笑笑</title>
+    <meta property="og:title" content="太极图技术记录 - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-09-07T14:10:36&#43;08:00">
+    <meta property="article:published_time" content="2019-11-21T12:21:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-09-07T14:10:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-11-21T12:21:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="浅析 URL">
+    <meta name="description" content="太极图技术记录">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">浅析 URL</h1>
+                            <h1 class="post-title">太极图技术记录</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年9月7日
+                            2019年11月21日
                         </date>
                         
                         
@@ -81,65 +81,109 @@
                         <div class="post-content">
                             
 
-<h1 id="strong-url-统一资源定位符-strong"><strong>URL (统一资源定位符)</strong></h1>
+<h1 id="前言">前言</h1>
 
-<p><br></p>
+<p>本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结</p>
 
-<h2 id="strong-style-color-black-1-url-包含哪几部分-每部分分别有什么作用-strong"><strong style="color:black;">1. URL 包含哪几部分，每部分分别有什么作用</strong></h2>
+<h2 id="document-queryselector-方法-文档对象模型-document-引用的-queryselector-方法返回文档中与指定选择器或选择器组匹配的第一个-html-元素-element-如果找不到匹配项-则返回-null">document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null</h2>
 
-<p><img src="/hugo_images/URL.png" alt="22" /></p>
+<pre><code class="language-JavaScript">
+let demo = document.querySelector('#demo')
+</code></pre>
 
-<pre>
-<strong >1. 协议：</strong><span style="color:black">规定请求以及响应具体过程的实现带有s则数据会被加密</span></strong>
-<strong >2. 域名：</strong><span style="color:black">由域名管理系统(Domain Name System)管理主要方便于人类记忆(相对于IP),跟公网IP绑定</span></strong>
-<strong >3. 路径：</strong><span style="color:black">当前路径页面</span></strong>
-<strong >4. 参数：</strong><span style="color:black">搜索关键字</span></strong>
-<strong >5. 锚点：</strong><span style="color:black">当有锚点时,浏览器可视窗口到元素ID为vue</span></strong>
+<h2 id="innerhtml-是一个属性忘该元素中添加内容">innerHTML 是一个属性忘该元素中添加内容</h2>
 
-</pre>
+<pre><code class="language-JavaScript">let demo = document.querySelector(&quot;#demo&quot;)
 
-<blockquote>
-<p>上方图中的意思是：你我遵循 https 协议,我要访问 xiedaimala.com 去路径为 search 提供的搜索功能,搜索关键字“前端”。这是请求的部分。
-xiedaimala.com 服务器会遵循 https 协议来解析请求。并且响应给我,然后浏览器会根据锚点去搜哪个元素的 ID 相等锚点</p>
-</blockquote>
+demo.innerHTML =2
+</code></pre>
 
-<h2 id="strong-style-color-black-2-dns-的作用是什么-nslookup-命令怎么用-strong"><strong style="color:black;">2. DNS 的作用是什么，nslookup 命令怎么用</strong></h2>
+<h2 id="settimeout-定时器-该定时器在定时器到期后执行一个函数或指定的一段代码">setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码</h2>
 
-<pre>
-    DNS的作用在于,当用户输入地址 xiedaimala.com,会先到DNS服务器询问xiedaimala.com 这个域名相对的IP
-是多少? DNS解析后响应一个的IP。
-    nslookup命令是查询域名相对的IP是什么例如：在命令行输入nslookup xiedaimala.com 会得到这个域名的IP 
-</pre>
+<pre><code class="language-JavaScript">
+setTimeout(()=&gt;{
+  demo.innerHTML = 3
+},3000)
+</code></pre>
 
-<h2 id="strong-style-color-black-3-ip-的作用是什么-ping-命令怎么用-strong"><strong style="color:black;">3. IP 的作用是什么，ping 命令怎么用</strong></h2>
+<h2 id="setinterval-方法-方法重复调用一个函数或这姓一个代码段-在每次调用之间具有固定的时间延迟">setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟</h2>
 
-<pre>
-    IP分公网IP和内网IP。公网IP是你能上网的凭证，公网IP的作用是链接其他公网IP的身份凭证,例如：你要访问
-baidu.com。首先你得有一个公网IP(由网络服务商提供服务)。baidu.com就知道是谁来访问啦。内网IP由路由
-器分配的,管理终端一般由198.168.x.x开头
-    ping 命令要在命令行内配合域名/IP使用.例如： ping baidu.com 。主要目的是否能通过IP链接到主机。过程
-中会发送数据包,主机是否由响应
-    
-</pre>
+<pre><code class="language-JavaScript">let n =1
+setInterval(()=&gt;{
+  n++
+},3000)
+</code></pre>
 
-<h2 id="strong-style-color-black-4-域名是什么-分别哪几类域名-strong"><strong style="color:black;">4. 域名是什么，分别哪几类域名</strong></h2>
+<h2 id="string-prototype-substring-方法返回一个字符串在开始索引到结束索引之间的一个子集-或从开始索引直到字符串末尾的一个子集-不包含结束索引">String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引)</h2>
 
-<pre>
-    要说域名是什么，得先说起IP。IP的存在是给每个终端分配的一个名字，IP是一串数字。但是一串数字不利于人类
-记忆以及传播更不容易发生联想。域名是由字符组成显然优于数字。域名对应着IP。当我们访问某个域名时,也可以说访
-问某个IP。
-    分别有顶级域名、一级域名以及二级域名例如：.com 是顶级域名 xiedaimala.com 是一级域名。 www.xiedaima
-la.com 是二级域名 
-    以后缀分类有：主要分为国家地区顶级域(例如：中国是 .CN)以及通用顶级域名
-    通用顶级域名：
-                1. .com - 供商业机构使用
-                2. .net - 供网络服务商
-                3. .org - 供非盈利组织
-                4. .edu - 供教育机构
-                5. .gov - 供政府
-                6. .mil - 供军事
-                7. .int - 供国际组织 等 
-</pre>
+<pre><code class="language-JavaScript">
+let string = `你好,我是一名前端新人`
+
+console.log(string.substring(0,1))    //你
+</code></pre>
+
+<h2 id="string-prototype-replace-方法-方法返回一个由替换值替换一些或所有匹配的模式后的新字符串-模式可以是一个字符串或者一个正则表达式-替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数-原字符串不会改变">String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变</h2>
+
+<pre><code class="language-JavaScript">let string = `
+你好,我是一名前端新人
+接下来我要加样式了
+我要加的样式是
+body{
+  color:red;
+}`;
+
+string = string.replace('\n','&lt;br&gt;')    //换行换成HTML元素里的换行标签
+//第一个参数如果不是正则表达式则只会替换一次
+
+string = string.replace(/\n/g,'&lt;br&gt;')   //换行所有替换成&lt;br&gt;
+</code></pre>
+
+<h2 id="string-prototype-charcodeat-方法返回字符的编码">String.prototype.charCodeAt()方法返回字符的编码</h2>
+
+<pre><code class="language-JavaScript">let string = &quot;
+&quot;
+
+string[0].charCodeAt(); //10
+</code></pre>
+
+<h2 id="css-属性">CSS 属性</h2>
+
+<pre><code class="language-css">border: 1px solid red; /*添加边框*/
+
+/*对应：border-width,border-style,border-color*/
+
+border-radius: 50%; /*该属性会让元素变成圆*/
+
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /*添加阴影*/
+
+background: ; /*背景颜色*/
+
+position: fixed; /*固定在某个位置*/
+
+transform:translateX() /*transform属性允许旋转,缩放,倾斜,平移给定元素;translateX()会在二维平面上水平方向移动元素*/
+
+::before {
+} /*创建一个伪元素,其将成为匹配选中的元素的第一个子元素。常通过content属性来为一个元素添加修饰性的内容。此元素默认为行内元素*/
+
+::after {
+} /*用来创建一个伪元素,作为已选中元素的最后一个元素。通常会配合content属性来为该元素添加装饰内容。这个虚拟元素是行内元素*/
+
+background：linear-gradient(); /*线性渐变*/
+
+background: radial-gradient(); /*半径渐变*/
+
+@media(){
+
+}/*媒体查询：主要是针对不同分辨率显示不同的CSS规则.*/
+
+box-sizing:border-box;    /*盒模型的计算考虑将把margin排除*/
+
+word-break:break-all; /*用于字符的断行*/
+
+overflow:auto;  /*元素的内容太大无法适应元素时块级格式上下文时候该做什么。auto属性是太大自动出现横竖导航条*/
+
+position:relative; /*使当前元素的位置相对于父元素*/
+</code></pre>
 
                         </div>
 
@@ -152,15 +196,15 @@ la.com 是二级域名
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        <li><a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/">算法入门上</a></li>
         
-        <li><a href="/posts/css%E5%9F%BA%E7%A1%80/">css基础</a></li>
+        <li><a href="/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/">JS总结之原型</a></li>
         
-        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
+        <li><a href="/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/">JS运算符</a></li>
         
-        <li><a href="/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/">HTML 重难点</a></li>
+        <li><a href="/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">JS 函数的执行时机</a></li>
         
-        <li><a href="/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">HTML常用标签</a></li>
+        <li><a href="/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/">JS对象的基本用法</a></li>
         
     </ul>
 </div>
