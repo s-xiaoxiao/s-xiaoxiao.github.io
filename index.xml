@@ -6,10 +6,20 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Nov 2019 13:51:36 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 12:21:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>太极图</title>
+      <link>https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE/</link>
+      <pubDate>Thu, 21 Nov 2019 12:21:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE/</guid>
+      <description>前言 本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结
+document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null let demo = document.querySelector(&#39;#demo&#39;)  innerHTML 是一个属性忘该元素中添加内容 let demo = document.querySelector(&amp;quot;#demo&amp;quot;) demo.innerHTML =2  setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码 setTimeout(()=&amp;gt;{ demo.innerHTML = 3 },3000)  setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟 let n =1 setInterval(()=&amp;gt;{ n++ },3000)  String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引) let string = `你好,我是一名前端新人` console.log(string.substring(0,1)) //你  String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变 let string = ` 你好,我是一名前端新人 接下来我要加样式了 我要加的样式是 body{ color:red; }`; string = string.replace(&#39;\n&#39;,&#39;&amp;lt;br&amp;gt;&#39;) //换行换成HTML元素里的换行标签 //第一个参数如果不是正则表达式则只会替换一次 string = string.</description>
+    </item>
     
     <item>
       <title>算法入门上</title>

@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS对象的基本用法 | 笑笑</title>
-    <meta property="og:title" content="JS对象的基本用法 - 笑笑">
+    <title>太极图 | 笑笑</title>
+    <meta property="og:title" content="太极图 - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-10-18T14:10:36&#43;08:00">
+    <meta property="article:published_time" content="2019-11-21T12:21:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-10-18T14:10:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-11-21T12:21:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="JS对象的基本用法">
+    <meta name="description" content="太极图">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">JS对象的基本用法</h1>
+                            <h1 class="post-title">太极图</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年10月18日
+                            2019年11月21日
                         </date>
                         
                         
@@ -83,128 +83,107 @@
 
 <h1 id="前言">前言</h1>
 
-<blockquote>
-<p>本文章仅仅自身学习需要,把目前所学已知的用文章记录下来，做一次归纳整理,达到理解和加强记忆的目的，如有不对,请联系: 460046653@qq.com</p>
-</blockquote>
+<p>本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结</p>
 
-<h2 id="1-如果声明一个对象-object-数据类型">1. 如果声明一个对象(Object)数据类型？</h2>
+<h2 id="document-queryselector-方法-文档对象模型-document-引用的-queryselector-方法返回文档中与指定选择器或选择器组匹配的第一个-html-元素-element-如果找不到匹配项-则返回-null">document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null</h2>
 
-<p>什么是对象呢？对象是属性(由属性名和属性值组成一个属性,:隔开)的集合,用大括号括起来.称之为对象(没有属性名和属性值是空对象(null))</p>
-
-<pre><code class="language-JavaScript">//以下是规范写法
-let obj = new Object({'属性名':'属性值','属性名':'属性值'}) //逗号隔开
-
-//以下是简写写法
-let obj2 = {'属性名':'属性值','属性名':'属性值'}
+<pre><code class="language-JavaScript">
+let demo = document.querySelector('#demo')
 </code></pre>
 
-<p><strong>属性名</strong>：遵守标识符的规则,可不加引号。其他例外</p>
+<h2 id="innerhtml-是一个属性忘该元素中添加内容">innerHTML 是一个属性忘该元素中添加内容</h2>
 
-<pre><code class="language-JavaScript">//如果属性名是数值也不可加引号,但自动转换为字符串
-let obj = {
-  1: 'a',
-  3.2: 'b',
-  1e2: true,
-  1e-2: true,
-  .234: true,
-  0xFF: true
-}
-//它们最终都会变成字符串！！
-// obj {
-//   1: &quot;a&quot;,
-//   3.2: &quot;b&quot;,
-//   100: true,
-//   0.01: true,
-//   0.234: true,
-//   255: true
-// }
+<pre><code class="language-JavaScript">let demo = document.querySelector(&quot;#demo&quot;)
 
-//不符合标识符 报错
-let obj = {
-  1+2:3,
-  1a:'1a'
-}
-
-//如果不符合标识符,请加上引号
-let obj = {
-  '1+2':3,
-  '1a':'1a'
-}
+demo.innerHTML =2
 </code></pre>
 
-<p><strong>变量可不可以当成属性名呢？</strong> 答：可以的我们来看代码</p>
+<h2 id="settimeout-定时器-该定时器在定时器到期后执行一个函数或指定的一段代码">setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码</h2>
 
-<pre><code class="language-JavaScript">let p1 = 'name'
-let obj = {
-  [p1]:'xiaoxiao',
-}
+<pre><code class="language-JavaScript">
+setTimeout(()=&gt;{
+  demo.innerHTML = 3
+},3000)
 </code></pre>
 
-<blockquote>
-<p>可以看到 p1 是一个 string 类型的变量,值为&rsquo;name&rsquo;.我们定义对象时,属性名是被中括号包裹起来了,这是当属性名为变量时的一个写法.属性名是变量的值(name)</p>
-</blockquote>
+<h2 id="setinterval-方法-方法重复调用一个函数或这姓一个代码段-在每次调用之间具有固定的时间延迟">setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟</h2>
 
-<p><strong>属性值</strong>:值遵守该类型规则即可</p>
-
-<h2 id="2-如何删除对象的属性">2. 如何删除对象的属性？</h2>
-
-<pre><code class="language-JavaScript">//我们先声明一个对象
-
-let obj = {
-  'name':'xiaoxiao',
-  'age':18
-}
-
-delete obj.name  //name属性就会消失
+<pre><code class="language-JavaScript">let n =1
+setInterval(()=&gt;{
+  n++
+},3000)
 </code></pre>
 
-<h2 id="3-怎么查看对象的属性">3. 怎么查看对象的属性？</h2>
+<h2 id="string-prototype-substring-方法返回一个字符串在开始索引到结束索引之间的一个子集-或从开始索引直到字符串末尾的一个子集-不包含结束索引">String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引)</h2>
 
-<p>分两种情况来看,一个是自身属性,一个是该对象的共有属性</p>
+<pre><code class="language-JavaScript">
+let string = `你好,我是一名前端新人`
 
-<pre><code class="language-JavaScript">let obj = {
-  name: &quot;xiaoxiao&quot;,
-  age: 18
-};
-//查看自身属性
-Object.keys(obj);
-
-//查看自身属性和共有属性
-console.dir(obj);
+console.log(string.substring(0,1))    //你
 </code></pre>
 
-<h2 id="4-如何修改或增加对象的属性">4. 如何修改或增加对象的属性</h2>
+<h2 id="string-prototype-replace-方法-方法返回一个由替换值替换一些或所有匹配的模式后的新字符串-模式可以是一个字符串或者一个正则表达式-替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数-原字符串不会改变">String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变</h2>
 
-<pre><code class="language-javascript">//定义之后增加对象的属性
-let obj = {
-  name: &quot;xiaoxiao&quot;
-};
-obj.age = 18;
+<pre><code class="language-JavaScript">let string = `
+你好,我是一名前端新人
+接下来我要加样式了
+我要加的样式是
+body{
+  color:red;
+}`;
 
-//定义之后修改对象属性的属性值
-obj.name = &quot;xiao&quot;;
-obj.age = &quot;20&quot;;
+string = string.replace('\n','&lt;br&gt;')    //换行换成HTML元素里的换行标签
+//第一个参数如果不是正则表达式则只会替换一次
 
-//或者批量一起修改 可以用Object提供的assign属性
-Object.assign(obj, { name: &quot;xiaoxiao&quot;, age: 20 });
+string = string.replace(/\n/g,'&lt;br&gt;')   //换行所有替换成&lt;br&gt;
 </code></pre>
 
-<h2 id="5-name-in-obj-和-obj-hasownproperty-name-的区别">5. &lsquo;name&rsquo; in obj 和 obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h2>
+<h2 id="string-prototype-charcodeat-方法返回字符的编码">String.prototype.charCodeAt()方法返回字符的编码</h2>
 
-<p>你会问这是什么意思？区别在于自身属性和共有属性,我们在查看和删除的时候</p>
+<pre><code class="language-JavaScript">let string = &quot;
+&quot;
 
-<pre><code class="language-JavaScript">let obj = {
-  name:'xiaoxiao',
-  age:18
-}
-//我们知道obj有个自身属性,它还有一个隐藏的共有属性
-
-'name' in obj //问name是属于obj的自身属性或共有属性吗？答案是true
-
-obj.hasOwnProperty('name') //问name自身属性吗？ 答案是true
+string[0].charCodeAt(); //10
 </code></pre>
 
-<p>明白它们之间的区别了吗？</p>
+<h2 id="css-属性">CSS 属性</h2>
+
+<pre><code class="language-css">border: 1px solid red; /*添加边框*/
+
+/*对应：border-width,border-style,border-color*/
+
+border-radius: 50%; /*该属性会让元素变成圆*/
+
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /*添加阴影*/
+
+background: ; /*背景颜色*/
+
+position: fixed; /*固定在某个位置*/
+
+transform:translateX() /*transform属性允许旋转,缩放,倾斜,平移给定元素;translateX()会在二维平面上水平方向移动元素*/
+
+::before {
+} /*创建一个伪元素,其将成为匹配选中的元素的第一个子元素。常通过content属性来为一个元素添加修饰性的内容。此元素默认为行内元素*/
+
+::after {
+} /*用来创建一个伪元素,作为已选中元素的最后一个元素。通常会配合content属性来为该元素添加装饰内容。这个虚拟元素是行内元素*/
+
+background：linear-gradient(); /*线性渐变*/
+
+background: radial-gradient(); /*半径渐变*/
+
+@media(){
+
+}/*媒体查询：主要是针对不同分辨率显示不同的CSS规则.*/
+
+box-sizing:border-box;    /*盒模型的计算考虑将把margin排除*/
+
+word-break:break-all; /*用于字符的断行*/
+
+overflow:auto;  /*元素的内容太大无法适应元素时块级格式上下文时候该做什么。auto属性是太大自动出现横竖导航条*/
+
+position:relative; /*使当前元素的位置相对于父元素*/
+</code></pre>
 
                         </div>
 
@@ -217,15 +196,15 @@ obj.hasOwnProperty('name') //问name自身属性吗？ 答案是true
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">JS的数据类型</a></li>
+        <li><a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/">算法入门上</a></li>
         
-        <li><a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">JS的基本语法</a></li>
+        <li><a href="/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/">JS总结之原型</a></li>
         
-        <li><a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">css知识总结</a></li>
+        <li><a href="/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/">JS运算符</a></li>
         
-        <li><a href="/posts/%E6%B5%85%E6%9E%90url/">浅析 URL</a></li>
+        <li><a href="/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">JS 函数的执行时机</a></li>
         
-        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        <li><a href="/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/">JS对象的基本用法</a></li>
         
     </ul>
 </div>
