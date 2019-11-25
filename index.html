@@ -66,6 +66,24 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下" >算法入门-下</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年11月23日
+                            </date>
+                            
+                            <div class="post-content">
+                                四种排序 选择排序 快速排序 归并排序 计数排序
+选择排序(循环) 思路:每次查找最小值,拿最小值的索引下标跟数组升序下标逐步交换.
+//交换 let swap = (array,i,j) =&gt;{ let temp = array[i]; array[i]=array[j]; array[j]=temp; } //寻找最小值索引 let minIndex = (numbers) =&gt;{ let index = 0; for(let i=1;i&lt;numbers.length;i++){ if(numbers[i]&lt;numbers[index]){ index = i; } } return index; } //选择排序(从小到大) let sort = (numbers) =&gt;{ for(let i=0;i&lt;numbers.length-1;i++){ let index = minIndex(numbers.slice(i))+i if(index!==i){ swap(numbers,index,i) } } return numbers; } //slice()：方法是 Array.prototype.slice();返回一个新对象, //这一对象是由一个begin和end决定的原数组的浅拷贝(包含begin,不包含end)。原始数组不会被改变  快速排序(quick sort)(递归) let quickSort = arr =&gt;{ if(arr.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录" >太极图技术记录</a>
                                 </h1>
                             </header>
@@ -241,23 +259,6 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="css知识总结" >css知识总结</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年9月9日
-                            </date>
-                            
-                            <div class="post-content">
-                                 1.浏览器渲染原理  浏览器在得到服务器的响应之后,会先根据HTML去渲染成一个结构图HTML树(DOM)所有的标签具有父子关系。 HTML标签是最大的,其次是head和body两个大儿子,依次渲染。 CSS会构建成CSS树(CSSOM)。CSS也是根据标签所具备的属性。在这里body是最大的。如果body所带的属性 如果标签是共有的属性,儿子会继承父子所带的属性 这时会将HTML CSS 合并在一起成为渲染树(render tree) Layout布局然后是计算标签的大小以及位置渲染布局。(文档流、盒模型、计算大小和位置) paint绘制接下来是绘制标签的背景颜色、边框、字体颜色、阴影的(所有美化属性在渲染) compose最后一步是层叠的合成,(例如拍照：就是把背景和人合成跟这个概念是一样的)  CSS 动画的两种做法（transition 和 animatioin） 1. transition 过渡 作用:补充中间帧
- 语法： transition:属性名 时长 过渡方式 延迟 transition：left 200ms linear 可以用逗号分隔两个不同属性 transition:left 200ms,top 400ms 可以用 all 代表所有属性 transition:all 200ms 时长单位只有 s 和 ms 过渡方式有：linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier|step-start|step-end|steps  2. animation 动画  缩写语法： animation:时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名； 时长：1s 或者 1000ms 过渡方式：跟 transition 取值一样，如 linear 次数：3 或者 2.4 或者 infinite 方向：reverse|alternate|alternate-reverse 填充模式：none|forwards|backwards|both 是否暂停：paused|running 以上所有属性都有对应的单独属性。  ……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -302,6 +303,10 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
     </li>
     
@@ -335,10 +340,6 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     
     <li>
         <a href="https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="JS的基本语法">JS的基本语法</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="css知识总结">css知识总结</a>
     </li>
     
 </ul>

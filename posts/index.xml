@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 21 Nov 2019 12:21:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 18:57:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法入门-下</title>
+      <link>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</link>
+      <pubDate>Sat, 23 Nov 2019 18:57:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</guid>
+      <description>四种排序 选择排序 快速排序 归并排序 计数排序
+选择排序(循环) 思路:每次查找最小值,拿最小值的索引下标跟数组升序下标逐步交换.
+//交换 let swap = (array,i,j) =&amp;gt;{ let temp = array[i]; array[i]=array[j]; array[j]=temp; } //寻找最小值索引 let minIndex = (numbers) =&amp;gt;{ let index = 0; for(let i=1;i&amp;lt;numbers.length;i++){ if(numbers[i]&amp;lt;numbers[index]){ index = i; } } return index; } //选择排序(从小到大) let sort = (numbers) =&amp;gt;{ for(let i=0;i&amp;lt;numbers.length-1;i++){ let index = minIndex(numbers.slice(i))+i if(index!==i){ swap(numbers,index,i) } } return numbers; } //slice()：方法是 Array.prototype.slice();返回一个新对象, //这一对象是由一个begin和end决定的原数组的浅拷贝(包含begin,不包含end)。原始数组不会被改变  快速排序(quick sort)(递归) let quickSort = arr =&amp;gt;{ if(arr.</description>
+    </item>
     
     <item>
       <title>太极图技术记录</title>
