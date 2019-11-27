@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>数据结构-上 | 笑笑</title>
+    <meta property="og:title" content="数据结构-上 - 笑笑">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-11-25T19:45:36&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-11-25T19:45:36&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="数据结构-上">
+        
+    <meta name="author" content="笑笑">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://sunxiaochuang.top">
+                        笑笑
+                    </a>
+                
+                <p class="description">专注于前端方向</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://sunxiaochuang.top">首页</a>
+                    
+                    <a  href="https://sunxiaochuang.top/archives/" title="归档">归档</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">数据结构-上</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年11月25日
+                        </date>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="数据结构-上">数据结构(上)</h1>
+
+<ul>
+<li><a href="#队列">队列</a></li>
+<li><a href="#栈">栈</a></li>
+<li><a href="#链表">链表</a></li>
+<li><a href="#哈希表">哈希表</a></li>
+<li><a href="#树">树</a></li>
+</ul>
+
+<h2 id="strong-id-队列-队列-queue-strong-fifo-first-in-first-out-先入先出"><strong id="队列">队列(Queue)</strong>(FIFO):First-In First-Out 先入先出</h2>
+
+<p>队列实例 : 取号先进叫号先出</p>
+
+<div id="screen" style="border:1px solid red;height:100px;width:200px "><span></span></div>
+<div id="actions"> <button id="createNumber" onclick="if(queue.length===0){document.querySelector('#screen').innerText=''}document.querySelector('#newNumber').innerText=++n;queue.push.call(queue,n);document.querySelector('#queue').innerText = JSON.stringify(queue);">取号</button> <button id="callNumber" onclick="if(queue.length >1 ){document.querySelector('#screen').innerText = `请 ${queue.shift.call(queue)}就餐`;document.querySelector('#queue').innerText = JSON.stringify(queue)}else if(queue.length === 1){document.querySelector('#screen').innerText = `请 ${queue.shift.call(queue)}就餐`;document.querySelector('#queue').innerText = JSON.stringify(queue);document.querySelector('#newNumber').innerText=n=0}else{document.querySelector('#newNumber').innerText=0;}">叫号</button></div>
+<div >当前号码：<span id="newNumber">0</span></div>
+<div >当前队列：<span id="queue"></span></div>
+
+<script>
+let n = 0
+let queue = []
+console.log(queue);
+</script>
+
+<pre><code class="language-JavaScript">//const : 常量块级作用域,很像使用let语句定义的变量。常量的值不能通过重新赋值来改变,并且不能重新声明
+//document.querySelector() : 返回文档中与指定选择器或选择器匹配的第一个html元素element。如果找不
+// 到匹配项,则返回null
+//innerText : 属性表示一个节点及其后代的“渲染”文本内容
+//JSON.stringify() ：方法将一个JavaScript值(对象或者数组)转换为一个JSON字符串,
+//Array.prototype.push() : 方法是将一个或多个元素添加到数组的末尾,并返回数组的新长度
+</code></pre>
+
+<h2 id="strong-id-栈-栈-stack-strong-lifo-last-in-first-out-后进后出"><strong id="栈">栈(stack)</strong>(LIFO):Last In First Out 后进后出</h2>
+
+<pre><code class="language-JavaScript">let result = 0
+let recursion = numbers =&gt;{
+    if(numbers&lt;=100){
+      return recursion((result+=numbers,++numbers))
+    }else{
+      return result
+    }
+}
+recursion(1)    //5050
+
+//递归的步骤是怎么做的？调用函数时,在一个数组里进行压栈直到numbers等于101时。
+//返回result并且把之前调用函数栈逐一释放,后进后出
+</code></pre>
+
+<h2 id="strong-id-链表-链表-strong-linked-list"><strong id="链表">链表</strong>(Linked List)</h2>
+
+<p>链表在 JS 里主要体现在对象里</p>
+
+<p>什么时链表？ 答：在 JS 里的链表是由多个对象组成的,对象在链表里称为节点,第一个节点里必须有一个 next 属性该属性值必须是第二个节点以此类推</p>
+
+<pre><code class="language-JavaScript">//创建一个单向链表,具有删除和遍历的函数。
+const createList = value =&gt;{  //创建第一个链表头
+  return createNode(value)
+}
+const createNode = value =&gt;{  //创建节点对象
+  return {
+    data:value,
+    next:null
+  }
+}
+const appendList = (list,value) =&gt;{   //创建其他节点
+  const node = createNode(value)
+  let x = list
+  while(x.next){
+    x=x.next
+  }
+  x.next = node
+  return node
+}
+
+const removeFromList = (list,node) =&gt;{    //删除节点
+  let x = list  //当前节点
+  let p = null  //上一个节点
+  while(x!==node){
+    p = x
+    x = x.next
+  }
+  p.next = x.next
+}
+
+const travelList = (list,fn)=&gt;{
+  let x = list
+  while(x){
+    fn(x)
+    x = x.next
+  }
+}
+const list = createList(1)
+const node2 = appendList(list,2)
+const node3 = appendList(list,3)
+const node4 = appendList(list,4)
+removeFromList(list,node3)    //删除第三个节点
+console.log(list)  //data：3 的节点没了~
+
+travelList(list,(node)=&gt;{
+  console.log(node.data)
+})
+/*
+  输出:
+      1
+      2
+      3
+*/
+</code></pre>
+
+<h2 id="strong-id-哈希表-哈希表-strong-key-value-pairs"><strong id="哈希表">哈希表</strong>(key-value pairs)</h2>
+
+<pre><code class="language-JavaScript">// 哈希表 在JS里是由对象存在的,对象里有多个 key - value
+
+let key_value = {
+    aaa:value,
+    bbb:value,
+    10000:value
+}
+
+//key-value 少的话访问速度可以忽略不计,
+
+//如果key-value 有上万
+let key_value = {
+  //有上万个key-value
+}
+
+key_value['xxx']    //假设对象里key没排序.在找'xxx'时候假设它在10000 那就需要 O(n)
+
+//假设 对象里的key已经排好序了 可以使用二分查找法  速度就是 O(log2 n)
+
+//还能不能更快一点？ 做到 O(1)?
+
+//当我们把key的转换成ascii数组做索引,在找的时候做除法取余数  就会达到o(1)
+</code></pre>
+
+<blockquote>
+<p>目前只是了解到这,以后有相关实例再来补充</p>
+</blockquote>
+
+<h2 id="strong-id-树-树-strong-tree"><strong id="树">树</strong>(tree)</h2>
+
+<p>结构的外形上相似于树,拿省市区县来说.一个中国有多少省?每个省有多少市？每个市有多少区？如果画出来是不是很想一棵树？</p>
+
+<pre><code class="language-JavaScript">//树实例 :
+const createTree = (value) =&gt;{    //创建树的根节点
+  return {
+    data:value,
+    children:null,
+    parent:null
+  }
+}
+
+const addChild = (node,value) =&gt;{ //创建其他节点
+  const newNode = {
+    data:value,
+    children:null,
+    parent:node
+  }
+  node.children = node.children || []
+  node.children.push(newNode)
+
+  return newNode
+}
+
+const travel = (tree,fn) =&gt;{    //遍历tree
+  fn(tree)
+  if(!tree.children){
+    return
+  }
+  for(let i = 0;i&lt;tree.children.length;i++){
+    travel(tree.children[i],fn)
+  }
+}
+const find = (tree,node) =&gt;{      //find node
+  if(tree === node){
+    return tree
+  }else if(tree.children){
+    for(let i=0;i&lt;tree.length;i++){
+      let result = find(tree.children[i],node)
+      if(result){
+        return result
+      }
+    }
+    return undefined
+  }else{
+    return undefined
+  }
+}
+const removeNode = (tree,node) =&gt;{  //remove node
+  const siblings = node.parent.children
+  let index = 0
+  for(let i=1;i&lt;siblings.length;i++){
+    if(siblings[i] === node){
+      index = i
+    }
+  }
+  siblings.splice(index,1)
+}
+const tree = createTree(10)     //创建根节点
+const node2 = addChild(tree,20) //根节点的儿子(2层)
+addChild(node2,201) //节点(3层)
+addChild(node2,202) //节点(3层)
+addChild(node2,203) //节点(3层)
+addChild(node2,204) //节点(3层)
+const node3 = addChild(tree,30) //根节点的儿子(2层)
+const node4 = addChild(tree,40) //根节点的儿子(2层)
+
+travel(tree,(node)=&gt;{         //遍历tree
+  console.log(node.data)
+  }
+)
+
+
+removeNode(tree,node3)  //删除一个节点
+
+console.log(tree)
+</code></pre>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/">算法入门-下</a></li>
+        
+        <li><a href="/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">太极图技术记录</a></li>
+        
+        <li><a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/">算法入门上</a></li>
+        
+        <li><a href="/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/">JS总结之原型</a></li>
+        
+        <li><a href="/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/">JS运算符</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://sunxiaochuang.top">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/" title="数据结构-上">数据结构-上</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/" title="算法入门上">算法入门上</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/" title="JS总结之原型">JS总结之原型</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/" title="JS运算符">JS运算符</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS 函数的执行时机">JS 函数的执行时机</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/" title="JS对象的基本用法">JS对象的基本用法</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="JS的数据类型">JS的数据类型</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://sunxiaochuang.top/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>
