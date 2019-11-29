@@ -6,10 +6,22 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 25 Nov 2019 19:45:36 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2019 15:09:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOM编程</title>
+      <link>https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 28 Nov 2019 15:09:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/</guid>
+      <description>前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN &#39;&#39; null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
+ 1. 什么是 DOM(Document Object Model 文档对象模型) 1 . 网页里的各种标签按照数据结构来看是一个树的结构.(Document)
+&amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;我是第三层&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;我是第三层&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;lt;!-- 是不是很想树的结构？--&amp;gt;  2 . JS 如何操作这棵树？(Object)
+浏览器往 window 上加一个 document 即可,JS 用 document 操作网页。这就是 Document Object Model 文档对象模型</description>
+    </item>
     
     <item>
       <title>数据结构-上</title>
