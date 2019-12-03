@@ -6,10 +6,20 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 Nov 2019 15:09:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 16:17:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>手写DOM库 </title>
+      <link>https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</link>
+      <pubDate>Sat, 30 Nov 2019 16:17:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</guid>
+      <description>前言 上篇 blog,我们学习了 DOM (Document Object model)操作.但是每个 API 的名字实在是有点长.这次我们把哪些 JS 本身的 API 给封装成一个库供大家便利。,
+全局对象 window.dom = {} //我们提供一个全局对象供我们调用  增(Create) dom.create = (node){ //新增节点 const container = document.createElement(&#39;template&#39;); container.innerHTML = node.trim() return template.content.firstChild } //Document.createElement() 方法 :创建由tagName指定的HTML元素 //&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt; 内容模板元素,改内容在加载页面时不会呈现,但随后可以在运行时使用JavaScript实例化 //Element.innerHTML 属性：设置或获取HTML语法表示的元素的后代 //String.prototype.trim() 方法：会从一个字符串的两端删除空白字符.上下文中的空白字符是所有的空白字符(space,tab,no-break space等) //HTMLTemplateElement.content 属性 :返回&amp;lt;template&amp;gt;元素的模板内容 //Node.firstChild : 只读属性返回树中节点的第一个子节点,如果节点是无子节点,则返回null dom.after = (node,node2){ //新增弟弟 node.parentNode.insertBefore(node2,node.nextSibling) } //Node.parentNode 属性 : 返回指定的节点在DOM树中的父节点 //Node.insertBefore() 方法 ：方法在参考节点之前插入一个拥有指定父节点的子节点.如果给定的子节点是对文档中现有节点的引用,insertBefore()会将其从当前位置移动到新位置 //Node.nextSibling : 返回与该节点同级的下一个节点Node,如果没有返回null dom.before=(node,node2){ //新增哥哥 node.parentNode.insertBefore(node2,node); } //Node.</description>
+    </item>
     
     <item>
       <title>DOM编程</title>
@@ -17,10 +27,11 @@
       <pubDate>Thu, 28 Nov 2019 15:09:36 +0800</pubDate>
       
       <guid>https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/</guid>
-      <description>前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN &#39;&#39; null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
+      <description>title: &amp;ldquo;DOM编程&amp;rdquo; date: 2019-11-28T15:09:36+08:00
+draft: false title: &amp;ldquo;DOM编程&amp;rdquo; date: 2019-11-28T15:09:36+08:00
+draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN &#39;&#39; null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
  1. 什么是 DOM(Document Object Model 文档对象模型) 1 . 网页里的各种标签按照数据结构来看是一个树的结构.(Document)
-&amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;我是第三层&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;我是第三层&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;lt;!-- 是不是很想树的结构？--&amp;gt;  2 . JS 如何操作这棵树？(Object)
-浏览器往 window 上加一个 document 即可,JS 用 document 操作网页。这就是 Document Object Model 文档对象模型</description>
+&amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;我是第三层&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;我是第三层&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>

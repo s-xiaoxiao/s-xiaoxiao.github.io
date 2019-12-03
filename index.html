@@ -66,6 +66,23 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/" title="手写DOM库 " >手写DOM库 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年11月30日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言 上篇 blog,我们学习了 DOM (Document Object model)操作.但是每个 API 的名字实在是有点长.这次我们把哪些 JS 本身的 API 给封装成一个库供大家便利。,
+全局对象 window.dom = {} //我们提供一个全局对象供我们调用  增(Create) dom.create = (node){ //新增节点 const container = document.createElement('template'); container.innerHTML = node.trim() return template.content.firstChild } //Document.createElement() 方法 :创建由tagName指定的HTML元素 //&lt;template&gt;&lt;/template&gt; 内容模板元素,改内容在加载页面时不会呈现,但随后可以在运行时使用JavaScript实例化 //Element.innerHTML 属性：设置或获取HTML语法表示的元素的后代 //String.prototype.trim() 方法：会从一个字符串的两端删除空白字符.上下文中的空白字符是所有的空白字符(space,tab,no-break space等) //HTMLTemplateElement.content 属性 :返回&lt;template&gt;元素的模板内容 //Node.firstChild : 只读属性返回树中节点的第一个子节点,如果节点是无子节点,则返回null dom.after = (node,node2){ //新增弟弟 node.parentNode.insertBefore(node2,node.nextSibling) } //Node.parentNode 属性 : 返回指定的节点在DOM树中的父节点 //Node.insertBefore() 方法 ：方法在参考节点之前插入一个拥有指定父节点的子节点.如果给定的子节点是对文档中现有节点的引用,insertBefore()会将其从当前位置移动到新位置 //Node.nextSibling : 返回与该节点同级的下一个节点Node,如果没有返回null dom.before=(node,node2){ //新增哥哥 node.parentNode.insertBefore(node2,node); } //Node.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/" title="DOM编程" >DOM编程</a>
                                 </h1>
                             </header>
@@ -74,10 +91,11 @@
                             </date>
                             
                             <div class="post-content">
-                                前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN '' null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
+                                title: &ldquo;DOM编程&rdquo; date: 2019-11-28T15:09:36+08:00
+draft: false title: &ldquo;DOM编程&rdquo; date: 2019-11-28T15:09:36+08:00
+draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN '' null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
  1. 什么是 DOM(Document Object Model 文档对象模型) 1 . 网页里的各种标签按照数据结构来看是一个树的结构.(Document)
-&lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;我是第三层&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt;我是第三层&lt;/div&gt; &lt;/body&gt; &lt;/html&gt; &lt;!-- 是不是很想树的结构？--&gt;  2 . JS 如何操作这棵树？(Object)
-浏览器往 window 上加一个 document 即可,JS 用 document 操作网页。这就是 Document Object Model 文档对象模型……
+&lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;我是第三层&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt;我是第三层&lt;/div&gt; &lt;/body&gt; &lt;/html&gt; &lt;!……
                             </div>
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/">阅读全文</a></p>
                         </article>
@@ -234,25 +252,6 @@ let arr = new Array(3) //这是声明数组的长度为3,内容为empty(空) con
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法" >JS对象的基本用法</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年10月18日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言  本文章仅仅自身学习需要,把目前所学已知的用文章记录下来，做一次归纳整理,达到理解和加强记忆的目的，如有不对,请联系: 460046653@qq.com
- 1. 如果声明一个对象(Object)数据类型？ 什么是对象呢？对象是属性(由属性名和属性值组成一个属性,:隔开)的集合,用大括号括起来.称之为对象(没有属性名和属性值是空对象(null))
-//以下是规范写法 let obj = new Object({'属性名':'属性值','属性名':'属性值'}) //逗号隔开 //以下是简写写法 let obj2 = {'属性名':'属性值','属性名':'属性值'}  属性名：遵守标识符的规则,可不加引号。其他例外
-//如果属性名是数值也不可加引号,但自动转换为字符串 let obj = { 1: 'a', 3.2: 'b', 1e2: true, 1e-2: true, .234: true, 0xFF: true } //它们最终都会变成字符串！！ // obj { // 1: &quot;a&quot;, // 3.2: &quot;b&quot;, // 100: true, // 0.01: true, // 0.234: true, // 255: true // } //不符合标识符 报错 let obj = { 1+2:3, 1a:'1a' } //如果不符合标识符,请加上引号 let obj = { '1+2':3, '1a':'1a' }  变量可不可以当成属性名呢？ 答：可以的我们来看代码……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -301,6 +300,10 @@ let arr = new Array(3) //这是声明数组的长度为3,内容为empty(空) con
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/" title="手写DOM库 ">手写DOM库 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/" title="DOM编程">DOM编程</a>
     </li>
     
@@ -334,10 +337,6 @@ let arr = new Array(3) //这是声明数组的长度为3,内容为empty(空) con
     
     <li>
         <a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/" title="JS对象的基本用法">JS对象的基本用法</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="JS对象的基本用法">JS对象的基本用法</a>
     </li>
     
 </ul>
