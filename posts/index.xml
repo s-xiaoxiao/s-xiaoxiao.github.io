@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 30 Nov 2019 16:17:36 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 20:05:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jQuery的设计模式——上 </title>
+      <link>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</link>
+      <pubDate>Thu, 05 Dec 2019 20:05:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</guid>
+      <description>前言：上篇 blog 我们用对象的风格进行了 DOM 操作的封装,跟原生 DOM API 操作相比很明显在调用时极大的减少开发者的时间,这次我们用著名 jQuery 设计模式来重新封装 DOM 操作(称之为链式风格)。
+ 在你阅读本篇之前谨记三点：
+ 第一次出现的 API 会注解,当第二次时还不明白不要回头看。去 MDN 里搜索相关 API 整个代码运行过程在最后有注释,不过先不要去看.思考这个部分谁都不能代替,莫要自欺欺人。最好能形成一个逻辑写一遍 如果你看了代码运行过程的注释,记住一定要要自己照着自己的逻辑写一遍,没写顺在看注释.再形成逻辑.第三遍还没顺,再看代码  1. 添加全局函数 //下面时一个函数,请注意 window.jQuery = (selectorOrArray){ //参数有可能是单个选择器或多个元素(数组形式) let elements //保存元素or多个元素(数组) if(typeof selectorOrArray === &#39;string&#39;){ elements = document.querySelectorAll(selectorOrArray) }else if(selectorOrArray instanceof Array){ elements = selectorOrArray } return { } //注意了！本函数返回一个对象！我们会在对象实现addClass、find、each、parent、child、print、end //document.querySelectorAll() :查找指定选择器的全部元素 //typeof ：返回其类型 //instanceof:判断是否属于该构造函数的实例 }   当我们在调用 jQuery 时,会返回一个对象！并且根据指定选择器来寻找元素并且赋值给 elements 变量。
+ 2. addClass():添加类名 &amp;lt;!</description>
+    </item>
     
     <item>
       <title>手写DOM库 </title>
