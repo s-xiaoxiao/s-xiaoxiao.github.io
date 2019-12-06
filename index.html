@@ -66,6 +66,26 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 " >jQuery基本功能 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月6日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言:本文章的目的是介绍 jQuery 的基本功能,如果你想了解 jQuery 基本的思路可以去看 jQuery 的设计模式上和下的 blog。希望能帮助到你
+ 目录
+ jQuery 如何获取元素 jQuery 链式操作是怎样的 jQuery 如何创造元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  jQuery jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库,jQuery 是目前使用最广泛的 JavaScript 库
+1. jQuery 如何获取元素 &lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;jQuery之获取元素&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  $('#test') //利用id值来获取元素 //上述代码用ID的值去获取元素,$()函数执行完后,会返回一个对象。这个对象包含了对元素进行各种操作的方法   jQuery 基本思想和主要用法：就是当我获取一个元素之后,我可以直接进行各种操作。jQuery 的构造函数简写为\$
+ 2. jQuery 链式操作是怎样的 &lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;jQuery之链式操作&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;test&quot;&gt; &lt;div class=&quot;child&quot;&gt;child1&lt;/div&gt; &lt;div class=&quot;child&quot;&gt;child2&lt;/div&gt; &lt;div class=&quot;child&quot;&gt;child3&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  $(&quot;#test&quot;).……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 " >jQuery的设计模式——上 </a>
                                 </h1>
                             </header>
@@ -229,27 +249,6 @@ let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS 函数的执行时机" >JS 函数的执行时机</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月3日
-                            </date>
-                            
-                            <div class="post-content">
-                                1. 为何以下代码打印出6个6？ let i=0 for(i=0;i&lt;6;i++){ setTimeout(()=&gt;{console.log(i)},0) } /* 输出： 6 6 6 6 6 6 */   首先 let(块级作用域)定义一个i变量初始值为0。在for里循环,setTimeout()方法是一个定时器，该定时器到期后会执行指定的代码.延迟以毫秒计算1000毫秒=1秒,默认值是0(为0时也不会在第一代码执行。)).   我们首先了解到有一个循环,和一个定时器。在整个环境中i在全局范围内.我们该如何理解最后输出6个6。首先分两个部分,第一代码执行,第二执行其余代码.for循环在第一代码执行但是到包含了setTimeout()，发现它是一个定时器而且延迟为0毫秒在执行,那就放到第二代码执行去,现在剩下的代码执行完毕再说.setTimeout()在第二代码执行.因为在第一代码执行后 i因for值变成6。所以,在第二代码执行时setTimeout函数去调用i时,i的值为6
- 什么是第一代码执行：预先先写的,不需要交互点击我没反应
-什么是第二代码执行：当我需要交互时(点击时) 点击后3秒有弹窗
-所有 你理解了吗？为什么当在第二执行setTimeout时会输出6而不是0 1 2 3 4 5 呢？
-2. 当let配合for一起时,结果令人感到正常？ for(let i=0;i&lt;6;i++){ setTimeout(()=&gt;{console.log(i)},0) } /* 输出： 0 1 2 3 4 5 */   为什么let写在for里面结果就不一样呢？主要有个细节,当在第一代码执行setTimeout()时把它放到第二代码执行时i的当前值被保存在setTimeout()函数里了。
- 3. 使用递归配合setTimeout()输出0-5 function fn(i){ return i&lt;6?setTimeout(()=&gt;{console.log(i);fn(++i),0)}:i } fn(0) /* 输出： 0 1 2 3 4 5 */   如果你不明白递归先自行了解。如果你知道递归,你就明白每次递时i的值都是不同的。……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -298,6 +297,10 @@ let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 ">jQuery基本功能 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 ">jQuery的设计模式——上 </a>
     </li>
     
@@ -331,10 +334,6 @@ let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/" title="JS运算符">JS运算符</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" title="JS 函数的执行时机">JS 函数的执行时机</a>
     </li>
     
 </ul>

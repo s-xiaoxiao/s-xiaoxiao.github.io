@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Dec 2019 20:05:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Dec 2019 20:20:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jQuery基本功能 </title>
+      <link>https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 06 Dec 2019 20:20:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</guid>
+      <description>前言:本文章的目的是介绍 jQuery 的基本功能,如果你想了解 jQuery 基本的思路可以去看 jQuery 的设计模式上和下的 blog。希望能帮助到你
+ 目录
+ jQuery 如何获取元素 jQuery 链式操作是怎样的 jQuery 如何创造元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  jQuery jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库,jQuery 是目前使用最广泛的 JavaScript 库
+1. jQuery 如何获取元素 &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;jQuery之获取元素&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  $(&#39;#test&#39;) //利用id值来获取元素 //上述代码用ID的值去获取元素,$()函数执行完后,会返回一个对象。这个对象包含了对元素进行各种操作的方法   jQuery 基本思想和主要用法：就是当我获取一个元素之后,我可以直接进行各种操作。jQuery 的构造函数简写为\$
+ 2. jQuery 链式操作是怎样的 &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;jQuery之链式操作&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;child1&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;child2&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;child3&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  $(&amp;quot;#test&amp;quot;).</description>
+    </item>
     
     <item>
       <title>jQuery的设计模式——上 </title>
