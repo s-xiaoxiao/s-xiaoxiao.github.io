@@ -66,6 +66,49 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/" title="JavaScript的诞生" >JavaScript的诞生</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月3日
+                            </date>
+                            
+                            <div class="post-content">
+                                JavaScript 
+1. 1994年底一家名为网景公司发布第一个版本的网页浏览器Mosaic Netscape 0.9。 四个月内抢占当时浏览器市场份额四分之三,成为90年代互联网的主要浏览器。当时的网页只是静态页面的浏览，没有交互能力。网景预见到未来网络需要变得更加多态。 
+2. 1995.4 身为网景的程序员布兰登·艾克目标是把Scheme语言嵌入浏览器内。但在这之前浏览器就已经支持java。内部争论中，网景决定发明一种跟Java在语法上有相似的语言，这个决策导致把Perl、Python、Tcl或Scheme排除在外。 
+3. 1995.5 艾克受命于此，仅仅花了10天时间就把原型设计出来了。最初命名为Mocha,9月分更名为LiveScript。同年12月改为JavaScript(当时网景公司跟Sun公司组成的开发联盟为了让这门语言搭上Java这个编程语言的热度)当时Sun公司大肆宣传Java&rdquo;一次编写 到处运行&rdquo; 
+4. 由于当时仓促的时间设计，语言的一些细节考虑的不够严谨，后来导致很长一段时间，JavaScript写出来的程序混乱不堪。总的来说，他的设计思路借鉴以下语言:  (1) 借鉴C语言的基本语言 (2) 借鉴Java语言的数据类型和内存管理 (3) 借鉴Scheme语言，将函数提升到”第一等公民(first class)“的地位 (4) 借鉴Self语言，使用基于原型(prototype)的继承机制  5. 标准化  在1996年11月，网景公司向ECMA(欧洲计算机制造协会)提交语言标准。 1997年6月，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。 JavaScript成为了ECMAScript最著名的实现之一   所以，Javascript 语言实际上是两种语言风格的混合产物&mdash;-（简化的）函数式编程+（简化的）面向对象编程。这是由 Brendan Eich（函数式编程）与网景公司（面向对象编程）共同决定的。
+ JavaScript 的十个设计缺陷  由于上文得知,JavaScript是在十天内设计的。所以因为时间的原因造成的一些缺陷. 上文提到JavaScript语言是函数式+面向对象的混合产物,这是在那个时代是属于先例开创先河了,得自己摸索着 前进.还有由于竞争的环境,当时微软公司推出自己的脚本语言Jscript,由此网景公司在当时处于不利于自己的 处境,先下手强,申请JavaScript国际标准,打压微软.1997年6月第一个国际标准ECMA-262正式版权(). 你想象一下这个过程当中从设计到标准,时间太快了.这门语言还没有经过市场的检验国际标准就问世了,当然这 也是迫不得己,相比之下其他语言将近几十年的市场检验,才发布国际标准.  1. 不适合开发大型程序  Javascript没有名称空间（namespace），很难模块化；没有如何将代码分布在多个文件的规范； 允许同名函数的重复定义，后面的定义可以覆盖前面的定义，很不利于模块化加载。   相对于 C 语言，一个函数名只能出现一次。
+ 2. 非常小的标准库  Javascript 提供的标准函数库非常小，只能完成一些基本操作，很多功能都不具备。   怎么形容呢，大概就是你活在原始部落(当时 JavaScript),跟现代化城市的对比。……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/" title="css基础" >css基础</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年8月22日
+                            </date>
+                            
+                            <div class="post-content">
+                                css 基础 文档流(normal flow) 文档流里有块、内联以及内联块
+1. block(块)：可自行设定宽度(width),高度(height)(不设定情况下,由内部文档流决定)并且独占一行 2. inline(内联)：由内容限定宽度,高度由 line-height 间接确定(跟 height 无关).跟其他内联占满一行(多余另起一行) 3. inline-block(内联块)：可自行设定宽度以及高度,但具有内联特性(不会独占一行)又具有块的特性(块不可分离)  注意要点: width and height 默认是：auto(自动伸缩); width 不可写：100%(会有 bug); 当内容大于宽度或者高度时,会发生溢出。overflow属性默认:visible(显示溢出部分)。hidden(溢出部分隐藏),auto(根据实际宽度和宽度出现滚动条),scroll(不管是否溢出直接除滚动条).当前是overflow:auto; 块级元素里没有content,height为0  脱离文档流 会使当前容器脱离父容器,父容器的宽高度计算则忽略有以下代码的子容器
+position:absolute/fixed; or float:left;
+盒模型 content padding border margin 共有 4 层。内容+内边距+边框+外边距
+两种盒模型 1. content box(内容盒) 内容就是盒模型的边界 2. border box(边框盒) 边框就是盒模型的边界 margin 合并 当上下都有 margin 时(没有 border 等等),外边距会合并。
+ 父子合并(最上父子 margin 和最下父子 margin) 兄弟合并(相邻的 margin 也会合并)   以上情况都是在 Margin 和 Margin 之间没有其他属性存在,才会合并……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/" title="vim命令参考笔记" >vim命令参考笔记</a>
                                 </h1>
                             </header>
@@ -224,6 +267,14 @@ vim 的基本操作 进入：vi or vim 一&gt; enter vi 文件名 enter or vim �
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/" title="jQuery的设计模式——下 ">jQuery的设计模式——下 </a>
     </li>
     
@@ -253,14 +304,6 @@ vim 的基本操作 进入：vi or vim 一&gt; enter vi 文件名 enter or vim �
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/" title="算法入门上">算法入门上</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/" title="JS总结之原型">JS总结之原型</a>
     </li>
     
 </ul>

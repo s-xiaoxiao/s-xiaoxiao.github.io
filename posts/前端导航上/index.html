@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>前端导航—上之Mobile  | 笑笑</title>
+    <meta property="og:title" content="前端导航—上之Mobile  - 笑笑">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-12-13T10:28:36&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-12-13T10:28:36&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="前端导航—上之Mobile ">
+        
+    <meta name="author" content="笑笑">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://sunxiaochuang.top">
+                        笑笑
+                    </a>
+                
+                <p class="description">专注于前端方向</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://sunxiaochuang.top">首页</a>
+                    
+                    <a  href="https://sunxiaochuang.top/archives/" title="归档">归档</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">前端导航—上之Mobile </h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年12月13日
+                        </date>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="前言">前言</h1>
+
+<p>这篇文章实现适配 Mobile 端的页面,搜索功能以及添加网站快捷方式.(效果如下图)</p>
+
+<p>预览：<a href="">效果图</a>
+<img src="/hugo_images/mobile.PNG" alt="" /></p>
+
+<p>我们分成 3 个部分讲</p>
+
+<ol>
+<li><a href="#view">HTML 视图</a></li>
+<li><a href="#style">CSS 样式</a></li>
+<li><a href="#action">JavaScript 行为</a></li>
+</ol>
+
+<h2 id="1-span-id-view-html-span">1.<span id="view"> HTML</span></h2>
+
+<pre><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta
+      name=&quot;viewport&quot;
+      content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,
+      user-scalable=no,viewport-fit=cover&quot;
+    /&gt;
+    &lt;!--不用背,宽度=设备的宽度，最初的比例和最大和最小比例=1.防止用户双指扩大以及缩小填充设备显示可以
+    借鉴淘宝--&gt;
+    &lt;title&gt;前端导航网站&lt;/title&gt;
+    &lt;!-- 加入通用css代码iconfont.cn用 --&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+    &lt;/style&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header class=&quot;globalHeader&quot;&gt;
+      &lt;form method=&quot;get&quot; action=&quot;https://www.baidu.com/s&quot; class=&quot;searchForm&quot;&gt;
+        &lt;input name=&quot;wd&quot; type=&quot;test&quot;&gt;
+        &lt;button&gt;搜索&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/header&gt;
+
+    &lt;main class=&quot;globalMain&quot;&gt;
+      &lt;ul class=&quot;siteList&quot;&gt;
+        &lt;!-- 下面两个li是测试css用的写完之后删掉 --&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;https://bilibili.com/&quot;&gt;
+            &lt;div class=&quot;site&quot;&gt;
+              &lt;div class=&quot;logo&quot;&gt;
+                &lt;img src=&quot;https://bilibili.com/favicon.ico&quot; alt=&quot;&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;link&quot;&gt;bilibili.com&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;a href=&quot;https://baidu.com&quot;&gt;
+            &lt;div class=&quot;site&quot;&gt;
+              &lt;div class=&quot;logo&quot;&gt;
+                &lt;img src=&quot;https://baidu.com/favicon.ico&quot; alt=&quot;&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;link&quot;&gt;baidu.com&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;!-- 添加快捷方式按钮 --&gt;
+        &lt;li class=&quot;last&quot;&gt;
+          &lt;div class=&quot;addButton&quot;&gt;
+            &lt;div class=&quot;iconWrapper&quot;&gt;
+              &lt;!-- 下面svg标签是引用iconfont.cn图标用的 --&gt;
+              &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#icon-add&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;test&quot;&gt;新增网站&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+      &lt;/ul&gt;
+    &lt;/main&gt;
+    &lt;!-- 下面这个不能跟我一样,等下去看下面的教程去iconfont.cn引用自己的 --&gt;
+    &lt;script src=&quot;//at.alicdn.com/t/font_1560724_sqlp3wop15.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 下面是jQuery引用 --&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 下面是你自己写的JS --&gt;
+    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>打开<a href="https://www.iconfont.cn" target="_blank">iconfont</a>,搜索 add 选择一个图标,点击第一个图标添加入库,点击右上角的购物车图标,添加至项目,新建一个项目.选中点击确定.选择 Symbol 点击最上方的帮助-代码应用找到 symbol 应用把上述 HTML 代码中 49 行代码换成你的</p>
+
+<p>写完如下图(搜索功能是可以用的)<a href="">源代码</a><img src="/hugo_images/nav_html1.PNG" alt="" />
+接下来我们来排版</p>
+
+<h2 id="2-span-id-style-css-span">2. <span id="style">CSS</span></h2>
+
+<pre><code class="language-CSS">/* css reset */
+*{padding:0;margin:0;box-sizing:border-box;}
+*:before,*:after{box-sizing:border-box;}
+ol,ul{list-style:none;}/* 去掉列表的样式 */
+a{color:inherit;text-decoration:none;}/* 去掉链接的的样式 */
+
+/* style */
+body{background:#eee;}
+.globalHeader{margin:20px;}
+.searchForm{display:flex;justify-content:space-between;}
+.searchForm &gt; input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.searchForm &gt; button {
+  white-space: nowrap;   /* 文字不竖排   */
+  padding: 0 28px;
+  border: none;
+  border-radius: 4px;
+  background: #0282b9;
+  color: white;
+  font-size: 16px;
+}
+/* 在pc里用 */
+.globalMain {
+}
+.siteList {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.siteList &gt; li {
+  margin-bottom: 10px;
+}
+.siteList .site {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+}
+.siteList .site &gt; .logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+}
+.siteList .site &gt; .logo &gt; img {
+  width: 32px;
+  height: 32px;
+}
+.siteList .site &gt; .link {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .addButton {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  border: 1px solid #ddd;
+  background: white;
+}
+.siteList .addButton .iconWrapper {
+  margin: 16px;
+  width: 32px;
+  height: 32px;
+}
+.siteList .addButton .icon {
+  width: 32px;
+  height: 32px;
+}
+.siteList .addButton .text {
+  margin-top: 4px;
+  font-size: 14px;
+}
+</code></pre>
+
+<p>写完如下效果图<a href="">源代码</a>
+<img src="/hugo_images/nav-css-1.PNG" alt="" /></p>
+
+<h2 id="3-span-id-action-javascript-行为-span">3. <span id="action">JavaScript 行为</span></h2>
+
+<p>我们已经写完 HTML 和 CSS.现在我们说一下 JavaScript 的思路.
+当我添加按钮时,弹出一个弹窗输入网址.然后添加一个快捷方式的按钮</p>
+
+<p>我们知道每个快捷方式是 li 标签.也是说,每次点击输入网址往 li.last 前添加一个 li 标签即可
+我们来写写代码逻辑</p>
+
+<pre><code class="language-JavaScript">const $siteList = $(&quot;.siteList&quot;)    //找到ul
+const $lastLi = $siteList.find(&quot;li.last&quot;)   //找到li.last
+const x =localStorage.getItem(&quot;x&quot;)  //得到缓存的数据(字符串)
+const xObject = JSON.parse(x);       //将字符串转换成JSON格式
+const hashMap = xObject||[{ url: &quot;https://www.bilibili.com&quot; },
+  { url: &quot;https://www.acfun.cn&quot; }]  //保存添加的快捷方式的网址
+
+const render =()=&gt;{   //创建li并且渲染到页面里
+  $siteList.find(&quot;li:not(.last)&quot;).remove()  //除.last全部删除
+  hashMap.foreach(node=&gt;{
+    $(`&lt;li&gt;
+    &lt;a href=&quot;${node.url}&quot;&gt;
+      &lt;div class=&quot;site&quot;&gt;
+        &lt;div class=&quot;logo&quot;&gt;
+          &lt;img src=&quot;${node.url}/favicon.ico&quot; alt=&quot;&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;link&quot;&gt;${
+          node.url.slice(0, 12) === &quot;https://www.&quot;
+            ? node.url.slice(12)
+            : node.url.slice(8)
+        }&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;`).insertBefore($lastLi);//创建并且放在.last之前
+  })
+}
+render();   //第一次进网页时,渲染缓存用的
+
+$(&quot;.addButton&quot;).on(&quot;click&quot;,()=&gt;{
+  let url=window.prompt(&quot;输入xx.com or www.xx.com 网址&quot;)//弹窗窗口返回一个文本
+  if(url!==&quot;&quot;){
+    if(url.indexOf(&quot;https://&quot;)!==0){
+      url = &quot;https://&quot;+url;
+    }
+    hashMap.push({url:url})
+    render(); //渲染
+  }
+})
+
+window.onbeforeunload=()=&gt;{   //窗口背关闭时触发该事件
+  const string = JSON.stringify(hashMap)    //变成字符串
+  localStorage.setItem(&quot;x&quot;,string)      //设置缓存
+}
+</code></pre>
+
+<blockquote>
+<p>Mobile 移动端写到这里,如果你点击源码时跟这里是不一样的,因为同时兼容了 PC 和 mobile 还有其他功能</p>
+</blockquote>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">前端导航项目介绍 </a></li>
+        
+        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/">jQuery的设计模式——下 </a></li>
+        
+        <li><a href="/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">jQuery基本功能 </a></li>
+        
+        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/">jQuery的设计模式——上 </a></li>
+        
+        <li><a href="/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/">手写DOM库 </a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://sunxiaochuang.top">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/" title="jQuery的设计模式——下 ">jQuery的设计模式——下 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 ">jQuery基本功能 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 ">jQuery的设计模式——上 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/" title="手写DOM库 ">手写DOM库 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/" title="DOM编程">DOM编程</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/" title="数据结构-上">数据结构-上</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://sunxiaochuang.top/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,38 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 07 Dec 2019 14:36:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 10:28:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>前端导航—上之Mobile </title>
+      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</link>
+      <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</guid>
+      <description>前言 这篇文章实现适配 Mobile 端的页面,搜索功能以及添加网站快捷方式.(效果如下图)
+预览：效果图 我们分成 3 个部分讲
+ HTML 视图 CSS 样式 JavaScript 行为  1.HTML &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no,viewport-fit=cover&amp;quot; /&amp;gt; &amp;lt;!--不用背,宽度=设备的宽度，最初的比例和最大和最小比例=1.防止用户双指扩大以及缩小填充设备显示可以 借鉴淘宝--&amp;gt; &amp;lt;title&amp;gt;前端导航网站&amp;lt;/title&amp;gt; &amp;lt;!-- 加入通用css代码iconfont.cn用 --&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } &amp;lt;/style&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css&amp;quot; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;header class=&amp;quot;globalHeader&amp;quot;&amp;gt; &amp;lt;form method=&amp;quot;get&amp;quot; action=&amp;quot;https://www.baidu.com/s&amp;quot; class=&amp;quot;searchForm&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;wd&amp;quot; type=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;button&amp;gt;搜索&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/header&amp;gt; &amp;lt;main class=&amp;quot;globalMain&amp;quot;&amp;gt; &amp;lt;ul class=&amp;quot;siteList&amp;quot;&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>前端导航项目介绍 </title>
+      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
+      <description> 前言：  项目预览：前端导航
+ 预备知识
+ jQuery：jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库 console.log(调式)：向 Web 控制台输出一条消息。 flex 布局：flex 是一个 CSS 的 display 属性中新添加一个值 媒体查询(@media)：@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。 Git&amp;amp;Github：代码版本管理&amp;amp;代码托管平台  新增知识
+ window.localStorage：只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。 SVG Symbol：可缩放矢量图形 iconfont.cn：阿里巴巴矢量图标库  阻止冒泡：阻止事件调用函的发生, JSON 序列化：JSON 是一种语法,用来序列化对象、数组、数值、字符串、布尔值和 null。   思路  首先我们要有一个设计稿(先有设计稿再做)
+用figma.com来做设计稿查看设计稿
+ 实现 Mobile 端 前端导航项目——上之 Mobile
+ 实现 PC 端 前端导航项目——下之 PC
+ 发布到 GitHub
+  </description>
+    </item>
     
     <item>
       <title>jQuery的设计模式——下 </title>

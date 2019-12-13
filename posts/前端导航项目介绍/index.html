@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>算法入门-下 | 笑笑</title>
-    <meta property="og:title" content="算法入门-下 - 笑笑">
+    <title>前端导航项目介绍  | 笑笑</title>
+    <meta property="og:title" content="前端导航项目介绍  - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-11-23T18:57:36&#43;08:00">
+    <meta property="article:published_time" content="2019-12-13T10:28:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-11-23T18:57:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-12-13T10:28:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="算法入门-下">
+    <meta name="description" content="前端导航项目介绍 ">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">算法入门-下</h1>
+                            <h1 class="post-title">前端导航项目介绍 </h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年11月23日
+                            2019年12月13日
                         </date>
                         
                         
@@ -81,128 +81,45 @@
                         <div class="post-content">
                             
 
-<h1 id="四种排序">四种排序</h1>
+<h1 id="前言">前言：</h1>
 
-<p>选择排序
-快速排序
-归并排序
-计数排序</p>
+<ol>
+<li><p><strong>项目预览：</strong><a href=";" >前端导航</a></p></li>
 
-<h2 id="选择排序-循环">选择排序(循环)</h2>
+<li><p><strong>预备知识</strong></p>
 
-<p>思路:每次查找最小值,拿最小值的索引下标跟数组升序下标逐步交换.</p>
+<ol>
+<li><strong>jQuery：</strong>jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库</li>
+<li><strong>console.log(调式)：</strong>向 Web 控制台输出一条消息。</li>
+<li><strong>flex 布局：</strong>flex 是一个 CSS 的 display 属性中新添加一个值</li>
+<li><strong>媒体查询(@media)：</strong>@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。</li>
+<li><strong>Git&amp;Github：</strong>代码版本管理&amp;代码托管平台</li>
+</ol></li>
 
-<pre><code class="language-JavaScript">//交换
-let swap = (array,i,j) =&gt;{
-  let temp = array[i];
-  array[i]=array[j];
-  array[j]=temp;
-}
+<li><p><strong>新增知识</strong></p>
 
-//寻找最小值索引
-let minIndex = (numbers) =&gt;{
-  let index = 0;
-  for(let i=1;i&lt;numbers.length;i++){
-      if(numbers[i]&lt;numbers[index]){
-        index = i;
-      }
-  }
-  return index;
-}
+<ol>
+<li><strong>window.localStorage：</strong>只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。</li>
+<li><strong>SVG Symbol：</strong>可缩放矢量图形</li>
+<li><strong>iconfont.cn：</strong>阿里巴巴矢量图标库</li>
+<li><strong> 阻止冒泡：</strong>阻止事件调用函的发生,</li>
+<li><strong>JSON 序列化：</strong>JSON 是一种语法,用来序列化对象、数组、数值、字符串、布尔值和 null。</li>
+</ol></li>
+</ol>
 
-//选择排序(从小到大)
-let sort = (numbers) =&gt;{
-  for(let i=0;i&lt;numbers.length-1;i++){
-    let index = minIndex(numbers.slice(i))+i
-    if(index!==i){
-      swap(numbers,index,i)
-    }
-  }
-  return numbers;
-}
+<h2 id="思路">思路</h2>
 
+<ol>
+<li><p>首先我们要有一个设计稿(先有设计稿再做)</p>
 
-//slice()：方法是 Array.prototype.slice();返回一个新对象,
-//这一对象是由一个begin和end决定的原数组的浅拷贝(包含begin,不包含end)。原始数组不会被改变
-</code></pre>
+<p>用<a href="figma.com">figma.com</a>来做设计稿<a href="https://www.figma.com/file/2jfkUswaGvw8NzgYq9AVLx/Untitled?node-id=0%3A1">查看设计稿</a></p></li>
 
-<h2 id="快速排序-quick-sort-递归">快速排序(quick sort)(递归)</h2>
+<li><p>实现 Mobile 端 <a href="#">前端导航项目——上之 Mobile</a></p></li>
 
-<pre><code class="language-JavaScript">
-let quickSort =  arr =&gt;{
-  if(arr.length &lt;= 1){return arr}
-  let pivotIndex = Math.floor(arr.length/2);
-  let pivot = arr.splice(pivotIndex,1)[0];  //取[0]的值
-  let left = [];
-  let right = [];
-  for(let i = 0;i&lt;arr.length;i++){
-    if(arr[i]&gt;pivot){
-      right.push(arr[i]);
-    }else{
-      left.push(arr[i]);
-    }
-  }
+<li><p>实现 PC 端 <a href="#">前端导航项目——下之 PC</a></p></li>
 
-  return quickSort(left).concat([pivot],quickSort(right));
-}
-
-//Math.floor()方法 : 向下取整
-//Array.prototype.splice()方法 : 删除或替换现有元素或者原地添加元素来修改数组,并以数组形式返回被修改的内容.此方法会改变原数组
-//Array.prototype.push()方法 ：将一个或多个元素数组的末尾,并返回数组的新长度
-//Array.prototype.concat()方法 : 用于合并两个或多个数组.此方法不会更改现有数组,而是返回一个新数组
-</code></pre>
-
-<h2 id="归并排序-merge-sort">归并排序(merge sort)</h2>
-
-<pre><code class="language-JavaScript">//一个数组拆分两个数组(拆成数组只有一个元素为止)
-let mergeSort = arr =&gt;{
-  let k = arr.length;
-  if(k===1||k===0){return arr}
-  let left = arr.slice(0,Math.floor(k/2))
-  let right = arr.slice(Math.floor(k/2))
-  return merge(mergeSort(left),mergeSort(right))
-}
-//两个数组排序从小到大成一个数组
-let merge = (a, b) =&gt;{
-  if(a.length === 0){return b}
-  if(b.length === 0){return a}
-  return a[0] &gt; b[0] ?
-      [b[0]].concat(merge(a,b.slice(1))) :
-      [a[0]].concat(merge(a.slice(1),b))
-}
-
-//Array.prototype.slice()方法: 返回一个新的数组对象,这一对象是一个由begin和end决定的原数组的浅拷贝(包含begin,不包含end).原数组不会被改变
-</code></pre>
-
-<h2 id="计数排序-count-sort">计数排序(count sort)</h2>
-
-<pre><code class="language-JavaScript">
-let countSort = arr =&gt;{
-  let hashTable = {},max = 0,result = [];
-  //遍历数组
-  for(let i =0;i&lt;arr.length;i++){
-    if(!(arr[i] in hashTable)){
-      hashTable[arr[i]] = 1
-    }else{
-      hashTable[arr[i]] += 1
-    }
-    if(arr[i]&gt;max){max = arr[i]}
-  }
-  console.dir(hashTable)
-  //遍历哈希表
-  for(let j=0; j&lt;=max; j++){
-      if(j in hashTable){
-        for(let i =0;i&lt;hashTable[j];i++){
-          result.push(j)
-        }
-      }
-  }
-  return result
-}
-
-// in 运算符：如果指定的属性在指定的对象或原型链中,则in运算符返回true
-//Array.prototype.push() : 方法将一个或多个添加到数组的末尾,并返回该数组的新长度
-</code></pre>
+<li><p>发布到 GitHub</p></li>
+</ol>
 
                         </div>
 
@@ -215,15 +132,15 @@ let countSort = arr =&gt;{
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">太极图技术记录</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">前端导航—上之Mobile </a></li>
         
-        <li><a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/">算法入门上</a></li>
+        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/">jQuery的设计模式——下 </a></li>
         
-        <li><a href="/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/">JS总结之原型</a></li>
+        <li><a href="/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">jQuery基本功能 </a></li>
         
-        <li><a href="/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/">JS运算符</a></li>
+        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/">jQuery的设计模式——上 </a></li>
         
-        <li><a href="/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/">JS 函数的执行时机</a></li>
+        <li><a href="/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/">手写DOM库 </a></li>
         
     </ul>
 </div>
