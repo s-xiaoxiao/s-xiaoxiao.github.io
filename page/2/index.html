@@ -66,6 +66,23 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录" >太极图技术记录</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年11月21日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言 本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结
+document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null let demo = document.querySelector('#demo')  innerHTML 是一个属性忘该元素中添加内容 let demo = document.querySelector(&quot;#demo&quot;) demo.innerHTML =2  setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码 setTimeout(()=&gt;{ demo.innerHTML = 3 },3000)  setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟 let n =1 setInterval(()=&gt;{ n++ },3000)  String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引) let string = `你好,我是一名前端新人` console.log(string.substring(0,1)) //你  String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变 let string = ` 你好,我是一名前端新人 接下来我要加样式了 我要加的样式是 body{ color:red; }`; string = string.replace('\n','&lt;br&gt;') //换行换成HTML元素里的换行标签 //第一个参数如果不是正则表达式则只会替换一次 string = string.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/" title="算法入门上" >算法入门上</a>
                                 </h1>
                             </header>
@@ -241,24 +258,6 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/" title="浅析 URL" >浅析 URL</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年9月7日
-                            </date>
-                            
-                            <div class="post-content">
-                                URL (统一资源定位符) 
-1. URL 包含哪几部分，每部分分别有什么作用  1. 协议：规定请求以及响应具体过程的实现带有s则数据会被加密 2. 域名：由域名管理系统(Domain Name System)管理主要方便于人类记忆(相对于IP),跟公网IP绑定 3. 路径：当前路径页面 4. 参数：搜索关键字 5. 锚点：当有锚点时,浏览器可视窗口到元素ID为vue   上方图中的意思是：你我遵循 https 协议,我要访问 xiedaimala.com 去路径为 search 提供的搜索功能,搜索关键字“前端”。这是请求的部分。 xiedaimala.com 服务器会遵循 https 协议来解析请求。并且响应给我,然后浏览器会根据锚点去搜哪个元素的 ID 相等锚点
- 2. DNS 的作用是什么，nslookup 命令怎么用  DNS的作用在于,当用户输入地址 xiedaimala.com,会先到DNS服务器询问xiedaimala.com 这个域名相对的IP 是多少? DNS解析后响应一个的IP。 nslookup命令是查询域名相对的IP是什么例如：在命令行输入nslookup xiedaimala.com 会得到这个域名的IP  3. IP 的作用是什么，ping 命令怎么用  IP分公网IP和内网IP。公网IP是你能上网的凭证，公网IP的作用是链接其他公网IP的身份凭证,例如：你要访问 baidu.com。首先你得有一个公网IP(由网络服务商提供服务)。baidu.com就知道是谁来访问啦。内网IP由路由 器分配的,管理终端一般由198.168.x.x开头 ping 命令要在命令行内配合域名/IP使用.例如： ping baidu.com 。主要目的是否能通过IP链接到主机。过程 中会发送数据包,主机是否由响应  4. 域名是什么，分别哪几类域名  要说域名是什么，得先说起IP。IP的存在是给每个终端分配的一个名字，IP是一串数字。但是一串数字不利于人类 记忆以及传播更不容易发生联想。域名是由字符组成显然优于数字。域名对应着IP。当我们访问某个域名时,也可以说访 问某个IP。 分别有顶级域名、一级域名以及二级域名例如：.……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -315,6 +314,10 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     </li>
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
     </li>
     
@@ -344,10 +347,6 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
     </li>
     
 </ul>

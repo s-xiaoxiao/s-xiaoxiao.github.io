@@ -23,12 +23,25 @@
     </item>
     
     <item>
+      <title>前端导航下——PC </title>
+      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</link>
+      <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</guid>
+      <description> 导读  在导航项目介绍里,介绍了用的技术,以及在上的文章里实现了 Mobile 的界面以及行为.这边文章优于只是在 PC 的布局方面(添加一些样式)行为上添加了删除的功能,以及 event 事件、阻止冒泡的行为。还有优化了一些细节.
+ 查看效果图
+主要添加功能如下：
+ 删除功能 0-9 的热键功能 当我在 input 输入时,阻止冒泡行为(阻止 0-9 的热键功能) 不能添加一样的网站(例如：baidu.com 不存在两个 baidu.com (但可以存在 www.baidu.com)) 只能添加 10 个快捷方式图标   我觉得有点没有做到满意的是，只有 5 or 10 个图标时，布局很好看。(由于经验上的关系。这个项目我只能做到这里啦)主要原因是外面的宽度是写死的.flex 掌握的还不是很熟练 加油！figting！
+ </description>
+    </item>
+    
+    <item>
       <title>前端导航项目介绍 </title>
       <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
       
       <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
-      <description> 前言：  项目预览：前端导航
+      <description>前言：  项目预览：前端导航
  预备知识
  jQuery：jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库 console.log(调式)：向 Web 控制台输出一条消息。 flex 布局：flex 是一个 CSS 的 display 属性中新添加一个值 媒体查询(@media)：@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。 Git&amp;amp;Github：代码版本管理&amp;amp;代码托管平台  新增知识
  window.localStorage：只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。 SVG Symbol：可缩放矢量图形 iconfont.cn：阿里巴巴矢量图标库  阻止冒泡：阻止事件调用函的发生, JSON 序列化：JSON 是一种语法,用来序列化对象、数组、数值、字符串、布尔值和 null。   思路  首先我们要有一个设计稿(先有设计稿再做)
@@ -36,7 +49,7 @@
  实现 Mobile 端 前端导航项目——上之 Mobile
  实现 PC 端 前端导航项目——下之 PC
  发布到 GitHub
-  </description>
+   写完之后我们需要上传 GitHub。上传之前我们需要 parcel 一键部署一下.</description>
     </item>
     
     <item>

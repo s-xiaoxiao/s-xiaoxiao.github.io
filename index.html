@@ -84,6 +84,26 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC " >前端导航下——PC </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月13日
+                            </date>
+                            
+                            <div class="post-content">
+                                 导读  在导航项目介绍里,介绍了用的技术,以及在上的文章里实现了 Mobile 的界面以及行为.这边文章优于只是在 PC 的布局方面(添加一些样式)行为上添加了删除的功能,以及 event 事件、阻止冒泡的行为。还有优化了一些细节.
+ 查看效果图
+主要添加功能如下：
+ 删除功能 0-9 的热键功能 当我在 input 输入时,阻止冒泡行为(阻止 0-9 的热键功能) 不能添加一样的网站(例如：baidu.com 不存在两个 baidu.com (但可以存在 www.baidu.com)) 只能添加 10 个快捷方式图标   我觉得有点没有做到满意的是，只有 5 or 10 个图标时，布局很好看。(由于经验上的关系。这个项目我只能做到这里啦)主要原因是外面的宽度是写死的.flex 掌握的还不是很熟练 加油！figting！
+ ……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 " >前端导航项目介绍 </a>
                                 </h1>
                             </header>
@@ -92,7 +112,7 @@
                             </date>
                             
                             <div class="post-content">
-                                 前言：  项目预览：前端导航
+                                前言：  项目预览：前端导航
  预备知识
  jQuery：jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库 console.log(调式)：向 Web 控制台输出一条消息。 flex 布局：flex 是一个 CSS 的 display 属性中新添加一个值 媒体查询(@media)：@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。 Git&amp;Github：代码版本管理&amp;代码托管平台  新增知识
  window.localStorage：只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。 SVG Symbol：可缩放矢量图形 iconfont.cn：阿里巴巴矢量图标库  阻止冒泡：阻止事件调用函的发生, JSON 序列化：JSON 是一种语法,用来序列化对象、数组、数值、字符串、布尔值和 null。   思路  首先我们要有一个设计稿(先有设计稿再做)
@@ -100,7 +120,7 @@
  实现 Mobile 端 前端导航项目——上之 Mobile
  实现 PC 端 前端导航项目——下之 PC
  发布到 GitHub
-  ……
+   写完之后我们需要上传 GitHub。上传之前我们需要 parcel 一键部署一下.……
                             </div>
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">阅读全文</a></p>
                         </article>
@@ -235,23 +255,6 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录" >太极图技术记录</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月21日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言 本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结
-document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null let demo = document.querySelector('#demo')  innerHTML 是一个属性忘该元素中添加内容 let demo = document.querySelector(&quot;#demo&quot;) demo.innerHTML =2  setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码 setTimeout(()=&gt;{ demo.innerHTML = 3 },3000)  setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟 let n =1 setInterval(()=&gt;{ n++ },3000)  String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引) let string = `你好,我是一名前端新人` console.log(string.substring(0,1)) //你  String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变 let string = ` 你好,我是一名前端新人 接下来我要加样式了 我要加的样式是 body{ color:red; }`; string = string.replace('\n','&lt;br&gt;') //换行换成HTML元素里的换行标签 //第一个参数如果不是正则表达式则只会替换一次 string = string.……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -304,6 +307,10 @@ document.querySelector() 方法：文档对象模型 Document 引用的 querySel
     </li>
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
     </li>
     
@@ -333,10 +340,6 @@ document.querySelector() 方法：文档对象模型 Document 引用的 querySel
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/" title="太极图技术记录">太极图技术记录</a>
     </li>
     
 </ul>
