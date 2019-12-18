@@ -6,10 +6,20 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Dec 2019 22:50:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 05:32:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AJAX的原理 </title>
+      <link>https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Wed, 18 Dec 2019 05:32:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
+      <description>前言 : AJAX (Asynchronous JavaScript And Xml)(非同步的 JavaScript 与 XML 技术):主要功能是存取数据用的.
+ AJAX 的原理  用JS发送请求和收响应(在早期用户登录时,服务器会返回全部页面信息,页面会全部刷新.AJAX出来后当我登录时, 只需要局部刷新即可,无需服务器返回全面页面.因为登录前后有些HTML CSS是一样的)  用 AJAX 请求 2.js 文件  既然我们知道AJAX的目的,那我们需要一个本地服务器做出响应。main.js做出请求 index.html 视图化 2.js做出响应正文 本地服务器代码：服务器源码 复制代码创建一个server.js文件粘贴  index.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;AJAX应用——请求JS文件 &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;button id=&amp;quot;getJs&amp;quot;&amp;gt;Get 2.js&amp;lt;/button&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  2.js console.log(&amp;quot;hello world&amp;quot;)  main.js //在JS里由构造函数XMLHttpRequest创建的实例可以实现与服务器交互 getJs.onclick = ()=&amp;gt;{ const request = new XMLHttpRequest() //创建该构造函数的实例 request.open(&amp;quot;GET&amp;quot;,&amp;quot;/2.js&amp;quot;) // request.onreadystatechange=()=&amp;gt;{ if(request.readyState === 4 &amp;amp;&amp;amp; request.</description>
+    </item>
     
     <item>
       <title>前端导航下——PC </title>

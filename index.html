@@ -66,6 +66,23 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 " >AJAX的原理 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月18日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言 : AJAX (Asynchronous JavaScript And Xml)(非同步的 JavaScript 与 XML 技术):主要功能是存取数据用的.
+ AJAX 的原理  用JS发送请求和收响应(在早期用户登录时,服务器会返回全部页面信息,页面会全部刷新.AJAX出来后当我登录时, 只需要局部刷新即可,无需服务器返回全面页面.因为登录前后有些HTML CSS是一样的)  用 AJAX 请求 2.js 文件  既然我们知道AJAX的目的,那我们需要一个本地服务器做出响应。main.js做出请求 index.html 视图化 2.js做出响应正文 本地服务器代码：服务器源码 复制代码创建一个server.js文件粘贴  index.html &lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;AJAX应用——请求JS文件 &lt;/head&gt; &lt;body&gt; &lt;button id=&quot;getJs&quot;&gt;Get 2.js&lt;/button&gt; &lt;/body&gt; &lt;/html&gt;  2.js console.log(&quot;hello world&quot;)  main.js //在JS里由构造函数XMLHttpRequest创建的实例可以实现与服务器交互 getJs.onclick = ()=&gt;{ const request = new XMLHttpRequest() //创建该构造函数的实例 request.open(&quot;GET&quot;,&quot;/2.js&quot;) // request.onreadystatechange=()=&gt;{ if(request.readyState === 4 &amp;&amp; request.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC " >前端导航下——PC </a>
                                 </h1>
                             </header>
@@ -236,24 +253,6 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下" >算法入门-下</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月23日
-                            </date>
-                            
-                            <div class="post-content">
-                                四种排序 选择排序 快速排序 归并排序 计数排序
-选择排序(循环) 思路:每次查找最小值,拿最小值的索引下标跟数组升序下标逐步交换.
-//交换 let swap = (array,i,j) =&gt;{ let temp = array[i]; array[i]=array[j]; array[j]=temp; } //寻找最小值索引 let minIndex = (numbers) =&gt;{ let index = 0; for(let i=1;i&lt;numbers.length;i++){ if(numbers[i]&lt;numbers[index]){ index = i; } } return index; } //选择排序(从小到大) let sort = (numbers) =&gt;{ for(let i=0;i&lt;numbers.length-1;i++){ let index = minIndex(numbers.slice(i))+i if(index!==i){ swap(numbers,index,i) } } return numbers; } //slice()：方法是 Array.prototype.slice();返回一个新对象, //这一对象是由一个begin和end决定的原数组的浅拷贝(包含begin,不包含end)。原始数组不会被改变  快速排序(quick sort)(递归) let quickSort = arr =&gt;{ if(arr.……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -302,6 +301,10 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 ">AJAX的原理 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
     </li>
     
@@ -335,10 +338,6 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/" title="数据结构-上">数据结构-上</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" title="算法入门-下">算法入门-下</a>
     </li>
     
 </ul>
