@@ -66,6 +66,27 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" title="异步与promise " >异步与promise </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月19日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言:本篇文章讲诉异步 回调 promise 一些概念以及在使用 AJAX 时,我们需要 promise 构造函数提供的对象来监听 AJAX 的成功与失败等
+ 异步(Async)  异步: 当我需要在1分钟内才能拿到炒饭,在这1分钟内我可以做一些其他的东西.1分钟之后有人告诉我你的炒饭好了. 前两句话是异步操纵(我可以每隔15秒问一下我的饭好了吗),后一句是回调操作 同步：当我需要在1分钟内才能拿到炒饭,1分钟就拿到炒饭了(中途无法分心,中途无法过问)  回调(call back)  回调：当你早上去买热干面时,本该先付钱再给我面就行(好香)。但是师傅问你,弄好了要不要辣(这就是回调)  let 要辣 = ()=&gt;{ console.log(&quot;热干面+加辣椒 好了&quot;) } let 热干面= (额外配料) =&gt; { console.log(&quot;煮面&quot;) console.log(&quot;捞面装碗&quot;) console.log(&quot;基本配料&quot;) 额外配料() } 热干面(要辣); //热干面函数返回undefined 要辣函数输出预期的结果。要辣函数返回的结果比热干面函数要早。 //这是异步的特征。同时要辣函数也是一个回调函数   异步任务不能直接拿到结果(每个人口味不一样),所以传给一个回调函数给异步。异步完成调用回调函数
+ 问题来了！我不要辣椒,我不要酸豆角,我希望麻酱不要放少了！萝卜多放点等等。。每天那么多客人我怎么我不能每次都问一遍吧？(要写多少个回调函数？或者回调函数的参数得写多少个?)这得多麻烦阿。效率低下！那怎么办?办法就是基本配料师傅来放,其他口味的配料让客人自助 ok 解决了(这就是我们今天说的主角 promise 具有类似得思想)
+Promise  Promise ：对象用于表示一个异步操作的最终完成(或失败),及其结果值
+ 我们以 AJAX 得封装为例来介绍 不用和用 Promise 的用法
+//不用promise let ajax =(method,url,options)=&gt;{ const{success,fail} = options const request = new XMLHttpRequest() request.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 " >AJAX的原理 </a>
                                 </h1>
                             </header>
@@ -236,23 +257,6 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/" title="数据结构-上" >数据结构-上</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月25日
-                            </date>
-                            
-                            <div class="post-content">
-                                数据结构(上)  队列 栈 链表 哈希表 树  队列(Queue)(FIFO):First-In First-Out 先入先出 队列实例 : 取号先进叫号先出
- 取号 1 ){document.querySelector('#screen').innerText = `请 ${queue.shift.call(queue)}号就餐`;document.querySelector('#queue').innerText = JSON.stringify(queue)}else if(queue.length === 1){document.querySelector('#screen').innerText = `请 ${queue.shift.call(queue)}号就餐`;document.querySelector('#queue').innerText = JSON.stringify(queue);document.querySelector('#newNumber').innerText=n=0}else{document.querySelector('#newNumber').innerText=0;}"叫号 当前号码：0 当前队列：  let n = 0 let queue = [] console.log(queue);  //const : 常量块级作用域,很像使用let语句定义的变量。常量的值不能通过重新赋值来改变,并且不能重新声明 //document.querySelector() : 返回文档中与指定选择器或选择器匹配的第一个html元素element。如果找不 // 到匹配项,则返回null //innerText : 属性表示一个节点及其后代的“渲染”文本内容 //JSON.stringify() ：方法将一个JavaScript值(对象或者数组)转换为一个JSON字符串, //Array.prototype.push() : 方法是将一个或多个元素添加到数组的末尾,并返回数组的新长度  栈(stack)(LIFO):Last In First Out 后进后出 let result = 0 let recursion = numbers =&gt;{ if(numbers&lt;=100){ return recursion((result+=numbers,++numbers)) }else{ return result } } recursion(1) //5050 //递归的步骤是怎么做的？调用函数时,在一个数组里进行压栈直到numbers等于101时。 //返回result并且把之前调用函数栈逐一释放,后进后出  链表(Linked List) 链表在 JS 里主要体现在对象里……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -271,6 +275,10 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     
     <li >
         <a href="https://sunxiaochuang.top/page/3/">3</a>
+    </li>
+    
+    <li >
+        <a href="https://sunxiaochuang.top/page/4/">4</a>
     </li>
     
 
@@ -299,6 +307,10 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" title="异步与promise ">异步与promise </a>
+    </li>
     
     <li>
         <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 ">AJAX的原理 </a>
@@ -334,10 +346,6 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     
     <li>
         <a href="https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/" title="DOM编程">DOM编程</a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/" title="数据结构-上">数据结构-上</a>
     </li>
     
 </ul>

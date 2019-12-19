@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>浅析 URL | 笑笑</title>
-    <meta property="og:title" content="浅析 URL - 笑笑">
+    <title>异步与promise  | 笑笑</title>
+    <meta property="og:title" content="异步与promise  - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-09-07T14:10:36&#43;08:00">
+    <meta property="article:published_time" content="2019-12-19T10:57:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-09-07T14:10:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-12-19T10:57:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="浅析 URL">
+    <meta name="description" content="异步与promise ">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">浅析 URL</h1>
+                            <h1 class="post-title">异步与promise </h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年9月7日
+                            2019年12月19日
                         </date>
                         
                         
@@ -81,65 +81,124 @@
                         <div class="post-content">
                             
 
-<h1 id="strong-url-统一资源定位符-strong"><strong>URL (统一资源定位符)</strong></h1>
-
-<p><br></p>
-
-<h2 id="strong-style-color-black-1-url-包含哪几部分-每部分分别有什么作用-strong"><strong style="color:black;">1. URL 包含哪几部分，每部分分别有什么作用</strong></h2>
-
-<p><img src="/hugo_images/URL.png" alt="22" /></p>
-
-<pre>
-<strong >1. 协议：</strong><span style="color:black">规定请求以及响应具体过程的实现带有s则数据会被加密</span></strong>
-<strong >2. 域名：</strong><span style="color:black">由域名管理系统(Domain Name System)管理主要方便于人类记忆(相对于IP),跟公网IP绑定</span></strong>
-<strong >3. 路径：</strong><span style="color:black">当前路径页面</span></strong>
-<strong >4. 参数：</strong><span style="color:black">搜索关键字</span></strong>
-<strong >5. 锚点：</strong><span style="color:black">当有锚点时,浏览器可视窗口到元素ID为vue</span></strong>
-
-</pre>
-
 <blockquote>
-<p>上方图中的意思是：你我遵循 https 协议,我要访问 xiedaimala.com 去路径为 search 提供的搜索功能,搜索关键字“前端”。这是请求的部分。
-xiedaimala.com 服务器会遵循 https 协议来解析请求。并且响应给我,然后浏览器会根据锚点去搜哪个元素的 ID 相等锚点</p>
+<p>前言:本篇文章讲诉异步 回调 promise 一些概念以及在使用 AJAX 时,我们需要 promise 构造函数提供的对象来监听 AJAX 的成功与失败等</p>
 </blockquote>
 
-<h2 id="strong-style-color-black-2-dns-的作用是什么-nslookup-命令怎么用-strong"><strong style="color:black;">2. DNS 的作用是什么，nslookup 命令怎么用</strong></h2>
+<h2 id="异步-async">异步(Async)</h2>
 
 <pre>
-    DNS的作用在于,当用户输入地址 xiedaimala.com,会先到DNS服务器询问xiedaimala.com 这个域名相对的IP
-是多少? DNS解析后响应一个的IP。
-    nslookup命令是查询域名相对的IP是什么例如：在命令行输入nslookup xiedaimala.com 会得到这个域名的IP 
+    异步: 当我需要在1分钟内才能拿到炒饭,在这1分钟内我可以做一些其他的东西.1分钟之后有人告诉我你的炒饭好了.
+    前两句话是异步操纵(我可以每隔15秒问一下我的饭好了吗),后一句是回调操作
+    同步：当我需要在1分钟内才能拿到炒饭,1分钟就拿到炒饭了(中途无法分心,中途无法过问)
 </pre>
 
-<h2 id="strong-style-color-black-3-ip-的作用是什么-ping-命令怎么用-strong"><strong style="color:black;">3. IP 的作用是什么，ping 命令怎么用</strong></h2>
+<h2 id="回调-call-back">回调(call back)</h2>
 
 <pre>
-    IP分公网IP和内网IP。公网IP是你能上网的凭证，公网IP的作用是链接其他公网IP的身份凭证,例如：你要访问
-baidu.com。首先你得有一个公网IP(由网络服务商提供服务)。baidu.com就知道是谁来访问啦。内网IP由路由
-器分配的,管理终端一般由198.168.x.x开头
-    ping 命令要在命令行内配合域名/IP使用.例如： ping baidu.com 。主要目的是否能通过IP链接到主机。过程
-中会发送数据包,主机是否由响应
-    
+    回调：当你早上去买热干面时,本该先付钱再给我面就行(好香)。但是师傅问你,弄好了要不要辣(这就是回调)
 </pre>
 
-<h2 id="strong-style-color-black-4-域名是什么-分别哪几类域名-strong"><strong style="color:black;">4. 域名是什么，分别哪几类域名</strong></h2>
+<pre><code class="language-JavaScript">let 要辣 = ()=&gt;{
+    console.log(&quot;热干面+加辣椒 好了&quot;)
+}
 
-<pre>
-    要说域名是什么，得先说起IP。IP的存在是给每个终端分配的一个名字，IP是一串数字。但是一串数字不利于人类
-记忆以及传播更不容易发生联想。域名是由字符组成显然优于数字。域名对应着IP。当我们访问某个域名时,也可以说访
-问某个IP。
-    分别有顶级域名、一级域名以及二级域名例如：.com 是顶级域名 xiedaimala.com 是一级域名。 www.xiedaima
-la.com 是二级域名 
-    以后缀分类有：主要分为国家地区顶级域(例如：中国是 .CN)以及通用顶级域名
-    通用顶级域名：
-                1. .com - 供商业机构使用
-                2. .net - 供网络服务商
-                3. .org - 供非盈利组织
-                4. .edu - 供教育机构
-                5. .gov - 供政府
-                6. .mil - 供军事
-                7. .int - 供国际组织 等 
-</pre>
+let 热干面= (额外配料) =&gt; {
+    console.log(&quot;煮面&quot;)
+    console.log(&quot;捞面装碗&quot;)
+    console.log(&quot;基本配料&quot;)
+    额外配料()
+}
+
+热干面(要辣);
+
+//热干面函数返回undefined  要辣函数输出预期的结果。要辣函数返回的结果比热干面函数要早。
+//这是异步的特征。同时要辣函数也是一个回调函数
+</code></pre>
+
+<blockquote>
+<p>异步任务不能直接拿到结果(每个人口味不一样),所以传给一个回调函数给异步。异步完成调用回调函数</p>
+</blockquote>
+
+<p>问题来了！我不要辣椒,我不要酸豆角,我希望麻酱不要放少了！萝卜多放点等等。。每天那么多客人我怎么我不能每次都问一遍吧？(要写多少个回调函数？或者回调函数的参数得写多少个?)这得多麻烦阿。效率低下！那怎么办?办法就是基本配料师傅来放,其他口味的配料让客人自助 ok 解决了(这就是我们今天说的主角 promise 具有类似得思想)</p>
+
+<h2 id="promise">Promise</h2>
+
+<blockquote>
+<p>Promise ：对象用于表示一个异步操作的最终完成(或失败),及其结果值</p>
+</blockquote>
+
+<p>我们以 AJAX 得封装为例来介绍 不用和用 Promise 的用法</p>
+
+<pre><code class="language-JavaScript">//不用promise
+let ajax =(method,url,options)=&gt;{
+  const{success,fail} = options
+  const request = new XMLHttpRequest()
+  request.open(method,url)
+  request.onreadystatechange = ()=&gt;{
+      if(request.readyState ===4){
+        //成功调用success 失败调用 fail
+        if(request.status&lt;400){
+          success.call(null,request.response)
+        }else if(request.status&gt;=400){
+          fail.call(null,request.response)
+        }
+      }
+  }
+  request.send()
+}
+
+ajax('get','/xxx',{success(response){},fail:(request,status)=&gt;{}})
+</code></pre>
+
+<pre><code class="language-JavaScript">//用Promise
+ajax =(method,url,options)=&gt;{
+  return new Promise((resolve,reject)=&gt;{
+    const {success,fail}=options
+    const request = new XMLHttpRequest()
+    request.open(method,url)
+    request.onreadystatechange = ()=&gt;{
+      if(request.readyState===4){
+        if(request.status&lt;400){
+          resolve.call(null,request.response)
+        }else if(request.status &gt;=400){
+          reject.call(null,request)
+        }
+      }
+    }
+  })
+}
+//Promise 对象用于表示一个异步操作的最终完成(或失败),其结果值。接收一个参数该参数为一个函数并且接收两个
+//参数名为resolve,reject。Promise 构造函数执行时立即调用该参数,该参数的两个参数resolve、reject作为函数传
+//给该参数。resolve和reject执行时会修改Promise的状态改为fulfilled和rejected。
+
+//Promise：并不是立即返回最终执行结果,而是返回一个能代表未来出现结果Promise对象。由于返回的对象我们可以
+//进行链式操作。一个Promise有以下几种状态
+//pending：初始状态，既不是成功，也不是失败状态
+//fulfilled：意味着操作完成
+//rejected：意味着操作失败
+
+//初始值为pending状态的promise对象可能会变成fulfilled状态并传递一个值给相应的状态处理方法，也可能变为失败
+//状态rejected并传递失败信息。当中其一中情况发生时,promise对象的.then方法绑定的处理方法(handlers)就会被调
+//用(then方法包含两个参数：onfulfilled和onrejected,它们都是Function类型。当promise状态为fulfilled时,
+//调用then的onfulfilled方法，当Promise状态为rejected时，调用then的onrejected方法，所以在异步操作的完成
+//和绑定处理方法之间不存在竞争)因为它们都返回一个promise对象
+</code></pre>
+
+<p>这样有可能一时难以理解的话下面一段代码要记住!因为它返回的是一个 promise 对象可以链式操作</p>
+
+<pre><code class="language-JavaScript">return new Promise((resolve,reject)=&gt;{})
+
+//最后一步写成功时回调函数和失败时回调函数
+
+.them(success,fail) //传入成功和失败函数
+
+//先到这里promise的其他用法其他本章介绍
+</code></pre>
+
+<blockquote>
+<p>目前最新的 AJAX 的库是 axios</p>
+</blockquote>
 
                         </div>
 
@@ -152,15 +211,15 @@ la.com 是二级域名
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        <li><a href="/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">AJAX的原理 </a></li>
         
-        <li><a href="/posts/css%E5%9F%BA%E7%A1%80/">css基础</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">前端导航下——PC </a></li>
         
-        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">前端导航—上之Mobile </a></li>
         
-        <li><a href="/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/">HTML 重难点</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">前端导航项目介绍 </a></li>
         
-        <li><a href="/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">HTML常用标签</a></li>
+        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/">jQuery的设计模式——下 </a></li>
         
     </ul>
 </div>
