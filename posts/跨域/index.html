@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>css知识总结 | 笑笑</title>
-    <meta property="og:title" content="css知识总结 - 笑笑">
+    <title>跨域  | 笑笑</title>
+    <meta property="og:title" content="跨域  - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-09-09T10:10:36&#43;08:00">
+    <meta property="article:published_time" content="2019-12-22T10:57:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-09-09T10:10:36&#43;08:00">
+    <meta property="article:modified_time" content="2019-12-22T10:57:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="css知识总结">
+    <meta name="description" content="跨域 ">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">css知识总结</h1>
+                            <h1 class="post-title">跨域 </h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年9月9日
+                            2019年12月22日
                         </date>
                         
                         
@@ -81,52 +81,117 @@
                         <div class="post-content">
                             
 
-<h2 id="strong-style-color-black-1-浏览器渲染原理-strong"><strong style="color:black;">1.浏览器渲染原理</strong></h2>
+<blockquote>
+<p>前面几篇文章讲解 AJAX 异步的访问等等之类的，都是在同源的策略下进行访问数据。这次我们讲讲跨域。跨域访问不是自己的数据,访问其他的数据称之为跨域。只有不同源的情况下才算跨域我们先讲解同源不同源的概念和跨域的方法</p>
+</blockquote>
+
+<h2 id="同源策略">同源策略</h2>
 
 <pre>
-    浏览器在得到服务器的响应之后,会先根据HTML去渲染成一个结构图HTML树(DOM)所有的标签具有父子关系。
-HTML标签是最大的,其次是head和body两个大儿子,依次渲染。
-    CSS会构建成CSS树(CSSOM)。CSS也是根据标签所具备的属性。在这里body是最大的。如果body所带的属性
-如果标签是共有的属性,儿子会继承父子所带的属性
-    这时会将HTML CSS 合并在一起成为渲染树(render tree)
-    Layout布局然后是计算标签的大小以及位置渲染布局。(文档流、盒模型、计算大小和位置)
-    paint绘制接下来是绘制标签的背景颜色、边框、字体颜色、阴影的(所有美化属性在渲染)
-    compose最后一步是层叠的合成,(例如拍照：就是把背景和人合成跟这个概念是一样的)
-    
+源 = 协议 + 域名 + 端口
+
+例：http://baidu.com 跟http://baidu.com/?是同源的
+例：http://baidu.com 跟http://www.baidu.com是不同源的
+
+协议 + 域名 + 端口  相同才是同源
+
 </pre>
 
-<h2 id="strong-style-color-black-css-动画的两种做法-transition-和-animatioin-strong"><strong style="color:black;">CSS 动画的两种做法（transition 和 animatioin）</strong></h2>
+<p>如果谁访问都可以得到数据,那用户的隐私无法得到保证 公司就没了。那我们怎么让不同源的情况下给它响应的?</p>
 
-<h3 id="strong-style-black-1-transition-过渡-strong"><strong style="black">1. transition 过渡</strong></h3>
+<blockquote>
+<p>知道同源之后如果源不一样去请求的时候是拿不到数据的,所以在我们进行访问源后端得设置只有谁跨域请求才响应,我要知道你的身份是正确才要返回数据。</p>
+</blockquote>
 
-<p>作用:补充中间帧</p>
+<p>一共两种方法：1. cors 2. jsonp</p>
 
-<pre>
-语法：
+<h2 id="cors">Cors</h2>
 
-    transition:属性名 时长 过渡方式 延迟
-    transition：left 200ms linear
-    可以用逗号分隔两个不同属性
-    transition:left 200ms,top 400ms
-    可以用 all 代表所有属性
-    transition:all 200ms
-    时长单位只有 s 和 ms
-    过渡方式有：linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier|step-start|step-end|steps
-</pre>
+<pre><code class="language-javascript">//简单请求
+if (path === &quot;/friends.json&quot;) {
+  response.statusCode = 200;
+  response.setHeader(&quot;Content-Type&quot;, &quot;text/json;charset=utf-8&quot;);
+  response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;http://xiaoxiao.com:9999&quot;);
+  response.write(fs.readFileSync(&quot;./public/friends.json&quot;));
+  response.end();
+}
 
-<h3 id="strong-style-black-2-animation-动画-strong"><strong style="black">2. animation 动画</strong></h3>
+//access-control-allow-origin:*;如果为星号的话该资源可以被任意外域访问
+//access-control-allow-origin:http://xiaoxiao.com:9999;只能被该协议域名端口访问;除了该外域其他都不可访问
+</code></pre>
 
-<pre>
-缩写语法：
-    animation:时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名；
-    时长：1s 或者 1000ms
-    过渡方式：跟 transition 取值一样，如 linear
-    次数：3 或者 2.4 或者 infinite
-    方向：reverse|alternate|alternate-reverse
-    填充模式：none|forwards|backwards|both
-    是否暂停：paused|running
-    以上所有属性都有对应的单独属性。
-</pre>
+<blockquote>
+<p>cors 只需要在被访问者的后端设置头部信息即可,遗憾是这种方法 IE 6 7 8 9 不支持!</p>
+</blockquote>
+
+<h2 id="jsonp">Jsonp</h2>
+
+<pre><code class="language-JavaScript">//该方法稍微复杂,虽然数据不能被访问但是.js文件是可以被访问的.我们先把数据放在js里请求js即可这是大体思路
+
+</code></pre>
+
+<p>首先分两个文件我们用 Jsonp 的方法来进行 xiaoxiao.com 请求 qq.com 里的数据跨域请求数据</p>
+
+<p>xiaoxiao-com 文件 main.js</p>
+
+<pre><code class="language-JavaScript">function jsonp(url){
+  return new Promise((resolve,reject)=&gt;{
+      const random = 'xiaoxiaoJsonP'+Math.random()
+
+      window[random] = data =&gt; {
+        console.log(data)
+      }
+
+      const script = document.createElement('script')
+      script.src = `${url}?callback=${random}`
+      script.onload = () =&gt;{
+        script.remove()
+      }
+      script.onerror= () =&gt;{
+        console.log(1)
+      }
+
+      document.body.appendChild(script)
+  })
+}
+jsonp(&quot;http://qq.com:8888/friends.js&quot;).then(data =&gt; {
+  console.log(data);
+});
+//new Promise : 返回一个Promise的实例对象
+//Math.random : 返回一个浮点数,伪随机数的范围[0,1)
+</code></pre>
+
+<p>qq.com server.js</p>
+
+<pre><code class="language-JavaScript">if (path === &quot;/friends.js&quot;) {
+    if (request.headers[&quot;referer&quot;].indexOf(&quot;http://xiaoxiao.com:9999&quot;) === 0) {
+      response.statusCode = 200;
+      response.setHeader(&quot;Content-Type&quot;, &quot;text/javascript;charset=utf-8&quot;);
+      const string = `window['{{xxx}}']({{data}})`;
+      const data = fs.readFileSync(&quot;./public/friends.json&quot;).toString();
+      const string2 = string
+        .replace(`{{data}}`, data)
+        .replace(`{{xxx}}`, query.callback);
+      response.write(string2);
+      response.end();
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  }
+
+//Referer:请求头包含了当前请求页面的来源页面的地址.既表示当前页面是通过来源页面里的链接进入的
+//string : 是跟xiaoxiao.com main.js里的一个函数把xx替换成random.data替换成json
+//String.prototype.replace():方法返回一个由替换值替换一些或所有匹配的模式后的新字符串
+</code></pre>
+
+<blockquote>
+<p>上述两种方法源码已经写好你直接下载在本地用 node 运行</p>
+</blockquote>
+
+<p><a href="https://github.com/s-xiaoxiao/kuayu-dom1">源代码</a></p>
+
+<p>用 git clone 下载到你的目录当中.跨域请求到数据然后 console.log</p>
 
                         </div>
 
@@ -139,15 +204,15 @@ HTML标签是最大的,其次是head和body两个大儿子,依次渲染。
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/%E6%B5%85%E6%9E%90url/">浅析 URL</a></li>
+        <li><a href="/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/">异步与promise </a></li>
         
-        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        <li><a href="/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">AJAX的原理 </a></li>
         
-        <li><a href="/posts/css%E5%9F%BA%E7%A1%80/">css基础</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">前端导航下——PC </a></li>
         
-        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">前端导航—上之Mobile </a></li>
         
-        <li><a href="/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/">HTML 重难点</a></li>
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">前端导航项目介绍 </a></li>
         
     </ul>
 </div>
