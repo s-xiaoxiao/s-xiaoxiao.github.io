@@ -6,10 +6,20 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Dec 2019 10:57:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 14:26:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>静态服务器 </title>
+      <link>https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 24 Dec 2019 14:26:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>Static Server(静态服务器)  以往我们写 server.js 时,用 if 来判断请求文件然后响应如果网页有几十个的话还用 if 那也得写几十个 if ,优化一下代码改成自动查找对应文件,既静态文件服务器
+ 响应代码 response.statusCode = 202 const filePath =path === &#39;/&#39;?&#39;index.html&#39;:path //得到文件后缀 const index = filePath.lastIndexOf(&#39;.&#39;) const suffix = filePath.substring(index) const fileTypes = { &#39;.html&#39;:&#39;test/html&#39;, &#39;.css&#39;:&#39;test/css&#39;, &#39;.js&#39;:&#39;test/javascript&#39;, &#39;.png&#39;:&#39;image/png&#39;, &#39;.jpg&#39;:&#39;image/jpeg&#39; } //设置头部文件的后缀 response.setHeader(&#39;Content-Type&#39;,`${fileTypes[suffix]||&#39;test/html&#39;}`;charset=&amp;quot;utf-8&amp;quot;) let content //读文件如果失败状态码为404 try{ content = fs.readFileSync(`./public${filePath}`) }catch(error){ content = &amp;quot;文件不存在&amp;quot; response.statusCode = 404 } //写入 response.write(content) response.end() //String.prototype.lastIndexOf():方法返回调用string对象的指定值最后一次出现的索引, //String.prototype.substring():方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引 //直到字符串的末尾的一个子集 //try...catch:语句标记要尝试的语句块,并指定一个出现异常时抛出响应  实例 源代码该代码实现请求 html css js png 等文件</description>
+    </item>
     
     <item>
       <title>跨域 </title>

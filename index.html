@@ -66,6 +66,23 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 " >静态服务器 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月24日
+                            </date>
+                            
+                            <div class="post-content">
+                                Static Server(静态服务器)  以往我们写 server.js 时,用 if 来判断请求文件然后响应如果网页有几十个的话还用 if 那也得写几十个 if ,优化一下代码改成自动查找对应文件,既静态文件服务器
+ 响应代码 response.statusCode = 202 const filePath =path === '/'?'index.html':path //得到文件后缀 const index = filePath.lastIndexOf('.') const suffix = filePath.substring(index) const fileTypes = { '.html':'test/html', '.css':'test/css', '.js':'test/javascript', '.png':'image/png', '.jpg':'image/jpeg' } //设置头部文件的后缀 response.setHeader('Content-Type',`${fileTypes[suffix]||'test/html'}`;charset=&quot;utf-8&quot;) let content //读文件如果失败状态码为404 try{ content = fs.readFileSync(`./public${filePath}`) }catch(error){ content = &quot;文件不存在&quot; response.statusCode = 404 } //写入 response.write(content) response.end() //String.prototype.lastIndexOf():方法返回调用string对象的指定值最后一次出现的索引, //String.prototype.substring():方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引 //直到字符串的末尾的一个子集 //try...catch:语句标记要尝试的语句块,并指定一个出现异常时抛出响应  实例 源代码该代码实现请求 html css js png 等文件……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/" title="跨域 " >跨域 </a>
                                 </h1>
                             </header>
@@ -241,23 +258,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/" title="手写DOM库 " >手写DOM库 </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月30日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言 上篇 blog,我们学习了 DOM (Document Object model)操作.但是每个 API 的名字实在是有点长.这次我们把哪些 JS 本身的 API 给封装成一个库供大家便利。,
-全局对象 window.dom = {} //我们提供一个全局对象供我们调用  增(Create) dom.create = (node){ //新增节点 const container = document.createElement('template'); container.innerHTML = node.trim() return template.content.firstChild } //Document.createElement() 方法 :创建由tagName指定的HTML元素 //&lt;template&gt;&lt;/template&gt; 内容模板元素,改内容在加载页面时不会呈现,但随后可以在运行时使用JavaScript实例化 //Element.innerHTML 属性：设置或获取HTML语法表示的元素的后代 //String.prototype.trim() 方法：会从一个字符串的两端删除空白字符.上下文中的空白字符是所有的空白字符(space,tab,no-break space等) //HTMLTemplateElement.content 属性 :返回&lt;template&gt;元素的模板内容 //Node.firstChild : 只读属性返回树中节点的第一个子节点,如果节点是无子节点,则返回null dom.after = (node,node2){ //新增弟弟 node.parentNode.insertBefore(node2,node.nextSibling) } //Node.parentNode 属性 : 返回指定的节点在DOM树中的父节点 //Node.insertBefore() 方法 ：方法在参考节点之前插入一个拥有指定父节点的子节点.如果给定的子节点是对文档中现有节点的引用,insertBefore()会将其从当前位置移动到新位置 //Node.nextSibling : 返回与该节点同级的下一个节点Node,如果没有返回null dom.before=(node,node2){ //新增哥哥 node.parentNode.insertBefore(node2,node); } //Node.……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -310,6 +310,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 ">静态服务器 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/" title="跨域 ">跨域 </a>
     </li>
     
@@ -343,10 +347,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 ">jQuery的设计模式——上 </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/" title="手写DOM库 ">手写DOM库 </a>
     </li>
     
 </ul>
