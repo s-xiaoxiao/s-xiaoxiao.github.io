@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>动态服务器 | 笑笑</title>
+    <meta property="og:title" content="动态服务器 - 笑笑">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-12-25T18:40:36&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-12-25T18:40:36&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="动态服务器">
+        
+    <meta name="author" content="笑笑">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://sunxiaochuang.top">
+                        笑笑
+                    </a>
+                
+                <p class="description">专注于前端方向</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://sunxiaochuang.top">首页</a>
+                    
+                    <a  href="https://sunxiaochuang.top/archives/" title="归档">归档</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">动态服务器</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年12月25日
+                        </date>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<blockquote>
+<p>动态服务器跟静态服务器最主要的区别就是在于是否请求了数据</p>
+</blockquote>
+
+<p>今天做一个简易版的注册 登录功能 ,AJAX 的实战：包含不限于( Cookie Session)</p>
+
+<p>下面是文件目录</p>
+
+<pre>
+/ -> db
+     -> users.json       //存用户账号和密码文件 
+  -> public
+     -> home.html        //显示已登录 or 未登录网页    
+     -> register.html    //注册网页
+     -> sign_in.html     //登录网页
+  -> server.js           //服务器
+  -> session.json        //防止用户篡改的数据库(主要目的是防止用户更改ID)
+</pre>
+
+<h2 id="1-register-html-注册页面">1. Register.html 注册页面</h2>
+
+<pre><code class="language-HTML">&lt;!-- --&gt;
+&lt;body&gt;
+  &lt;form id=&quot;registerForm&quot;&gt;
+    &lt;div&gt; &lt;label for=&quot;&quot;&gt;用户名:&lt;input type=&quot;text&quot; name=&quot;name&quot;/&gt;&lt;/label&gt;&lt;/div&gt;
+
+    &lt;div&gt; &lt;label for=&quot;&quot;&gt;密码:&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;&lt;/label&gt;&lt;/div&gt;
+
+    &lt;div&gt; &lt;button type=&quot;submit&quot;&gt;注册&lt;/button&gt; &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;!-- 引用jQuery库 --&gt;
+  &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    const $form = $(&quot;#registerForm&quot;)
+    $form.on(&quot;submit&quot;,(e)=&gt;{
+      e.preventDefault();
+
+      const name = $form.find(&quot;input[name=name]&quot;).val()
+      const password = $form.find(&quot;input[name=password]&quot;).val()
+
+      $.ajax({
+        method:&quot;POST&quot;,
+        url:&quot;/register&quot;,
+        contentType:&quot;text/json;charset=UTF-8&quot;,
+        data:JSON.stringify({name,password})
+      }).then(
+        ()=&gt;{
+          alert('注册成功')
+          location.href=&quot;./sign_in.html&quot;
+        },
+        ()=&gt;{}
+        )
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;!--Event.preventDefault:当点击注册页面会刷新,此方法是阻止这种默认的行为--&gt;
+&lt;!--find():找到该元素并且获得元素的值val()  --&gt;
+&lt;!--$ajax()：发送请求(时带着 请求方法 url 内容类型 数据)  --&gt;
+&lt;!--then():接收两个参数第一个成功(时做什么)第二个失败(时做什么) --&gt;
+&lt;!--location.href:该操作会跳转到设置的网页 --&gt;
+</code></pre>
+
+<p>写在 server.js 里做出响应</p>
+
+<pre><code class="language-JavaScript">//以下代码不是完整代码 只是当请求/register 做出响应
+if(path === &quot;/register&quot; &amp;&amp; method === &quot;POST&quot;){
+  response.setHeader(&quot;ContentType&quot;,&quot;text/html;charset=UTF-8&quot;)
+
+  const userArray = JSON.parse(fs.readFileSync(&quot;./db/users.json&quot;))
+
+  const array = []
+
+  request.on(&quot;data&quot;,(chunk)=&gt;{
+    array.push(chunk)
+  })
+
+  request.on(&quot;end&quot;,()=&gt;{
+    const string = Buffer.concat(array).toString()
+    const obj = JSON.parse(string)
+    //创建一个对象包含新的用户名
+    const newUser = {
+      id:userArray.length ===0?1:userArray[userArray.length-1].id+1,
+      name:obj.name,
+      password:obj.password
+    }
+    //添加新的用户名
+    userArray.push(newUser)
+    //写出数据库 user.json
+    fs.writeFileSync(&quot;./db/user.json&quot;,JSON.stringify(userArray))
+    //响应结束
+    response.end()
+  })
+}
+</code></pre>
+
+<h2 id="2-sign-in-html-登录页面">2. sign_in .html 登录页面</h2>
+
+<pre><code class="language-HTML">&lt;form id=&quot;signInForm&quot;&gt;
+  &lt;div&gt; &lt;label for=&quot;&quot;&gt;用户名&lt;input type=&quot;text&quot; name=&quot;name&quot;/&gt; &lt;/label&gt; &lt;/div&gt;
+
+  &lt;div&gt; &lt;label for=&quot;&quot;&gt;密码&lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt; &lt;/label&gt; &lt;/div&gt;
+
+  &lt;div&gt; &lt;button type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+&lt;/form&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  const $form = $(&quot;#signInForm&quot;)
+  $form.on(&quot;submit&quot;, (e)=&gt;{
+    e.preventDefault()
+
+    const name = $form.find(&quot;input[name=name]&quot;).val()
+    const password = $form.find(&quot;input[name=password]&quot;).val()
+
+    $.ajax({
+      method:&quot;POST&quot;,
+      url:&quot;/sign_in&quot;,
+      contentType:&quot;text/json;charset=UTF-8&quot;,
+      data:JSON.stringify({name,password})
+    }).then(
+      ()=&gt;{
+        alert('登录成功')
+        location.href=&quot;./home.html&quot;
+      },
+      ()=&gt;{}
+    )
+  })
+  //基本跟注册差不多,区别就在后端里处理跟返回不一样
+&lt;/script&gt;
+</code></pre>
+
+<p>写在 server.js 里做出响应</p>
+
+<pre><code class="language-JavaScript">if (path === &quot;/sign_in&quot; &amp;&amp; method === &quot;POST&quot;) {
+    response.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=UTF-8&quot;);
+    const userArray = JSON.parse(fs.readFileSync(&quot;./db/users.json&quot;));
+
+    const array = [];
+    request.on(&quot;data&quot;, chunk =&gt; {
+      array.push(chunk);
+    });
+    request.on(&quot;end&quot;, () =&gt; {
+      const string = Buffer.concat(array).toString();
+      const obj = JSON.parse(string);
+      const user = userArray.find(
+        user =&gt; user.name === obj.name &amp;&amp; user.password === obj.password
+      );
+      if (user === undefined) {
+        response.statusCode = 400;
+        response.setHeader(&quot;Content-Type&quot;, &quot;text/json  ;charset=UTF-8&quot;);
+        response.end(`{&quot;errorCode&quot;:4001}`);
+      } else {
+        response.statusCode = 200;
+        const random = Math.random();
+        session[random] = { user_id: user.id };
+        fs.writeFileSync(&quot;./session.json&quot;, JSON.stringify(session));
+        response.setHeader(&quot;Set-Cookie&quot;, `session_id=${random};HttpOnly`);
+        response.end();
+      }
+    });
+}
+//唯一思路就是在user.json里找到它并且成功返回即可.在sign_in里有js代码自动跳转到home页面
+</code></pre>
+
+<blockquote>
+<p>注册跟登录在前台这一块区别不大都是获取到数据传给后台。逻辑在后台比较好.只不过后台返回给前台的各有不同</p>
+
+<p>注册：前台把用户名和密码传给后台,后台存入数据库.</p>
+
+<p>登录：前台把用户名和密码传给后台,后台读取数据库,看在不在数据库里面即可.</p>
+</blockquote>
+
+<p>完整<a href="https://github.com/s-xiaoxiao/Dynamic-server">源代码</a></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">静态服务器 </a></li>
+        
+        <li><a href="/posts/%E8%B7%A8%E5%9F%9F/">跨域 </a></li>
+        
+        <li><a href="/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/">异步与promise </a></li>
+        
+        <li><a href="/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">AJAX的原理 </a></li>
+        
+        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">前端导航下——PC </a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://sunxiaochuang.top">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器">动态服务器</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 ">静态服务器 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/" title="跨域 ">跨域 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" title="异步与promise ">异步与promise </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 ">AJAX的原理 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/" title="jQuery的设计模式——下 ">jQuery的设计模式——下 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 ">jQuery基本功能 </a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://sunxiaochuang.top/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

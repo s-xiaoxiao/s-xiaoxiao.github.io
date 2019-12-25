@@ -66,6 +66,25 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器" >动态服务器</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月25日
+                            </date>
+                            
+                            <div class="post-content">
+                                动态服务器跟静态服务器最主要的区别就是在于是否请求了数据
+ 今天做一个简易版的注册 登录功能 ,AJAX 的实战：包含不限于( Cookie Session)
+下面是文件目录
+ / - db - users.json //存用户账号和密码文件 - public - home.html //显示已登录 or 未登录网页 - register.html //注册网页 - sign_in.html //登录网页 - server.js //服务器 - session.json //防止用户篡改的数据库(主要目的是防止用户更改ID)  1. Register.html 注册页面 &lt;!-- --&gt; &lt;body&gt; &lt;form id=&quot;registerForm&quot;&gt; &lt;div&gt; &lt;label for=&quot;&quot;&gt;用户名:&lt;input type=&quot;text&quot; name=&quot;name&quot;/&gt;&lt;/label&gt;&lt;/div&gt; &lt;div&gt; &lt;label for=&quot;&quot;&gt;密码:&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;&lt;/label&gt;&lt;/div&gt; &lt;div&gt; &lt;button type=&quot;submit&quot;&gt;注册&lt;/button&gt; &lt;/div&gt; &lt;/form&gt; &lt;!-- 引用jQuery库 --&gt; &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script&gt; const $form = $(&quot;#registerForm&quot;) $form.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 " >静态服务器 </a>
                                 </h1>
                             </header>
@@ -239,25 +258,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 " >jQuery的设计模式——上 </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月5日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言：上篇 blog 我们用对象的风格进行了 DOM 操作的封装,跟原生 DOM API 操作相比很明显在调用时极大的减少开发者的时间,这次我们用著名 jQuery 设计模式来重新封装 DOM 操作(称之为链式风格)。
- 在你阅读本篇之前谨记三点：
- 第一次出现的 API 会注解,当第二次时还不明白不要回头看。去 MDN 里搜索相关 API 整个代码运行过程在最后有注释,不过先不要去看.思考这个部分谁都不能代替,莫要自欺欺人。最好能形成一个逻辑写一遍 如果你看了代码运行过程的注释,记住一定要要自己照着自己的逻辑写一遍,没写顺在看注释.再形成逻辑.第三遍还没顺,再看代码  1. 添加全局函数 //下面时一个函数,请注意 window.jQuery = (selectorOrArray){ //参数有可能是单个选择器或多个元素(数组形式) let elements //保存元素or多个元素(数组) if(typeof selectorOrArray === 'string'){ elements = document.querySelectorAll(selectorOrArray) }else if(selectorOrArray instanceof Array){ elements = selectorOrArray } return { } //注意了！本函数返回一个对象！我们会在对象实现addClass、find、each、parent、child、print、end //document.querySelectorAll() :查找指定选择器的全部元素 //typeof ：返回其类型 //instanceof:判断是否属于该构造函数的实例 }   当我们在调用 jQuery 时,会返回一个对象！并且根据指定选择器来寻找元素并且赋值给 elements 变量。
- 2. addClass():添加类名 &lt;!……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -310,6 +310,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器">动态服务器</a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 ">静态服务器 </a>
     </li>
     
@@ -343,10 +347,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 ">jQuery基本功能 </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/" title="jQuery的设计模式——上 ">jQuery的设计模式——上 </a>
     </li>
     
 </ul>

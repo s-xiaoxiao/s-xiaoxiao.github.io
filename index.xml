@@ -6,10 +6,22 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Dec 2019 14:26:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 18:40:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>动态服务器</title>
+      <link>https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Wed, 25 Dec 2019 18:40:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>动态服务器跟静态服务器最主要的区别就是在于是否请求了数据
+ 今天做一个简易版的注册 登录功能 ,AJAX 的实战：包含不限于( Cookie Session)
+下面是文件目录
+ / - db - users.json //存用户账号和密码文件 - public - home.html //显示已登录 or 未登录网页 - register.html //注册网页 - sign_in.html //登录网页 - server.js //服务器 - session.json //防止用户篡改的数据库(主要目的是防止用户更改ID)  1. Register.html 注册页面 &amp;lt;!-- --&amp;gt; &amp;lt;body&amp;gt; &amp;lt;form id=&amp;quot;registerForm&amp;quot;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label for=&amp;quot;&amp;quot;&amp;gt;用户名:&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;/&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label for=&amp;quot;&amp;quot;&amp;gt;密码:&amp;lt;input type=&amp;quot;password&amp;quot; name=&amp;quot;password&amp;quot;/&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;注册&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;!-- 引用jQuery库 --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; const $form = $(&amp;quot;#registerForm&amp;quot;) $form.</description>
+    </item>
     
     <item>
       <title>静态服务器 </title>
