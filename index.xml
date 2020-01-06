@@ -6,10 +6,22 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Dec 2019 18:40:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 15:50:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MVC-上 </title>
+      <link>https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/</link>
+      <pubDate>Mon, 06 Jan 2020 15:50:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/</guid>
+      <description>MVC (Model view controller) Model (数据模型) ：负责操作所有数据 View (视图)：负责 ui controller (控制器) 负责操作数据在ui层可视化  简称 MVC 模式，这是一种软件架构模式。该模式的目的是在于对程序的修改和扩展简化。并且某一个部分可重复利用的可能。 本篇博客使用模块化创建四个小功能： 在线预览
+我们先实现这四个功能。 后期使用 MVC 模式重构该小 demo
+目录 index.html //主页面 main.js //主页面行为 被index.html引用 global.css //主页面布局 被main.js引用 reset.css //主页面重置css 默认属性 被main.js引用 //以下js文件被main.js引用。css文件被自身js文件引用 app1.css //功能1的css和js app1.js app2.css //功能2的css和js app2.js app3.css //功能3的css和js app3.js app4.css //功能4的css和js app4.js   这是实现该 4 个功能全部的文件(这比以前在一个页面里写下全部代码好太多了,你应该学习这种方式)
+ 开始前准备  首先创建一个 mvc-demo1 文件里在创建一个 src 文件把上述文件 12 个全部放在里面即可 使用 yarn 命令初始化:yarn init -y; 使用 yarn 命令添加 jquery：yarn add jquery  ok 步骤完成。使用 parcel src/index.</description>
+    </item>
     
     <item>
       <title>动态服务器</title>

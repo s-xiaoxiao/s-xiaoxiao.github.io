@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MVC-上  | 笑笑</title>
+    <meta property="og:title" content="MVC-上  - 笑笑">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2020-01-06T15:50:36&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2020-01-06T15:50:36&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="MVC-上 ">
+        
+    <meta name="author" content="笑笑">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://sunxiaochuang.top">
+                        笑笑
+                    </a>
+                
+                <p class="description">专注于前端方向</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://sunxiaochuang.top">首页</a>
+                    
+                    <a  href="https://sunxiaochuang.top/archives/" title="归档">归档</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">MVC-上 </h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2020年1月6日
+                        </date>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="mvc-model-view-controller">MVC (Model view controller)</h1>
+
+<pre><code>Model (数据模型) ：负责操作所有数据
+View (视图)：负责 ui
+controller (控制器) 负责操作数据在ui层可视化
+</code></pre>
+
+<p>简称 MVC 模式，这是一种软件架构模式。该模式的目的是在于对程序的修改和扩展简化。并且某一个部分可重复利用的可能。
+本篇博客使用模块化创建四个小功能：
+<a href="http://sunxiaochuang.top/MVC-demo-1/dist/index.html">在线预览</a></p>
+
+<p>我们先实现这四个功能。
+后期使用 MVC 模式重构该小 demo</p>
+
+<h2 id="目录">目录</h2>
+
+<pre><code>index.html       //主页面
+
+main.js          //主页面行为 被index.html引用
+
+global.css       //主页面布局 被main.js引用
+
+reset.css        //主页面重置css 默认属性 被main.js引用
+
+    //以下js文件被main.js引用。css文件被自身js文件引用
+    app1.css     //功能1的css和js
+    app1.js
+
+    app2.css     //功能2的css和js
+    app2.js
+
+    app3.css     //功能3的css和js
+    app3.js
+
+    app4.css     //功能4的css和js
+    app4.js
+</code></pre>
+
+<blockquote>
+<p>这是实现该 4 个功能全部的文件(这比以前在一个页面里写下全部代码好太多了,你应该学习这种方式)</p>
+</blockquote>
+
+<h3 id="开始前准备">开始前准备</h3>
+
+<ol>
+<li>首先创建一个 mvc-demo1 文件里在创建一个 src 文件把上述文件 12 个全部放在里面即可</li>
+<li>使用 yarn 命令初始化:yarn init -y;</li>
+<li>使用 yarn 命令添加 jquery：yarn add jquery</li>
+</ol>
+
+<p>ok 步骤完成。使用 parcel src/index.html 开启本地服务器在浏览器里查看</p>
+
+<h3 id="4-个主页面">4 个主页面</h3>
+
+<ol>
+<li><p>index.html</p>
+
+<pre><code class="language-HTML">&lt;div class=&quot;page&quot;&gt;
+&lt;section id=&quot;app1&quot;&gt;
+&lt;div class=&quot;output&quot;&gt;
+  &lt;span id=&quot;number&quot;&gt;100&lt;span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;actions&quot;&gt;
+  &lt;button id=&quot;add1&quot;&gt;&lt;/button&gt;
+  &lt;button id=&quot;minus1&quot;&gt;&lt;/button&gt;
+  &lt;button id=&quot;mul2&quot;&gt;&lt;/button&gt;
+  &lt;button id=&quot;divide2&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;app2&quot;&gt;
+&lt;ol class=&quot;tab-bar&quot;&gt;
+  &lt;li class=&quot;selected&quot;&gt;1111&lt;/li&gt;
+  &lt;li&gt;2222&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol class=&quot;tab-content&quot;&gt;
+  &lt;li class=&quot;active&quot;&gt;内容1&lt;/li&gt;
+  &lt;li&gt;内容2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;app3&quot;&gt;
+&lt;div class=&quot;square&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;app4&quot;&gt;
+&lt;div class=&quot;circle&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;script src=&quot;main.js&quot;&gt; &lt;/script&gt;
+</code></pre></li>
+
+<li><p>main.js</p>
+
+<pre><code class="language-JavaScript">import './reset.css'
+import './global.css'
+
+import './app1.js'
+import './app2.js'
+import './app3.js'
+import './app4.js'
+
+// import:静态的import语句用于由另一个模块导出的绑定
+</code></pre></li>
+
+<li><p>global.css</p>
+
+<pre><code class="language-CSS">/*隐藏右侧下拉*/
+body {
+ overflow: hidden;
+}
+body &gt; .page{
+display:flex;
+flex-wrap:wrap;
+}
+body &gt; .page &gt; section{
+width:50vw;
+height:50vh;
+}
+</code></pre></li>
+
+<li><p>reset.css</p>
+
+<pre><code class="language-CSS">*,*::before,*::after{
+ box-sizing:border-box;
+ padding:0;
+ margin:0;
+}
+ol,ul{
+ list-style:none;
+}
+</code></pre></li>
+</ol>
+
+<h3 id="4-个功能页面">4 个功能页面</h3>
+
+<p>功能 1：加减乘除</p>
+
+<ol>
+<li><p>app1.css</p>
+
+<pre><code class="language-CSS">#app1{
+border:1px solid red;
+}
+</code></pre></li>
+
+<li><p>app1.js</p>
+
+<pre><code class="language-JavaScript">import './app1.css'       //引入app1.css
+import $ from 'jquery'    //引入jquery
+
+const $number=$('#number'),
+  $button1=$('#add1'),
+  $button2=$('#minus1'),
+  $button3=$('#mul2'),
+  $button4=$('#divide2');
+
+const n=localStorage.getItem('n')
+$number.text(n||100)
+
+$button1.on('click',()=&gt;{
+let n = parseInt($number.text())
+$number.text(++n)
+localStorage.setItem('n',n)
+})
+$button2.on('click',()=&gt;{
+let n = parseInt($number.text())
+$number.text(--n)
+localStorage.setItem('n',n)
+})
+$button3.on('click',()=&gt;{
+let n = parseInt($number.text())
+$number.text(n*=2)
+localStorage.setItem('n',n)
+})
+$button4.on('click',()=&gt;{
+let n = parseInt($number.text())
+$number.text(n/=2)
+localStorage.setItem('n',n)
+})
+//localStorage.getItem()：接受一个key得到本地存储key的value
+//localStorage.setItem()：接受一个key和value存储到本地
+//parseInt()：将一个字符串转换为radix进制的正数.radix在2-36之间.默认为10
+</code></pre></li>
+</ol>
+
+<p>功能 2：tab 切换</p>
+
+<ol>
+<li><p>app2.css</p>
+
+<pre><code class="language-CSS">#app2{
+border:1px solid green;
+}
+#app2 .tab-bar{
+display:flex;
+flex-wrap:wrap;
+}
+#app2 .tab-bar &gt;li {
+border:1px solid grey;
+width:50%;
+}
+#app2 .tab-content &gt;li{
+display:none;
+}
+#app2 .tab-content &gt;li.active{
+display:black;
+}
+#app2 .tab-bar &gt;li.selected{
+background:rgb(253,221,155)
+color:white;
+}
+
+</code></pre></li>
+
+<li><p>app2.js</p>
+
+<pre><code class="language-JavaScript">import './app2.css'
+import $ from 'jquery'
+
+const $tabBar = $('#app2 .tab-bar'),
+  $tabContent = $('#app2 .tab-content')
+
+$tabBar.on('click',(e)=&gt;{
+const $li = $(e.currenTarget)
+const index = $li.index()
+
+$li.addClass('selected').siblings().removeClass('selected')
+
+$tabContent.children().eq(index).addClass('active').siblings().removeClass('active')
+})
+
+// e是event对象，事件处理函数在被处理时将event对象作为第一个参数
+</code></pre></li>
+</ol>
+
+<p>功能 3：移动</p>
+
+<ol>
+<li><p>app3.css</p>
+
+<pre><code class="language-CSS">#app3{
+border:1px solid purple;
+}
+#app3{
+border:1px solid grey;
+margin:10vw 0 0 10vw;
+width:10vw;
+height:10vw;
+transition:transform 1s;
+}
+#app3 .square.active{
+transform:translateX(15vw)
+}
+</code></pre></li>
+
+<li><p>app3.js</p>
+
+<pre><code class="language-JavaScript">import './app3.css'
+import $ from 'jquery'
+
+const $square = $('#app3 .square')
+
+$square.on('click',()=&gt;{
+$.square.toggleClass('active')
+})
+</code></pre></li>
+</ol>
+
+<p>功能 4：渐变</p>
+
+<ol>
+<li><p>app4.css</p>
+
+<pre><code class="language-CSS">#app4{
+border:1px solid pink;
+}
+@keyframes change{
+0%{
+background:red;
+}
+100%{
+background:blue;
+}
+}
+#app4 .circle{
+border:1px solid grey;
+width:20vw;
+height:20vw;
+border-radius:50%;
+margin:2vw 0 0 2vw;
+}
+#app4 .circle.active{
+animation:change 1s infinite alternate liner;
+}
+</code></pre></li>
+
+<li><p>app4.js</p>
+
+<pre><code class="language-JavaScript">import './app4.css'
+import $ from 'jquery'
+
+const $circle = $('#app4 .circle')
+
+$circle.on('mouseenter',()=&gt;{
+$circle.addClass('active');
+})
+
+$circle.on('mouseout',()=&gt;{
+$circle.removeClass('active')
+})
+</code></pre></li>
+</ol>
+
+<p>现在所有小功能已经实现,现在你已经发现了模块化的好处。
+MVC-中 见</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">动态服务器</a></li>
+        
+        <li><a href="/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">静态服务器 </a></li>
+        
+        <li><a href="/posts/%E8%B7%A8%E5%9F%9F/">跨域 </a></li>
+        
+        <li><a href="/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/">异步与promise </a></li>
+        
+        <li><a href="/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">AJAX的原理 </a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://sunxiaochuang.top">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/" title="MVC-上 ">MVC-上 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器">动态服务器</a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="静态服务器 ">静态服务器 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/" title="跨域 ">跨域 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" title="异步与promise ">异步与promise </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 ">AJAX的原理 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
+    </li>
+    
+    <li>
+        <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/" title="jQuery的设计模式——下 ">jQuery的设计模式——下 </a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://sunxiaochuang.top/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

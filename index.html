@@ -66,6 +66,25 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/" title="MVC-上 " >MVC-上 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年1月6日
+                            </date>
+                            
+                            <div class="post-content">
+                                MVC (Model view controller) Model (数据模型) ：负责操作所有数据 View (视图)：负责 ui controller (控制器) 负责操作数据在ui层可视化  简称 MVC 模式，这是一种软件架构模式。该模式的目的是在于对程序的修改和扩展简化。并且某一个部分可重复利用的可能。 本篇博客使用模块化创建四个小功能： 在线预览
+我们先实现这四个功能。 后期使用 MVC 模式重构该小 demo
+目录 index.html //主页面 main.js //主页面行为 被index.html引用 global.css //主页面布局 被main.js引用 reset.css //主页面重置css 默认属性 被main.js引用 //以下js文件被main.js引用。css文件被自身js文件引用 app1.css //功能1的css和js app1.js app2.css //功能2的css和js app2.js app3.css //功能3的css和js app3.js app4.css //功能4的css和js app4.js   这是实现该 4 个功能全部的文件(这比以前在一个页面里写下全部代码好太多了,你应该学习这种方式)
+ 开始前准备  首先创建一个 mvc-demo1 文件里在创建一个 src 文件把上述文件 12 个全部放在里面即可 使用 yarn 命令初始化:yarn init -y; 使用 yarn 命令添加 jquery：yarn add jquery  ok 步骤完成。使用 parcel src/index.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器" >动态服务器</a>
                                 </h1>
                             </header>
@@ -238,26 +257,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 " >jQuery基本功能 </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月6日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言:本文章的目的是介绍 jQuery 的基本功能,如果你想了解 jQuery 基本的思路可以去看 jQuery 的设计模式上和下的 blog。希望能帮助到你
- 目录
- jQuery 如何获取元素 jQuery 链式操作是怎样的 jQuery 如何创造元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  jQuery jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库,jQuery 是目前使用最广泛的 JavaScript 库
-1. jQuery 如何获取元素 &lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;jQuery之获取元素&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;test&quot;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  $('#test') //利用id值来获取元素 //上述代码用ID的值去获取元素,$()函数执行完后,会返回一个对象。这个对象包含了对元素进行各种操作的方法   jQuery 基本思想和主要用法：就是当我获取一个元素之后,我可以直接进行各种操作。jQuery 的构造函数简写为\$
- 2. jQuery 链式操作是怎样的 &lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;jQuery之链式操作&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;test&quot;&gt; &lt;div class=&quot;child&quot;&gt;child1&lt;/div&gt; &lt;div class=&quot;child&quot;&gt;child2&lt;/div&gt; &lt;div class=&quot;child&quot;&gt;child3&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  $(&quot;#test&quot;).……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -310,6 +309,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/" title="MVC-上 ">MVC-上 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="动态服务器">动态服务器</a>
     </li>
     
@@ -345,10 +348,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
         <a href="https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/" title="jQuery的设计模式——下 ">jQuery的设计模式——下 </a>
     </li>
     
-    <li>
-        <a href="https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="jQuery基本功能 ">jQuery基本功能 </a>
-    </li>
-    
 </ul>
     </section>
 
@@ -382,7 +381,7 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
+        &copy; 2020 <a href="https://sunxiaochuang.top">笑笑 By 笑笑</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
