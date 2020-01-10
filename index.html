@@ -66,6 +66,26 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/vue/" title="浅析Vue两个版本的区别 " >浅析Vue两个版本的区别 </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年1月10日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言：请在 PC 浏览器下获得最佳阅读体验
+Vue 本文主要讲诉 Vue 两个版本的区别
+1. 两个版本对应的名字  完整版 只包含运行时版(非完整版 or 不完整版。文章中不完整版意思是只包含运行时版) 名字： vue.js vue.runtime.js //注:生产环境的版本带min如:vue.min.js和vue.runtime.min.js //带min的意思是该代码被压缩了。体积会小(加速加载代码),方便用户体验。   完整版：包含编译器和运行时的版本 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上除去编译器的其他一切  2. template 和 render 使用方法 我们知道完整版是带有编译器的,不完整版就是不带有编译器。我们知道编译器就是把模板转译JavaScript渲染函数的代码 这是本小节最主要的区别所在
+如下例：
+//template(模板)和 render用法 ---→ vue.js(完整版) VS vue.runtime.js(非完整版) //完整版：需要编译器 new Vue({ template:&quot;&lt;div&gt;{{hi}}&lt;/div&quot; }) //不完整版：不需要编译器 new Vue({ render(h){ return h(&quot;div&quot;,this.hi) } }) //template 的 value 是编译器所需要的模板 //h 函数是由 render 创建时由 vue 传进来的。最主要的目的时创建整个元素本身(是不是很像 createElement)  注： vue 支持单页面组件使用 vue-loader 把.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/vue/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90mvc/" title="浅析MVC " >浅析MVC </a>
                                 </h1>
                             </header>
@@ -235,30 +255,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 " >前端导航项目介绍 </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月13日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言：  项目预览：前端导航
- 预备知识
- jQuery：jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库 console.log(调式)：向 Web 控制台输出一条消息。 flex 布局：flex 是一个 CSS 的 display 属性中新添加一个值 媒体查询(@media)：@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。 Git&amp;Github：代码版本管理&amp;代码托管平台  新增知识
- window.localStorage：只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。 SVG Symbol：可缩放矢量图形 iconfont.cn：阿里巴巴矢量图标库  阻止冒泡：阻止事件调用函的发生, JSON 序列化：JSON 是一种语法,用来序列化对象、数组、数值、字符串、布尔值和 null。   思路  首先我们要有一个设计稿(先有设计稿再做)
-用figma.com来做设计稿查看设计稿
- 实现 Mobile 端 前端导航项目——上之 Mobile
- 实现 PC 端 前端导航项目——下之 PC
- 发布到 GitHub
-   写完之后我们需要上传 GitHub。上传之前我们需要 parcel 一键部署一下.……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -311,6 +307,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/vue/" title="浅析Vue两个版本的区别 ">浅析Vue两个版本的区别 </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90mvc/" title="浅析MVC ">浅析MVC </a>
     </li>
     
@@ -344,10 +344,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 ">前端导航项目介绍 </a>
     </li>
     
 </ul>

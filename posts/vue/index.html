@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AJAX的原理  | 笑笑</title>
-    <meta property="og:title" content="AJAX的原理  - 笑笑">
+    <title>浅析Vue两个版本的区别  | 笑笑</title>
+    <meta property="og:title" content="浅析Vue两个版本的区别  - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-12-18T05:32:36&#43;08:00">
+    <meta property="article:published_time" content="2020-01-10T22:19:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-12-18T05:32:36&#43;08:00">
+    <meta property="article:modified_time" content="2020-01-10T22:19:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="AJAX的原理 ">
+    <meta name="description" content="浅析Vue两个版本的区别 ">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/vue/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">AJAX的原理 </h1>
+                            <h1 class="post-title">浅析Vue两个版本的区别 </h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年12月18日
+                            2020年1月10日
                         </date>
                         
                         
@@ -81,87 +81,83 @@
                         <div class="post-content">
                             
 
-<blockquote>
-<p>前言 : AJAX (Asynchronous JavaScript And Xml)(非同步的 JavaScript 与 XML 技术):主要功能是存取数据用的.</p>
-</blockquote>
+<p>前言：请在 PC 浏览器下获得最佳阅读体验</p>
 
-<h1 id="ajax-的原理">AJAX 的原理</h1>
+<h1 id="vue">Vue</h1>
 
-<pre>
-    用JS发送请求和收响应(在早期用户登录时,服务器会返回全部页面信息,页面会全部刷新.AJAX出来后当我登录时,
-    只需要局部刷新即可,无需服务器返回全面页面.因为登录前后有些HTML CSS是一样的)
-</pre>
+<p>本文主要讲诉 Vue 两个版本的区别</p>
 
-<h2 id="用-ajax-请求-2-js-文件">用 AJAX 请求 2.js 文件</h2>
+<h2>1. 两个版本对应的名字</h2>
 
-<pre>
-    既然我们知道AJAX的目的,那我们需要一个本地服务器做出响应。main.js做出请求
-    index.html 视图化 2.js做出响应正文
-    本地服务器代码：<a href="https://github.com/s-xiaoxiao/ajax-1/blob/master/server.js">服务器源码</a> 复制代码创建一个server.js文件粘贴
+<pre><code>          完整版      只包含运行时版(非完整版 or 不完整版。文章中不完整版意思是只包含运行时版)
+名字：    vue.js      vue.runtime.js
 
-</pre>
-
-<h3 id="index-html">index.html</h3>
-
-<pre><code class="language-HTML">&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;AJAX应用——请求JS文件
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;button id=&quot;getJs&quot;&gt;Get 2.js&lt;/button&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+//注:生产环境的版本带min如:vue.min.js和vue.runtime.min.js
+//带min的意思是该代码被压缩了。体积会小(加速加载代码),方便用户体验。
 </code></pre>
 
-<h3 id="2-js">2.js</h3>
+<ul>
+<li>完整版：包含编译器和运行时的版本</li>
+<li>编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码</li>
+<li>运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上除去编译器的其他一切</li>
+</ul>
 
-<pre><code class="language-JavaScript">console.log(&quot;hello world&quot;)
-</code></pre>
+<p><h2>2. template 和 render 使用方法</h2>
+我们知道完整版是带有编译器的,不完整版就是不带有编译器。我们知道编译器就是把模板转译JavaScript渲染函数的代码
+这是本小节最主要的区别所在</p>
 
-<h3 id="main-js">main.js</h3>
+<p>如下例：</p>
 
-<pre><code class="language-JavaScript">//在JS里由构造函数XMLHttpRequest创建的实例可以实现与服务器交互
-getJs.onclick = ()=&gt;{
-  const request = new XMLHttpRequest()  //创建该构造函数的实例
+<pre><code class="language-JavaScript">//template(模板)和 render用法 ---→ vue.js(完整版) VS vue.runtime.js(非完整版)
 
-  request.open(&quot;GET&quot;,&quot;/2.js&quot;)       //
-  request.onreadystatechange=()=&gt;{
-    if(request.readyState === 4 &amp;&amp; request.status ===200){
-      const script = document.createElement(&quot;script&quot;)
-      script.innerHTML = request.response
-      document.body.appendChild(script)
-    }
+//完整版：需要编译器
+new Vue({
+  template:&quot;&lt;div&gt;{{hi}}&lt;/div&quot;
+})
+
+//不完整版：不需要编译器
+new Vue({
+  render(h){
+    return h(&quot;div&quot;,this.hi)
   }
-  request.send()
-}
+})
 
-
-//XMLHttpRequest 对象可以与服务器交互。你可以从url获取数据，而无需让整个页面刷新.这允许网页在不影响用户
-//的操作情况下更新页面的局部更新。
-//XMLHttpRequest.open():方法初始化一个请求。该方法要从JavaScript代码使用;
-//XMLHttpRequest.onreadystatechange:该属性只要readyState属性发生变化,就会处理相应的处理函数。
-//XMLHttpRequest.readyState: 属性返回一个XMLHttpRequest代理当前所处的状态。
-//4代表下载操作已完成 0.代理创建 1.open已经被调用 2.send已经被调用 3.下载中 4.完成
-//XMLHttpRequest.status: 属性返回XMLHttpRequest响应中的数字状态码。在请求完成前值为0出错也为0.
-//200代表请求成功
-//XMLHttpRequest.response:属性返回响应的正文.返回的类型可以是ArrayBuffer、blob、document、
-//javaScript object或DOMString。
-//XMLHttpRequest.send():方法用于发送HTTP请求。如果是异步请求(默认)。则此方法会在请求发送后立即返回;
-//如果是同步请求,则此方法直到响应到达后才会返回
+//template 的 value 是编译器所需要的模板
+//h 函数是由 render 创建时由 vue 传进来的。最主要的目的时创建整个元素本身(是不是很像 createElement)
 </code></pre>
 
-<blockquote>
-<p>当你点击过后控制台会输出 hello world</p>
-</blockquote>
+<p>注： vue 支持单页面组件使用 vue-loader 把.vue 文件(包含 template、script、style )翻译成 h 构建方法.如下:</p>
 
-<p>以上只是讲诉了请求 js 文件的应用</p>
+<pre><code class="language-JavaScript">improt Demo from &quot;./Demo.vue&quot;
 
-<p>以下源代码:<a href="https://github.com/s-xiaoxiao/ajax-1">code</a> 包含了请求 html、xml、json、css、script 文件以及应用。核心代码相同.</p>
+new Vue({
+  render(h){
+    return h(Demo)
+  }
+})
+</code></pre>
 
-<blockquote>
-<p>总结：一共分四步。创建构造函数 XMLHttpRequest 实例、调用实例的 open 方法、监听对象的 onreadystatechange 事件、调用实例的 send()方法</p>
-</blockquote>
+<p><h2>3. codesandbox.io 写Vue</h2>
+codesandbox.io 是什么？答:是一个在线的代码编辑器,主要聚焦于创建 Web 应用项目。当前已经进化为可以同时
+支持浏览器端以及服务器的 Web 应用。</p>
+
+<p><a href="https://codesandbox.io/">打开 codesandbox.io</a></p>
+
+<ol>
+<li>→ 点击右上角的 Create Sandbox 按钮</li>
+<li>→ 在 Official Templates 中点击 Vue 即可创建 Vue 项目</li>
+</ol>
+
+<p>请勿登录该网站(登录后创建项目限制 在 50 个 以内)</p>
+
+<h2 id="总结">总结：</h2>
+
+<ol>
+<li>Vue 两个版本代码上一个带有编译器一个没有。非完整版对用户体验教好加载。带 min 的是压缩后的文件</li>
+<li>template 和 render。一个需要编译器一个不需要;</li>
+<li>codesandbox.io 是一个在线代码编辑器。可以构建 web 应用项目。支持很多框架一键构建</li>
+<li>使用非完整版+单页面组件+vue-loader 来开发应用(最大好处是模块化)</li>
+</ol>
 
                         </div>
 
@@ -174,15 +170,15 @@ getJs.onclick = ()=&gt;{
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">前端导航下——PC </a></li>
+        <li><a href="/posts/%E6%B5%85%E6%9E%90mvc/">浅析MVC </a></li>
         
-        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">前端导航—上之Mobile </a></li>
+        <li><a href="/posts/mvc-%E4%B8%8A/">MVC-上 </a></li>
         
-        <li><a href="/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/">前端导航项目介绍 </a></li>
+        <li><a href="/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">动态服务器</a></li>
         
-        <li><a href="/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/">jQuery的设计模式——下 </a></li>
+        <li><a href="/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">静态服务器 </a></li>
         
-        <li><a href="/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/">jQuery基本功能 </a></li>
+        <li><a href="/posts/%E8%B7%A8%E5%9F%9F/">跨域 </a></li>
         
     </ul>
 </div>
