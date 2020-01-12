@@ -6,10 +6,23 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jan 2020 22:19:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 21:35:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue数据响应式之data </title>
+      <link>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</link>
+      <pubDate>Sun, 12 Jan 2020 21:35:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</guid>
+      <description>前置概念：
+数据响应式：数据在后台或者在内存里发生了改变要更新到 UI 视图层里。这是数据的响应式  预知知识：
+getter：get 语法将对象属性绑定到查询该属性时将被调用的函数 setter：set 语法当尝试设置属性时,set语法将对象属性绑定到要调用的函数 Object.defineProperty：该方法会直接在一个对象上定义一个新属性,或者修改一个对象的现有属性,并返回这个对象。  实现简易版的 vue 数据响应式之 data 需求：实现监听 data 里的数据是否发生了变化
+new Vue({ data:{ n:0 }, template:` &amp;lt;div&amp;gt; {{n}}&amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; `, methods:{ add(){ this.n+=1 } } }).$mount(&#39;#app&#39;) //我们知道在ui视图会显示一个数据0和一个按钮。按一下按钮数据会＋1.这是Vue的数据响应式 //接下来我们粗糙的看看原理是如何监听到数据的变化并且响应到视图里的  getter 和 setter 我们来看看代码
+let obj = { h:&#39;hello&#39;, w:&#39;world&#39;, get hw(){ return this.h+`,`+this.w }, set hw(hw){ this.h=hw.h this.w=hw.w } } console.log(obj.hw) //hello,world 注:属性前面有get 该属性的值是函数的返回值。该函数不接受参数; obj.hw = {h:&#39;h&#39;,w:&#39;w&#39;} //注：set 所绑定的函数只能有一个形式参数 console.</description>
+    </item>
     
     <item>
       <title>浅析Vue </title>

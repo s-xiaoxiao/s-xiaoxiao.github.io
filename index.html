@@ -66,6 +66,26 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/" title="Vue数据响应式之data " >Vue数据响应式之data </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年1月12日
+                            </date>
+                            
+                            <div class="post-content">
+                                前置概念：
+数据响应式：数据在后台或者在内存里发生了改变要更新到 UI 视图层里。这是数据的响应式  预知知识：
+getter：get 语法将对象属性绑定到查询该属性时将被调用的函数 setter：set 语法当尝试设置属性时,set语法将对象属性绑定到要调用的函数 Object.defineProperty：该方法会直接在一个对象上定义一个新属性,或者修改一个对象的现有属性,并返回这个对象。  实现简易版的 vue 数据响应式之 data 需求：实现监听 data 里的数据是否发生了变化
+new Vue({ data:{ n:0 }, template:` &lt;div&gt; {{n}}&lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; `, methods:{ add(){ this.n+=1 } } }).$mount('#app') //我们知道在ui视图会显示一个数据0和一个按钮。按一下按钮数据会＋1.这是Vue的数据响应式 //接下来我们粗糙的看看原理是如何监听到数据的变化并且响应到视图里的  getter 和 setter 我们来看看代码
+let obj = { h:'hello', w:'world', get hw(){ return this.h+`,`+this.w }, set hw(hw){ this.h=hw.h this.w=hw.w } } console.log(obj.hw) //hello,world 注:属性前面有get 该属性的值是函数的返回值。该函数不接受参数; obj.hw = {h:'h',w:'w'} //注：set 所绑定的函数只能有一个形式参数 console.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/vue/" title="浅析Vue " >浅析Vue </a>
                                 </h1>
                             </header>
@@ -237,24 +257,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile " >前端导航—上之Mobile </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月13日
-                            </date>
-                            
-                            <div class="post-content">
-                                前言 这篇文章实现适配 Mobile 端的页面,搜索功能以及添加网站快捷方式.(效果如下图)
-预览：效果图 我们分成 3 个部分讲
- HTML 视图 CSS 样式 JavaScript 行为  1.HTML &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no,viewport-fit=cover&quot; /&gt; &lt;!--不用背,宽度=设备的宽度，最初的比例和最大和最小比例=1.防止用户双指扩大以及缩小填充设备显示可以 借鉴淘宝--&gt; &lt;title&gt;前端导航网站&lt;/title&gt; &lt;!-- 加入通用css代码iconfont.cn用 --&gt; &lt;style type=&quot;text/css&quot;&gt; .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } &lt;/style&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt; &lt;/head&gt; &lt;body&gt; &lt;header class=&quot;globalHeader&quot;&gt; &lt;form method=&quot;get&quot; action=&quot;https://www.baidu.com/s&quot; class=&quot;searchForm&quot;&gt; &lt;input name=&quot;wd&quot; type=&quot;test&quot;&gt; &lt;button&gt;搜索&lt;/button&gt; &lt;/form&gt; &lt;/header&gt; &lt;main class=&quot;globalMain&quot;&gt; &lt;ul class=&quot;siteList&quot;&gt; &lt;!……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -307,6 +309,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/" title="Vue数据响应式之data ">Vue数据响应式之data </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/vue/" title="浅析Vue ">浅析Vue </a>
     </li>
     
@@ -340,10 +346,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
     </li>
     
 </ul>

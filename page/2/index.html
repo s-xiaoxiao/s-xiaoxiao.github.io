@@ -66,6 +66,24 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile " >前端导航—上之Mobile </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年12月13日
+                            </date>
+                            
+                            <div class="post-content">
+                                前言 这篇文章实现适配 Mobile 端的页面,搜索功能以及添加网站快捷方式.(效果如下图)
+预览：效果图 我们分成 3 个部分讲
+ HTML 视图 CSS 样式 JavaScript 行为  1.HTML &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no,viewport-fit=cover&quot; /&gt; &lt;!--不用背,宽度=设备的宽度，最初的比例和最大和最小比例=1.防止用户双指扩大以及缩小填充设备显示可以 借鉴淘宝--&gt; &lt;title&gt;前端导航网站&lt;/title&gt; &lt;!-- 加入通用css代码iconfont.cn用 --&gt; &lt;style type=&quot;text/css&quot;&gt; .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } &lt;/style&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt; &lt;/head&gt; &lt;body&gt; &lt;header class=&quot;globalHeader&quot;&gt; &lt;form method=&quot;get&quot; action=&quot;https://www.baidu.com/s&quot; class=&quot;searchForm&quot;&gt; &lt;input name=&quot;wd&quot; type=&quot;test&quot;&gt; &lt;button&gt;搜索&lt;/button&gt; &lt;/form&gt; &lt;/header&gt; &lt;main class=&quot;globalMain&quot;&gt; &lt;ul class=&quot;siteList&quot;&gt; &lt;!……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/" title="前端导航项目介绍 " >前端导航项目介绍 </a>
                                 </h1>
                             </header>
@@ -234,28 +252,6 @@ document.querySelector() 方法：文档对象模型 Document 引用的 querySel
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/" title="算法入门上" >算法入门上</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年11月18日
-                            </date>
-                            
-                            <div class="post-content">
-                                1. 用递归实现类似Math.prototype.min()方法:返回一个最小值 这是JS内置的一个方法.先从两个数实现开始,最后实现类似Math.min的方法 当我们调用Math.min()时,默认总会返回一个最小值
-两个数返回一个最小值
-let min = (numbers)=&gt;numbers[0]&gt;numbers[1]？numbers[1]:numbers[0]; min([2,3]) //2 //简化成——析构赋值 let min = ([a,b])=&gt; a&gt;b?b:a min([2,3]) //2  三个数返回一个最小值
-let min2 = ([a,b,c])=&gt; min([a,min([b,c])]) min2([3,4,5]) //3  四个数返回一个最小值
-let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会发现 min min2 min3是环环相扣的.你可以根据min min2 min3 写出min&hellip;.既然每次调用都是min来计算两个数的大小,如果你学过递归的话并且用递归去写,这个代码量就少的很多
-简单实例: 实现1+2+3+4&hellip;+100用for和递归做
-//for let num=0; for(let n=1;n&lt;=100;n++){ num+=n; } //5050  //递归:总之就是不满足条件前一直去调用自身函数,满足条件后逐一释放调用自身函数.前者为递,后者为归 let num=0; let add = (n) =&gt;{ if(n&lt;=100){ add((num+=n,++n)) }else{ console.log(num) } } add(1) //5050 只要条件成立就会一直调用自身add()函数,条件满足逐一释放自身函数() //代码优化： let add = (n) =&gt; n&lt;=100?……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -312,6 +308,10 @@ let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/" title="Vue数据响应式之data ">Vue数据响应式之data </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/vue/" title="浅析Vue ">浅析Vue </a>
     </li>
     
@@ -345,10 +345,6 @@ let min3 = ([a,b,c,d]) =&gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你会�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/" title="前端导航—上之Mobile ">前端导航—上之Mobile </a>
     </li>
     
 </ul>
