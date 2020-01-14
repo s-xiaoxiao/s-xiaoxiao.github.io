@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JS的基本语法 | 笑笑</title>
-    <meta property="og:title" content="JS的基本语法 - 笑笑">
+    <title>Vue修饰符sync  | 笑笑</title>
+    <meta property="og:title" content="Vue修饰符sync  - 笑笑">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-10-14T11:10:36&#43;08:00">
+    <meta property="article:published_time" content="2020-01-14T23:03:36&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-10-14T11:10:36&#43;08:00">
+    <meta property="article:modified_time" content="2020-01-14T23:03:36&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
-    <meta name="description" content="JS的基本语法">
+    <meta name="description" content="Vue修饰符sync ">
         
     <meta name="author" content="笑笑">
-    <meta property="og:url" content="https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+    <meta property="og:url" content="https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -70,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">JS的基本语法</h1>
+                            <h1 class="post-title">Vue修饰符sync </h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年10月14日
+                            2020年1月14日
                         </date>
                         
                         
@@ -81,129 +81,90 @@
                         <div class="post-content">
                             
 
-<h2 id="1-什么是表达式和语句">1. 什么是表达式和语句？</h2>
+<p>预知知识：</p>
 
-<p>在 JavaScript 的里面,如果后面带有&rsquo;;&lsquo;代表这是一条语句。表达式更容易区辨别,一般带有返回值的都可以称为表达式。</p>
-
-<pre><code class="language-JavaScript">var a = 1; //这是一个语句
-a + a;//这是一个表达式语句
+<pre><code class="language-JavaScript">new Vue({
+  data(){return {}},
+  components:{},
+  props:[]
+})
 </code></pre>
 
-<h2 id="2-标识符的规则">2. 标识符的规则</h2>
+<ol>
+<li>data(){}：保存数据的对象</li>
+<li>components：保存组件的对象</li>
+<li>props：保存父组件传来的数据</li>
+<li>vue.文件是一个组件</li>
+</ol>
 
-<p>在 JavaScript 里面标识符由&rsquo;字母&rsquo;和&rsquo;符号&rsquo;和&rsquo;中文&rsquo;组成.唯一特殊的是标识符开头不能是数字。</p>
+<h1 id="sync">sync</h1>
 
-<pre><code class="language-javaScript">var a123;  //字母开头
-var 中国;  //中文开头
-var _1;    //符号开头
-var 123;   //数字开头是错的！！！！！！
+<p>sync 同步：这个同步说的是数据之间的同步。</p>
+
+<pre>
+需求：用Vue模拟 使用余额宝支付完,让余额宝更新到最新金额
+
+1. 余额宝是一个父组件,有money一个数据
+2. 付款是一个子组件,引用余额宝父组件的money数据
+
+.sync修饰符主要目的是子组件引用父组件数据,由子组件让父组件数组产生了变化要告诉父组件,父组件会修改自身数据。
+由于子组件引用了父组件的数据,所引用的数据自然会更改
+</pre>
+
+<p>代码逻辑：</p>
+
+<ol>
+<li><p>父组件：余额宝.vue</p>
+
+<pre><code class="language-JavaScript">&lt;template&gt;
+  &lt;div&gt;
+    余额宝: {{money}}
+    &lt;hr /&gt;
+    &lt;Pay :payMoney.sync=&quot;money&quot;/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import Pay from &quot;./Pay.vue&quot;;
+  export default {
+    data() {
+      return { money: 1000 };
+    },
+    components: { Pay }
+};
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
 </code></pre>
 
-<h2 id="3-if-else-语句">3. if else 语句</h2>
+<p>Pay 是子组件。payMoney是在子组件定义的引用父组件money。</p></li>
 
-<p>例子：在 JavaScript 里,if else 用作判断条件为真假执行不同语句的。</p>
+<li><p>子组件：付款框.vue</p>
 
-<pre><code class="language-javaScript">if(如果今天下雨){
-  我就去淋雨
-}else{
-  我就去下雨
-}
+<pre><code class="language-JavaScript">&lt;template&gt;
+  &lt;div&gt;
+    {{payMoney}}
+    &lt;button @click=&quot;$emit('update:money', payMoney-100)&quot;&gt;
+    &lt;span&gt;花钱&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: [&quot;payMoney&quot;]
+};
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
 </code></pre>
 
-<p>本意：if else</p>
+<p>update:money是一个事件,点击该button会发布.payMoney-100的结果会告诉父组件,父组件产生数据修改.会返回给子组件</p></li>
+</ol>
 
-<pre><code class="language-javaScript">if(表达式){
-  语句 //为真执行
-}else{
-  语句 //为假执行
-}
-</code></pre>
-
-<blockquote>
-<p>if else 只是最简单的用法,某些事情的不单是一个影响因素.</p>
-</blockquote>
-
-<h2 id="4-while-for-语句">4. while for 语句</h2>
-
-<p>例子:在现实的世界当中,汽车行驶中轮胎不停的转动.因何而动,因何而停？
-在 JavaScript 世界里,while 和 for 控制轮胎.</p>
-
-<pre><code class="language-JavaScript">//假设是一道无障碍无人道路,只有一个距离500米红绿灯.while和for的区别
-
-var 汽车=0;
-while(汽车前方20米没有红绿灯){
-  汽车=汽车+20;
-}
-
-for(var 汽车=0;汽车前方20米没有红绿灯;汽车=汽车+20){
-
-}
-</code></pre>
-
-<blockquote>
-<p>上面代码中,var 汽车=0;只会执行一次,然后到&rsquo;汽车前方 20 米没有红绿灯&rsquo;判断为真就进入循环体。当判断汽车=480 的时候。循环完毕.(到汽车=汽车+20 时,会自身+20)</p>
-</blockquote>
-
-<p>本意：while for</p>
-
-<pre><code class="language-javaScript">
-while(表达式){
-  循环体            //执行顺序：表达式 循环体
-}
-
-for(语句1;表达式语句2;语句3){
-  循环体            //执行顺序 语句1 表达式语句2 循环体 语句3
-}
-
-</code></pre>
-
-<h2 id="5-break-continue">5. break continue</h2>
-
-<p><strong>break 是跳出当前层的循环</strong>:例如本来有人要转 2 次 10 圈。他转完了一次。到第二次了说不转了。直接把第二次(层)直接忽略了,太耍赖了,大赖皮.</p>
-
-<p>实例 break</p>
-
-<pre><code class="language-javaScript">for(var a=1;a&lt;=2;a++){
-  if(a===2){              //第二次时直接跳出
-    break;
-  }
-  for(var b=1;b&lt;=10;b++){
-
-  }
-}
-</code></pre>
-
-<p><strong>continue 是跳出当时的一次循环直接进入下一次循环</strong>：例如本来有人要转 2 次 5 圈。本该 10 圈。转到 2 次 4 圈时,说转完了。小赖皮
-用法：</p>
-
-<p>实例 continue</p>
-
-<pre><code class="language-javaScript">for(var a=1;a&lt;=2;a++){
-
-  for(var b=1;b&lt;=5;b++){
-
-    if(a===2){
-
-      if(b===4){
-
-        continue;
-      }
-    }
-  }
-}
-</code></pre>
-
-<h2 id="6-标签-label">6. 标签(label)</h2>
-
-<p>label 是跳转的意思。例如:当对未拥有的一件事物发生强烈的希望时.当你得到却未有当初想象的美好.有可能会抛弃事物。当抛弃事物时,又回到了未拥有的状态.</p>
-
-<pre><code class="language-javaScript">foo:{
-  console.log(目前心情还不错);
-  console.log(这是个啥阿,哎呀不要了);
-  break foo;
-  console.log(本来就是这样的阿)
-}
-</code></pre>
+<p>总结：.sync 主要目的是在子组件引用父组件数据产生了修改同步到父组件上</p>
 
                         </div>
 
@@ -216,15 +177,15 @@ for(语句1;表达式语句2;语句3){
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">css知识总结</a></li>
+        <li><a href="/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/">Vue数据响应式之data </a></li>
         
-        <li><a href="/posts/%E6%B5%85%E6%9E%90url/">浅析 URL</a></li>
+        <li><a href="/posts/vue/">浅析Vue </a></li>
         
-        <li><a href="/posts/javascript%E8%AF%9E%E7%94%9F/">JavaScript的诞生</a></li>
+        <li><a href="/posts/%E6%B5%85%E6%9E%90mvc/">浅析MVC </a></li>
         
-        <li><a href="/posts/css%E5%9F%BA%E7%A1%80/">css基础</a></li>
+        <li><a href="/posts/mvc-%E4%B8%8A/">MVC-上 </a></li>
         
-        <li><a href="/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/">vim命令参考笔记</a></li>
+        <li><a href="/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/">动态服务器</a></li>
         
     </ul>
 </div>

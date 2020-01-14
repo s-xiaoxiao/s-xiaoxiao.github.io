@@ -6,10 +6,24 @@
     <description>Recent content on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jan 2020 21:35:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 23:03:36 +0800</lastBuildDate>
     
 	<atom:link href="https://sunxiaochuang.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue修饰符sync </title>
+      <link>https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</link>
+      <pubDate>Tue, 14 Jan 2020 23:03:36 +0800</pubDate>
+      
+      <guid>https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</guid>
+      <description>预知知识：
+new Vue({ data(){return {}}, components:{}, props:[] })   data(){}：保存数据的对象 components：保存组件的对象 props：保存父组件传来的数据 vue.文件是一个组件  sync sync 同步：这个同步说的是数据之间的同步。
+ 需求：用Vue模拟 使用余额宝支付完,让余额宝更新到最新金额 1. 余额宝是一个父组件,有money一个数据 2. 付款是一个子组件,引用余额宝父组件的money数据 .sync修饰符主要目的是子组件引用父组件数据,由子组件让父组件数组产生了变化要告诉父组件,父组件会修改自身数据。 由于子组件引用了父组件的数据,所引用的数据自然会更改  代码逻辑：
+ 父组件：余额宝.vue
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; 余额宝: {{money}} &amp;lt;hr /&amp;gt; &amp;lt;Pay :payMoney.sync=&amp;quot;money&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Pay from &amp;quot;./Pay.vue&amp;quot;; export default { data() { return { money: 1000 }; }, components: { Pay } }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; &amp;lt;/style&amp;gt;  Pay 是子组件。payMoney是在子组件定义的引用父组件money。
+ 子组件：付款框.</description>
+    </item>
     
     <item>
       <title>Vue数据响应式之data </title>

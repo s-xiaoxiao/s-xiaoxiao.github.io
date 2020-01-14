@@ -66,6 +66,27 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/" title="Vue修饰符sync " >Vue修饰符sync </a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年1月14日
+                            </date>
+                            
+                            <div class="post-content">
+                                预知知识：
+new Vue({ data(){return {}}, components:{}, props:[] })   data(){}：保存数据的对象 components：保存组件的对象 props：保存父组件传来的数据 vue.文件是一个组件  sync sync 同步：这个同步说的是数据之间的同步。
+ 需求：用Vue模拟 使用余额宝支付完,让余额宝更新到最新金额 1. 余额宝是一个父组件,有money一个数据 2. 付款是一个子组件,引用余额宝父组件的money数据 .sync修饰符主要目的是子组件引用父组件数据,由子组件让父组件数组产生了变化要告诉父组件,父组件会修改自身数据。 由于子组件引用了父组件的数据,所引用的数据自然会更改  代码逻辑：
+ 父组件：余额宝.vue
+&lt;template&gt; &lt;div&gt; 余额宝: {{money}} &lt;hr /&gt; &lt;Pay :payMoney.sync=&quot;money&quot;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Pay from &quot;./Pay.vue&quot;; export default { data() { return { money: 1000 }; }, components: { Pay } }; &lt;/script&gt; &lt;style&gt; &lt;/style&gt;  Pay 是子组件。payMoney是在子组件定义的引用父组件money。
+ 子组件：付款框.……
+                            </div>
+                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/" title="Vue数据响应式之data " >Vue数据响应式之data </a>
                                 </h1>
                             </header>
@@ -238,25 +259,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
                             <p class="readmore"><a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC " >前端导航下——PC </a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年12月14日
-                            </date>
-                            
-                            <div class="post-content">
-                                 导读  在导航项目介绍里,介绍了用的技术,以及在上的文章里实现了 Mobile 的界面以及行为.这边文章优于只是在 PC 的布局方面(添加一些样式)行为上添加了删除的功能,以及 event 事件、阻止冒泡的行为。还有优化了一些细节.
- 查看效果图 主要添加功能如下：
- 删除功能 0-9 的热键功能 当我在 input 输入时,阻止冒泡行为(阻止 0-9 的热键功能) 不能添加一样的网站(例如：baidu.com 不存在两个 baidu.com (但可以存在 www.baidu.com)) 只能添加 10 个快捷方式图标   我觉得有点没有做到满意的是，只有 5 or 10 个图标时，布局很好看。(由于经验上的关系。这个项目我只能做到这里啦)主要原因是外面的宽度是写死的.flex 掌握的还不是很熟练 加油！figting！
- ……
-                            </div>
-                            <p class="readmore"><a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -309,6 +311,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
 <ul class="widget-list">
     
     <li>
+        <a href="https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/" title="Vue修饰符sync ">Vue修饰符sync </a>
+    </li>
+    
+    <li>
         <a href="https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/" title="Vue数据响应式之data ">Vue数据响应式之data </a>
     </li>
     
@@ -342,10 +348,6 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <li>
         <a href="https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/" title="AJAX的原理 ">AJAX的原理 </a>
-    </li>
-    
-    <li>
-        <a href="https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/" title="前端导航下——PC ">前端导航下——PC </a>
     </li>
     
 </ul>
