@@ -81,6 +81,8 @@
                         <div class="post-content">
                             
 
+<p>前言：请在 PC 浏览器下获得最佳阅读体验</p>
+
 <p>预知知识：</p>
 
 <pre><code class="language-JavaScript">new Vue({
@@ -88,13 +90,16 @@
   components:{},
   props:[]
 })
+@click = &quot;&quot;
+$emit():
 </code></pre>
 
 <ol>
 <li>data(){}：保存数据的对象</li>
 <li>components：保存组件的对象</li>
 <li>props：保存父组件传来的数据</li>
-<li>vue.文件是一个组件</li>
+<li>@click：@是指令 v-on 的缩写。click 是点击事件(在模板里使用)</li>
+<li>\$emit()：触发当前实例上的事件(通常是第一个参数)。附加参数都会传给监听器回调(结果赋值给\$event)。</li>
 </ol>
 
 <h1 id="sync">sync</h1>
@@ -102,13 +107,13 @@
 <p>sync 同步：这个同步说的是数据之间的同步。</p>
 
 <pre>
-需求：用Vue模拟 使用余额宝支付完,让余额宝更新到最新金额
+需求：用Vue模拟 使用余额宝付款完,让余额宝更新到最新金额
 
 1. 余额宝是一个父组件,有money一个数据
 2. 付款是一个子组件,引用余额宝父组件的money数据
 
-.sync修饰符主要目的是子组件引用父组件数据,由子组件让父组件数组产生了变化要告诉父组件,父组件会修改自身数据。
-由于子组件引用了父组件的数据,所引用的数据自然会更改
+.sync修饰符主要目的是子组件引用父组件数据,父组件数据在子组件里产生了变化告诉父组件,让父组件数据改为
+变化后的数据。由于子组件引用了父组件的数据,所引用的数据自然会更改
 </pre>
 
 <p>代码逻辑：</p>
@@ -118,7 +123,9 @@
 
 <pre><code class="language-JavaScript">&lt;template&gt;
   &lt;div&gt;
-    余额宝: {{money}}
+    余额宝组件
+    &lt;br /&gt;
+    余额：{{money}}
     &lt;hr /&gt;
     &lt;Pay :payMoney.sync=&quot;money&quot;/&gt;
   &lt;/div&gt;
@@ -144,9 +151,13 @@
 
 <pre><code class="language-JavaScript">&lt;template&gt;
   &lt;div&gt;
-    {{payMoney}}
-    &lt;button @click=&quot;$emit('update:money', payMoney-100)&quot;&gt;
-    &lt;span&gt;花钱&lt;/span&gt;
+    付款组件
+    &lt;br /&gt;
+    付款金额:100元
+    &lt;br /&gt;
+    余额宝 可用余额：{{payMoney}}
+    &lt;button @click=&quot;$emit('update:payMoney',payMoney-100)&quot;&gt;
+      &lt;span&gt;付款&lt;/span&gt;
     &lt;/button&gt;
   &lt;/div&gt;
 &lt;/template&gt;
@@ -161,10 +172,44 @@ export default {
 &lt;/style&gt;
 </code></pre>
 
-<p>update:money是一个事件,点击该button会发布.payMoney-100的结果会告诉父组件,父组件产生数据修改.会返回给子组件</p></li>
+<pre><code>点击button执行$emit()函数,该函数会触发当前实例上一个事件,附加参数都会传给监听器回调。
+payMoney-100产生的结果会赋值到$event。
+sync执行时调用$event赋值给父组件数据,父组件数据修改后子组件所引用的数据自然会更改
+</code></pre></li>
+
+<li><p>sync 修饰符原理</p>
+
+<pre><code>先看$emit()做了什么
+1 ：$emit(事件,结果)：$emit执行后触发事件把附加参数(结果)传给监听器回调
+    $emit会触发了第一个参数'事件',那我监听这个事件是不是就知道子组件是在什么时候想要更改数据？
+    $emit会把第二个参数'结果'传给监听器回调使用。那我在父组件监听该事件就知道了数据变化后的结果了
+2 ：v-on:事件=&quot;父组件数据=$event&quot;  :v-on监听了该'事件'然后修改了父组件数据。$event是$emit第二个参数
+结果的值
+
+那.sync这个修饰符做了什么？
+因为2这个步骤太常用了.sync修饰了它;.sync === v-on:事件='修改数据'
+
+如果不用.sync的话。子组件点击触发事件,父组件监听事件即可
+@click=&quot;$emit('payMoney',payMoney-100)&quot;
+
+&lt;Pay :payMoney=&quot;money&quot; v-on:update:payMoney=&quot;money=$event&quot;&gt;
+
+当然选择.sync修饰符
+@click=&quot;$emit('update:payMoney',payMoney-100)&quot;
+&lt;Pay :payMoney.sync=&quot;money&quot;&gt;
+
+注意：使用sync修饰符触发的事件要以 update:开头
+</code></pre></li>
 </ol>
 
-<p>总结：.sync 主要目的是在子组件引用父组件数据产生了修改同步到父组件上</p>
+<p>总结：</p>
+
+<ol>
+<li>.sync 主要目的是在子组件引用父组件数据产生了修改同步到父组件上</li>
+<li>\$emit()函数,触发事件并且附加参数给监听器回调用</li>
+<li>使用.sync 修饰符会监听\$emit 所触发的事件并且更新父组件的数据</li>
+<li>使用.sync 修饰符时\$emit()所触发的事件要以&rsquo;update:&lsquo;开头。</li>
+</ol>
 
                         </div>
 
