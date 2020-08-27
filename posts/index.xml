@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 笑笑</title>
-    <link>https://sunxiaochuang.top/posts/</link>
+    <link>https://s-xiaoxiao.github.io/posts/</link>
     <description>Recent content in Posts on 笑笑</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 14 Jan 2020 23:03:36 +0800</lastBuildDate>
     
-	<atom:link href="https://sunxiaochuang.top/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://s-xiaoxiao.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vue修饰符sync </title>
-      <link>https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</link>
+      <link>https://s-xiaoxiao.github.io/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</link>
       <pubDate>Tue, 14 Jan 2020 23:03:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/vue%E4%BF%AE%E9%A5%B0%E7%AC%A6sync/</guid>
       <description>前言：请在 PC 浏览器下获得最佳阅读体验
 预知知识：
 new Vue({ data(){return {}}, components:{}, props:[] }) @click = &amp;quot;&amp;quot; $emit():   data(){}：保存数据的对象 components：保存组件的对象 props：保存父组件传来的数据 @click：@是指令 v-on 的缩写。click 是点击事件(在模板里使用) \$emit()：触发当前实例上的事件(通常是第一个参数)。附加参数都会传给监听器回调(结果赋值给\$event)。  sync sync 同步：这个同步说的是数据之间的同步。
@@ -27,10 +27,10 @@ new Vue({ data(){return {}}, components:{}, props:[] }) @click = &amp;quot;&amp;
     
     <item>
       <title>Vue数据响应式之data </title>
-      <link>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</link>
       <pubDate>Sun, 12 Jan 2020 21:35:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E4%B9%8Bdata/</guid>
       <description>前置概念：
 数据响应式：数据在后台或者在内存里发生了改变要更新到 UI 视图层里。这是数据的响应式  预知知识：
 getter：get 语法将对象属性绑定到查询该属性时将被调用的函数 setter：set 语法当尝试设置属性时,set语法将对象属性绑定到要调用的函数 Object.defineProperty：该方法会直接在一个对象上定义一个新属性,或者修改一个对象的现有属性,并返回这个对象。  实现简易版的 vue 数据响应式之 data 需求：实现监听 data 里的数据是否发生了变化
@@ -40,10 +40,10 @@ let obj = { h:&#39;hello&#39;, w:&#39;world&#39;, get hw(){ return this.h+`,`+th
     
     <item>
       <title>浅析Vue </title>
-      <link>https://sunxiaochuang.top/posts/vue/</link>
+      <link>https://s-xiaoxiao.github.io/posts/vue/</link>
       <pubDate>Fri, 10 Jan 2020 22:19:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/vue/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/vue/</guid>
       <description>前言：请在 PC 浏览器下获得最佳阅读体验
 Vue 本文主要讲诉 Vue 两个版本的区别
 1. 两个版本对应的名字  完整版 只包含运行时版(非完整版 or 不完整版。文章中不完整版意思是只包含运行时版) 名字： vue.js vue.runtime.js //注:生产环境的版本带min如:vue.min.js和vue.runtime.min.js //带min的意思是该代码被压缩了。体积会小(加速加载代码),方便用户体验。   完整版：包含编译器和运行时的版本 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上除去编译器的其他一切  2. template 和 render 使用方法 我们知道完整版是带有编译器的,不完整版就是不带有编译器。我们知道编译器就是把模板转译JavaScript渲染函数的代码 这是本小节最主要的区别所在
@@ -53,10 +53,10 @@ Vue 本文主要讲诉 Vue 两个版本的区别
     
     <item>
       <title>浅析MVC </title>
-      <link>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90mvc/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90mvc/</link>
       <pubDate>Tue, 07 Jan 2020 20:20:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90mvc/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90mvc/</guid>
       <description>MVC (Model-View-Controller) MVC 是一种软件架构模式或者叫 MVC 框架;由模型(Model)、视图(View)、控制器(Controller)构成。该模式的目的是实现一种动态的程序设计,使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能。
  控制器(Controller)：负责操作模型在视图里显示以及其他 视图(View)：负责操作 UI 层 模型(Model)：负责操作数据  1. MVC 三个对象是做什么的？ 我们用伪代码来看看这三个对象具体是做什么的
 例：用伪代码的逻辑实现一个点击按钮 +1
@@ -67,10 +67,10 @@ Vue 本文主要讲诉 Vue 两个版本的区别
     
     <item>
       <title>MVC-上 </title>
-      <link>https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/</link>
+      <link>https://s-xiaoxiao.github.io/posts/mvc-%E4%B8%8A/</link>
       <pubDate>Mon, 06 Jan 2020 15:50:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/mvc-%E4%B8%8A/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/mvc-%E4%B8%8A/</guid>
       <description>MVC (Model view controller) Model (数据模型) ：负责操作所有数据 View (视图)：负责 ui controller (控制器) 负责操作数据在ui层可视化  简称 MVC 模式，这是一种软件架构模式。该模式的目的是在于对程序的修改和扩展简化。并且某一个部分可重复利用的可能。 本篇博客使用模块化创建四个小功能： 在线预览
 我们先实现这四个功能。 后期使用 MVC 模式重构该小 demo
 目录 index.html //主页面 main.js //主页面行为 被index.html引用 global.css //主页面布局 被main.js引用 reset.css //主页面重置css 默认属性 被main.js引用 //以下js文件被main.js引用。css文件被自身js文件引用 app1.css //功能1的css和js app1.js app2.css //功能2的css和js app2.js app3.css //功能3的css和js app3.js app4.css //功能4的css和js app4.js   这是实现该 4 个功能全部的文件(这比以前在一个页面里写下全部代码好太多了,你应该学习这种方式)
@@ -79,10 +79,10 @@ Vue 本文主要讲诉 Vue 两个版本的区别
     
     <item>
       <title>动态服务器</title>
-      <link>https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Wed, 25 Dec 2019 18:40:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%8A%A8%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>动态服务器跟静态服务器最主要的区别就是在于是否请求了数据
  今天做一个简易版的注册 登录功能 ,AJAX 的实战：包含不限于( Cookie Session)
 下面是文件目录
@@ -91,20 +91,20 @@ Vue 本文主要讲诉 Vue 两个版本的区别
     
     <item>
       <title>静态服务器 </title>
-      <link>https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Tue, 24 Dec 2019 14:26:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>Static Server(静态服务器)  以往我们写 server.js 时,用 if 来判断请求文件然后响应如果网页有几十个的话还用 if 那也得写几十个 if ,优化一下代码改成自动查找对应文件,既静态文件服务器
  响应代码 response.statusCode = 202 const filePath =path === &#39;/&#39;?&#39;index.html&#39;:path //得到文件后缀 const index = filePath.lastIndexOf(&#39;.&#39;) const suffix = filePath.substring(index) const fileTypes = { &#39;.html&#39;:&#39;test/html&#39;, &#39;.css&#39;:&#39;test/css&#39;, &#39;.js&#39;:&#39;test/javascript&#39;, &#39;.png&#39;:&#39;image/png&#39;, &#39;.jpg&#39;:&#39;image/jpeg&#39; } //设置头部文件的后缀 response.setHeader(&#39;Content-Type&#39;,`${fileTypes[suffix]||&#39;test/html&#39;}`;charset=&amp;quot;utf-8&amp;quot;) let content //读文件如果失败状态码为404 try{ content = fs.readFileSync(`./public${filePath}`) }catch(error){ content = &amp;quot;文件不存在&amp;quot; response.statusCode = 404 } //写入 response.write(content) response.end() //String.prototype.lastIndexOf():方法返回调用string对象的指定值最后一次出现的索引, //String.prototype.substring():方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引 //直到字符串的末尾的一个子集 //try...catch:语句标记要尝试的语句块,并指定一个出现异常时抛出响应  实例 源代码该代码实现请求 html css js png 等文件</description>
     </item>
     
     <item>
       <title>跨域 </title>
-      <link>https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E8%B7%A8%E5%9F%9F/</link>
       <pubDate>Sun, 22 Dec 2019 10:57:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E8%B7%A8%E5%9F%9F/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E8%B7%A8%E5%9F%9F/</guid>
       <description>前面几篇文章讲解 AJAX 异步的访问等等之类的，都是在同源的策略下进行访问数据。这次我们讲讲跨域。跨域访问不是自己的数据,访问其他的数据称之为跨域。只有不同源的情况下才算跨域我们先讲解同源不同源的概念和跨域的方法
  同源策略  源 = 协议 + 域名 + 端口 例：http://baidu.com 跟http://baidu.com/?是同源的 例：http://baidu.com 跟http://www.baidu.com是不同源的 协议 + 域名 + 端口 相同才是同源  如果谁访问都可以得到数据,那用户的隐私无法得到保证 公司就没了。那我们怎么让不同源的情况下给它响应的?
  知道同源之后如果源不一样去请求的时候是拿不到数据的,所以在我们进行访问源后端得设置只有谁跨域请求才响应,我要知道你的身份是正确才要返回数据。
@@ -115,10 +115,10 @@ Cors //简单请求 if (path === &amp;quot;/friends.json&amp;quot;) { response.s
     
     <item>
       <title>异步与promise </title>
-      <link>https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</link>
       <pubDate>Thu, 19 Dec 2019 10:57:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</guid>
       <description>前言:本篇文章讲诉异步 回调 promise 一些概念以及在使用 AJAX 时,我们需要 promise 构造函数提供的对象来监听 AJAX 的成功与失败等
  异步(Async)  异步: 当我需要在1分钟内才能拿到炒饭,在这1分钟内我可以做一些其他的东西.1分钟之后有人告诉我你的炒饭好了. 前两句话是异步操纵(我可以每隔15秒问一下我的饭好了吗),后一句是回调操作 同步：当我需要在1分钟内才能拿到炒饭,1分钟就拿到炒饭了(中途无法分心,中途无法过问)  回调(call back)  回调：当你早上去买热干面时,本该先付钱再给我面就行(好香)。但是师傅问你,弄好了要不要辣(这就是回调)  let 要辣 = ()=&amp;gt;{ console.log(&amp;quot;热干面+加辣椒 好了&amp;quot;) } let 热干面= (额外配料) =&amp;gt; { console.log(&amp;quot;煮面&amp;quot;) console.log(&amp;quot;捞面装碗&amp;quot;) console.log(&amp;quot;基本配料&amp;quot;) 额外配料() } 热干面(要辣); //热干面函数返回undefined 要辣函数输出预期的结果。要辣函数返回的结果比热干面函数要早。 //这是异步的特征。同时要辣函数也是一个回调函数   异步任务不能直接拿到结果(每个人口味不一样),所以传给一个回调函数给异步。异步完成调用回调函数
  问题来了！我不要辣椒,我不要酸豆角,我希望麻酱不要放少了！萝卜多放点等等。。每天那么多客人我怎么我不能每次都问一遍吧？(要写多少个回调函数？或者回调函数的参数得写多少个?)这得多麻烦阿。效率低下！那怎么办?办法就是基本配料师傅来放,其他口味的配料让客人自助 ok 解决了(这就是我们今天说的主角 promise 具有类似得思想)
@@ -129,20 +129,20 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>AJAX的原理 </title>
-      <link>https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</link>
+      <link>https://s-xiaoxiao.github.io/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</link>
       <pubDate>Wed, 18 Dec 2019 05:32:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/ajax%E7%9A%84%E5%8E%9F%E7%90%86/</guid>
       <description>前言 : AJAX (Asynchronous JavaScript And Xml)(非同步的 JavaScript 与 XML 技术):主要功能是存取数据用的.
  AJAX 的原理  用JS发送请求和收响应(在早期用户登录时,服务器会返回全部页面信息,页面会全部刷新.AJAX出来后当我登录时, 只需要局部刷新即可,无需服务器返回全面页面.因为登录前后有些HTML CSS是一样的)  用 AJAX 请求 2.js 文件  既然我们知道AJAX的目的,那我们需要一个本地服务器做出响应。main.js做出请求 index.html 视图化 2.js做出响应正文 本地服务器代码：服务器源码 复制代码创建一个server.js文件粘贴  index.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;AJAX应用——请求JS文件 &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;button id=&amp;quot;getJs&amp;quot;&amp;gt;Get 2.js&amp;lt;/button&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  2.js console.log(&amp;quot;hello world&amp;quot;)  main.js //在JS里由构造函数XMLHttpRequest创建的实例可以实现与服务器交互 getJs.onclick = ()=&amp;gt;{ const request = new XMLHttpRequest() //创建该构造函数的实例 request.open(&amp;quot;GET&amp;quot;,&amp;quot;/2.js&amp;quot;) // request.onreadystatechange=()=&amp;gt;{ if(request.readyState === 4 &amp;amp;&amp;amp; request.</description>
     </item>
     
     <item>
       <title>前端导航下——PC </title>
-      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</link>
       <pubDate>Sat, 14 Dec 2019 22:50:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8B/</guid>
       <description> 导读  在导航项目介绍里,介绍了用的技术,以及在上的文章里实现了 Mobile 的界面以及行为.这边文章优于只是在 PC 的布局方面(添加一些样式)行为上添加了删除的功能,以及 event 事件、阻止冒泡的行为。还有优化了一些细节.
  查看效果图 主要添加功能如下：
  删除功能 0-9 的热键功能 当我在 input 输入时,阻止冒泡行为(阻止 0-9 的热键功能) 不能添加一样的网站(例如：baidu.com 不存在两个 baidu.com (但可以存在 www.baidu.com)) 只能添加 10 个快捷方式图标   我觉得有点没有做到满意的是，只有 5 or 10 个图标时，布局很好看。(由于经验上的关系。这个项目我只能做到这里啦)主要原因是外面的宽度是写死的.flex 掌握的还不是很熟练 加油！figting！
@@ -151,10 +151,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>前端导航—上之Mobile </title>
-      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</link>
       <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E4%B8%8A/</guid>
       <description>前言 这篇文章实现适配 Mobile 端的页面,搜索功能以及添加网站快捷方式.(效果如下图)
 预览：效果图 我们分成 3 个部分讲
  HTML 视图 CSS 样式 JavaScript 行为  1.HTML &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no,viewport-fit=cover&amp;quot; /&amp;gt; &amp;lt;!--不用背,宽度=设备的宽度，最初的比例和最大和最小比例=1.防止用户双指扩大以及缩小填充设备显示可以 借鉴淘宝--&amp;gt; &amp;lt;title&amp;gt;前端导航网站&amp;lt;/title&amp;gt; &amp;lt;!-- 加入通用css代码iconfont.cn用 --&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } &amp;lt;/style&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css&amp;quot; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;header class=&amp;quot;globalHeader&amp;quot;&amp;gt; &amp;lt;form method=&amp;quot;get&amp;quot; action=&amp;quot;https://www.baidu.com/s&amp;quot; class=&amp;quot;searchForm&amp;quot;&amp;gt; &amp;lt;input name=&amp;quot;wd&amp;quot; type=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;button&amp;gt;搜索&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/header&amp;gt; &amp;lt;main class=&amp;quot;globalMain&amp;quot;&amp;gt; &amp;lt;ul class=&amp;quot;siteList&amp;quot;&amp;gt; &amp;lt;!</description>
@@ -162,10 +162,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>前端导航项目介绍 </title>
-      <link>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Fri, 13 Dec 2019 10:28:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%89%8D%E7%AB%AF%E5%AF%BC%E8%88%AA%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
       <description>前言：  项目预览：前端导航
  预备知识
  jQuery：jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库 console.log(调式)：向 Web 控制台输出一条消息。 flex 布局：flex 是一个 CSS 的 display 属性中新添加一个值 媒体查询(@media)：@media CSS @规则 可根据一个或多个 媒体查询 的结果应用样式表的一部分。 Git&amp;amp;Github：代码版本管理&amp;amp;代码托管平台  新增知识
@@ -179,10 +179,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>jQuery的设计模式——下 </title>
-      <link>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/</link>
       <pubDate>Sat, 07 Dec 2019 14:36:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8B/</guid>
       <description>前言本文是 jQuery 的设计模式——上的续篇.在上篇我们实现 jQuery 函数的实现.还有很多细节的问题需要我们来完善。
  问题
  我觉得 jQuery 这个名字太长了,我可不可以换一个符号来代替?可以. 我应该如何创建元素?用重载. 如果我调用了两次以及多次 jQuery 的返回的对象。是不是太占用内容了？是的,可以使用原型. 如果我把 jQuery 构造函数的实例对象当作实参传进去,该怎么区别它是一个 jQuery 实例？我们可以给它添加一个属性,值为 true.这样的话我们只需要判断这个属性是不是为 true。  注：整体大概思路是这样的,不过跟 jQuery 相比我们只是阐述了调用 jQuery()函数之后的链式操作和一些节约内存的问题以及如何重载的问题.学习 jQuery 的 DOM 操作有助于我们学习 vue react 等框架,如果看完你有所疑惑请看 jQuery 中文文档
@@ -191,10 +191,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>jQuery基本功能 </title>
-      <link>https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</link>
+      <link>https://s-xiaoxiao.github.io/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Fri, 06 Dec 2019 20:20:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/jquery%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</guid>
       <description>前言:本文章的目的是介绍 jQuery 的基本功能,如果你想了解 jQuery 基本的思路可以去看 jQuery 的设计模式上和下的 blog。希望能帮助到你
  目录
  jQuery 如何获取元素 jQuery 链式操作是怎样的 jQuery 如何创造元素 jQuery 如何移动元素 jQuery 如何修改元素的属性  jQuery jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库,jQuery 是目前使用最广泛的 JavaScript 库
@@ -204,10 +204,10 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>jQuery的设计模式——上 </title>
-      <link>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</link>
+      <link>https://s-xiaoxiao.github.io/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</link>
       <pubDate>Thu, 05 Dec 2019 20:05:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A/</guid>
       <description>前言：上篇 blog 我们用对象的风格进行了 DOM 操作的封装,跟原生 DOM API 操作相比很明显在调用时极大的减少开发者的时间,这次我们用著名 jQuery 设计模式来重新封装 DOM 操作(称之为链式风格)。
  在你阅读本篇之前谨记三点：
  第一次出现的 API 会注解,当第二次时还不明白不要回头看。去 MDN 里搜索相关 API 整个代码运行过程在最后有注释,不过先不要去看.思考这个部分谁都不能代替,莫要自欺欺人。最好能形成一个逻辑写一遍 如果你看了代码运行过程的注释,记住一定要要自己照着自己的逻辑写一遍,没写顺在看注释.再形成逻辑.第三遍还没顺,再看代码  1. 添加全局函数 //下面时一个函数,请注意 window.jQuery = (selectorOrArray){ //参数有可能是单个选择器或多个元素(数组形式) let elements //保存元素or多个元素(数组) if(typeof selectorOrArray === &#39;string&#39;){ elements = document.querySelectorAll(selectorOrArray) }else if(selectorOrArray instanceof Array){ elements = selectorOrArray } return { } //注意了！本函数返回一个对象！我们会在对象实现addClass、find、each、parent、child、print、end //document.querySelectorAll() :查找指定选择器的全部元素 //typeof ：返回其类型 //instanceof:判断是否属于该构造函数的实例 }   当我们在调用 jQuery 时,会返回一个对象！并且根据指定选择器来寻找元素并且赋值给 elements 变量。
@@ -216,20 +216,20 @@ Promise  Promise ：对象用于表示一个异步操作的最终完成(或失�
     
     <item>
       <title>手写DOM库 </title>
-      <link>https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</link>
       <pubDate>Sat, 30 Nov 2019 16:17:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%B0%81%E8%A3%85dom%E5%BA%93/</guid>
       <description>前言 上篇 blog,我们学习了 DOM (Document Object model)操作.但是每个 API 的名字实在是有点长.这次我们把哪些 JS 本身的 API 给封装成一个库供大家便利。,
 全局对象 window.dom = {} //我们提供一个全局对象供我们调用  增(Create) dom.create = (node){ //新增节点 const container = document.createElement(&#39;template&#39;); container.innerHTML = node.trim() return template.content.firstChild } //Document.createElement() 方法 :创建由tagName指定的HTML元素 //&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt; 内容模板元素,改内容在加载页面时不会呈现,但随后可以在运行时使用JavaScript实例化 //Element.innerHTML 属性：设置或获取HTML语法表示的元素的后代 //String.prototype.trim() 方法：会从一个字符串的两端删除空白字符.上下文中的空白字符是所有的空白字符(space,tab,no-break space等) //HTMLTemplateElement.content 属性 :返回&amp;lt;template&amp;gt;元素的模板内容 //Node.firstChild : 只读属性返回树中节点的第一个子节点,如果节点是无子节点,则返回null dom.after = (node,node2){ //新增弟弟 node.parentNode.insertBefore(node2,node.nextSibling) } //Node.parentNode 属性 : 返回指定的节点在DOM树中的父节点 //Node.insertBefore() 方法 ：方法在参考节点之前插入一个拥有指定父节点的子节点.如果给定的子节点是对文档中现有节点的引用,insertBefore()会将其从当前位置移动到新位置 //Node.nextSibling : 返回与该节点同级的下一个节点Node,如果没有返回null dom.before=(node,node2){ //新增哥哥 node.parentNode.insertBefore(node2,node); } //Node.</description>
     </item>
     
     <item>
       <title>DOM编程</title>
-      <link>https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/dom%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Thu, 28 Nov 2019 15:09:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/dom%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/dom%E7%BC%96%E7%A8%8B/</guid>
       <description>title: &amp;ldquo;DOM编程&amp;rdquo; date: 2019-11-28T15:09:36+08:00
 draft: false title: &amp;ldquo;DOM编程&amp;rdquo; date: 2019-11-28T15:09:36+08:00
 draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识: 1. JS语法,如变量、if else、循环 2. JS的其中数据类型: Number String Bool Symbol Null Undefined Object 3. 五个falsy值: 0 NaN &#39;&#39; null undefined 4. 函数是对象,数组也是对象 5. div和span标签 6. Css布局：flex   什么是 falsy 值？ 在 Bool 上下文中认定为 false 的值
@@ -239,20 +239,20 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     
     <item>
       <title>数据结构-上</title>
-      <link>https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/</link>
       <pubDate>Mon, 25 Nov 2019 19:45:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8A/</guid>
       <description>数据结构(上)  队列 栈 链表 哈希表 树  队列(Queue)(FIFO):First-In First-Out 先入先出 队列实例 : 取号先进叫号先出
  取号 1 ){document.querySelector(&#39;#screen&#39;).innerText = `请 ${queue.shift.call(queue)}号就餐`;document.querySelector(&#39;#queue&#39;).innerText = JSON.stringify(queue)}else if(queue.length === 1){document.querySelector(&#39;#screen&#39;).innerText = `请 ${queue.shift.call(queue)}号就餐`;document.querySelector(&#39;#queue&#39;).innerText = JSON.stringify(queue);document.querySelector(&#39;#newNumber&#39;).innerText=n=0}else{document.querySelector(&#39;#newNumber&#39;).innerText=0;}&#34;叫号 当前号码：0 当前队列：  let n = 0 let queue = [] console.log(queue);  //const : 常量块级作用域,很像使用let语句定义的变量。常量的值不能通过重新赋值来改变,并且不能重新声明 //document.querySelector() : 返回文档中与指定选择器或选择器匹配的第一个html元素element。如果找不 // 到匹配项,则返回null //innerText : 属性表示一个节点及其后代的“渲染”文本内容 //JSON.stringify() ：方法将一个JavaScript值(对象或者数组)转换为一个JSON字符串, //Array.prototype.push() : 方法是将一个或多个元素添加到数组的末尾,并返回数组的新长度  栈(stack)(LIFO):Last In First Out 后进后出 let result = 0 let recursion = numbers =&amp;gt;{ if(numbers&amp;lt;=100){ return recursion((result+=numbers,++numbers)) }else{ return result } } recursion(1) //5050 //递归的步骤是怎么做的？调用函数时,在一个数组里进行压栈直到numbers等于101时。 //返回result并且把之前调用函数栈逐一释放,后进后出  链表(Linked List) 链表在 JS 里主要体现在对象里</description>
     </item>
     
     <item>
       <title>算法入门-下</title>
-      <link>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</link>
       <pubDate>Sat, 23 Nov 2019 18:57:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</guid>
       <description>四种排序 选择排序 快速排序 归并排序 计数排序
 选择排序(循环) 思路:每次查找最小值,拿最小值的索引下标跟数组升序下标逐步交换.
 //交换 let swap = (array,i,j) =&amp;gt;{ let temp = array[i]; array[i]=array[j]; array[j]=temp; } //寻找最小值索引 let minIndex = (numbers) =&amp;gt;{ let index = 0; for(let i=1;i&amp;lt;numbers.length;i++){ if(numbers[i]&amp;lt;numbers[index]){ index = i; } } return index; } //选择排序(从小到大) let sort = (numbers) =&amp;gt;{ for(let i=0;i&amp;lt;numbers.length-1;i++){ let index = minIndex(numbers.slice(i))+i if(index!==i){ swap(numbers,index,i) } } return numbers; } //slice()：方法是 Array.prototype.slice();返回一个新对象, //这一对象是由一个begin和end决定的原数组的浅拷贝(包含begin,不包含end)。原始数组不会被改变  快速排序(quick sort)(递归) let quickSort = arr =&amp;gt;{ if(arr.</description>
@@ -260,20 +260,20 @@ draft: false 前言 //在进行认识DOM开始之前呢,希望你有如下知识
     
     <item>
       <title>太极图技术记录</title>
-      <link>https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Thu, 21 Nov 2019 12:21:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E5%A4%AA%E6%9E%81%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95/</guid>
       <description>前言 本文章介绍该太极图制作过程中所调用的 API 以及 CSS 记录和总结
 document.querySelector() 方法：文档对象模型 Document 引用的 querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个 html 元素 Element.如果找不到匹配项,则返回 null let demo = document.querySelector(&#39;#demo&#39;)  innerHTML 是一个属性忘该元素中添加内容 let demo = document.querySelector(&amp;quot;#demo&amp;quot;) demo.innerHTML =2  setTimeout()定时器：该定时器在定时器到期后执行一个函数或指定的一段代码 setTimeout(()=&amp;gt;{ demo.innerHTML = 3 },3000)  setInterval()方法：方法重复调用一个函数或这姓一个代码段,在每次调用之间具有固定的时间延迟 let n =1 setInterval(()=&amp;gt;{ n++ },3000)  String.prototype.substring()方法返回一个字符串在开始索引到结束索引之间的一个子集,或从开始索引直到字符串末尾的一个子集(不包含结束索引) let string = `你好,我是一名前端新人` console.log(string.substring(0,1)) //你  String.prototype.replace()方法：方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配的都要调用的回调函数。原字符串不会改变 let string = ` 你好,我是一名前端新人 接下来我要加样式了 我要加的样式是 body{ color:red; }`; string = string.replace(&#39;\n&#39;,&#39;&amp;lt;br&amp;gt;&#39;) //换行换成HTML元素里的换行标签 //第一个参数如果不是正则表达式则只会替换一次 string = string.</description>
     </item>
     
     <item>
       <title>算法入门上</title>
-      <link>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</link>
       <pubDate>Mon, 18 Nov 2019 13:51:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8A/</guid>
       <description>1. 用递归实现类似Math.prototype.min()方法:返回一个最小值 这是JS内置的一个方法.先从两个数实现开始,最后实现类似Math.min的方法 当我们调用Math.min()时,默认总会返回一个最小值
 两个数返回一个最小值
 let min = (numbers)=&amp;gt;numbers[0]&amp;gt;numbers[1]？numbers[1]:numbers[0]; min([2,3]) //2 //简化成——析构赋值 let min = ([a,b])=&amp;gt; a&amp;gt;b?b:a min([2,3]) //2  三个数返回一个最小值
@@ -285,20 +285,20 @@ let min3 = ([a,b,c,d]) =&amp;gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你
     
     <item>
       <title>JS总结之原型</title>
-      <link>https://sunxiaochuang.top/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/</link>
       <pubDate>Wed, 13 Nov 2019 13:51:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E5%9E%8B/</guid>
       <description>原型 今天我们谈谈原型,当我们使用对象时,该对象有一个__proto__的属性问的就是它的属性值来自哪里? 我们目前只举例三种 Function Object Array 带你了解过后可以自行推出其他 基于这三种公式 1. 对象.__proto__ === 其构造函数.prototype 例1： let a = {} a的原型就是构造对象函数的prototype a.__proto__ === Object.prototype 2. Object.prototype是所有对象的的直接或间接原型 例2: Function.prototype.__proto__ === Object.prototype 3. 任何函数.__proto__ === Function.prototype 例3：任何函数包含构造函数和被构造出来的函数。 构造函数: Object.__proto__ === Function.prototype Function.__proto__ === Function.prototype Array.__proto__ === Function.prototype 被构造出来的函数： function fn(){} fn.__proto__ === Function.prototype  根据以上的概念和公式,我们可以推出Object,Function,Array的原型以及被构造函数构造出来的对象的原型
 1. Object 注意：Object.prototype是所有对象的直接或间接原型。那Object.prototype的原型是什么？是null(是没有的意思) console.log(Object.prototype.__proto__ === null ) //true //对象的构造函数 Object.__proto__ === Function.prototype //公式3 Object.__proto__.__proto__ === Object.prototype //公式3 再看公式2 Object.__proto__.__proto__.__proto__ === null //公式3 再看公式2 看看开头的注意 //对象实例 let a = {} a.</description>
     </item>
     
     <item>
       <title>JS运算符</title>
-      <link>https://sunxiaochuang.top/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
       <pubDate>Sat, 09 Nov 2019 10:50:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
       <description>JavaScript运算符 目录
  算术运算符 比较运算符 布尔运算符 二进制运算符 其他运算符
  点运算符 void运算符 逗号运算符   算术运算符 加法( + ) 减法( - ) 除法( / ) 乘法( * ) 求余( % ) 幂( ** ) 递增( ++) 递减( --) 一元负号( - ) 一元正号( - )   注：第一行是二元操作符,第二行是一元操作符。区别在于是有一个还是有两个操作数。例：一元的意思只有一个操作数 +2。递增和递减分前置和后置。区别在于先加减还是后加减
@@ -307,10 +307,10 @@ let min3 = ([a,b,c,d]) =&amp;gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你
     
     <item>
       <title>JS 函数的执行时机</title>
-      <link>https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
       <pubDate>Sun, 03 Nov 2019 11:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
       <description>1. 为何以下代码打印出6个6？ let i=0 for(i=0;i&amp;lt;6;i++){ setTimeout(()=&amp;gt;{console.log(i)},0) } /* 输出： 6 6 6 6 6 6 */   首先 let(块级作用域)定义一个i变量初始值为0。在for里循环,setTimeout()方法是一个定时器，该定时器到期后会执行指定的代码.延迟以毫秒计算1000毫秒=1秒,默认值是0(为0时也不会在第一代码执行。)).   我们首先了解到有一个循环,和一个定时器。在整个环境中i在全局范围内.我们该如何理解最后输出6个6。首先分两个部分,第一代码执行,第二执行其余代码.for循环在第一代码执行但是到包含了setTimeout()，发现它是一个定时器而且延迟为0毫秒在执行,那就放到第二代码执行去,现在剩下的代码执行完毕再说.setTimeout()在第二代码执行.因为在第一代码执行后 i因for值变成6。所以,在第二代码执行时setTimeout函数去调用i时,i的值为6
  什么是第一代码执行：预先先写的,不需要交互点击我没反应
 什么是第二代码执行：当我需要交互时(点击时) 点击后3秒有弹窗
@@ -321,10 +321,10 @@ let min3 = ([a,b,c,d]) =&amp;gt; min([a,min2([b,c,d])]) min3([4,5,6,7]) //4  你
     
     <item>
       <title>JS对象的基本用法</title>
-      <link>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/</link>
       <pubDate>Mon, 21 Oct 2019 09:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E5%AF%B9%E8%B1%A1%E4%B9%8B%E6%95%B0%E7%BB%84/</guid>
       <description>前言：本文章仅仅适合刚入门的 JS 人员.本文章仅仅自身学习需要,把目前所学已知的用文章记录下来，做一次归纳整理,达到自己理解和加强记忆的目的，如有不对,请联系: 460046653@qq.com
  数组(Array) 在 JavaScript 里 Array 对象是构造数组的全局对象.在 JS 里数组也是对象
 1. 创建一个数组 1.1 新建 let arr = new Array(&#39;apple&#39;,&#39;xiaomi&#39;) //规范写法 let arr1 = [&#39;apple&#39;,&#39;xiaomi&#39;] //简写  规范写法：需要用到 new 操作符 调用 Array 对象函数来构造一个数组.接收的参数用逗号隔开。
@@ -335,10 +335,10 @@ let arr = new Array(3) //这是声明数组的长度为3,内容为empty(空) con
     
     <item>
       <title>JS对象的基本用法</title>
-      <link>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
       <pubDate>Fri, 18 Oct 2019 14:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
       <description>前言  本文章仅仅自身学习需要,把目前所学已知的用文章记录下来，做一次归纳整理,达到理解和加强记忆的目的，如有不对,请联系: 460046653@qq.com
  1. 如果声明一个对象(Object)数据类型？ 什么是对象呢？对象是属性(由属性名和属性值组成一个属性,:隔开)的集合,用大括号括起来.称之为对象(没有属性名和属性值是空对象(null))
 //以下是规范写法 let obj = new Object({&#39;属性名&#39;:&#39;属性值&#39;,&#39;属性名&#39;:&#39;属性值&#39;}) //逗号隔开 //以下是简写写法 let obj2 = {&#39;属性名&#39;:&#39;属性值&#39;,&#39;属性名&#39;:&#39;属性值&#39;}  属性名：遵守标识符的规则,可不加引号。其他例外
@@ -347,10 +347,10 @@ let arr = new Array(3) //这是声明数组的长度为3,内容为empty(空) con
     
     <item>
       <title>JS的数据类型</title>
-      <link>https://sunxiaochuang.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Wed, 16 Oct 2019 14:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>预知： 在本文章中,作者只是把已知的数据类型做一些归类整理,仅供复习参考。
 前言  在程序的世界里,数据是很重要的.程序的目的就是为了处理数据.我们会一眼区别出数字不是字母.但是程序是怎么知道的呢？是程序员标明的。计算机才知道这个是数字的,那个是字母对不对?接下来我们看看在JavaScript里有哪些数据类型
  1. 数字(number) 在现实里我们用数字来计算的数在JS里都算数字类型。但是我们常用十进制来计算。在程序还有二进制、八进制、十进制、十六进制。还有正0、负0。它们都是0.还有一些无穷大、正无穷大、负无穷大。以及不是数的数(Not a Number(简称NaN))，在JS里比如0/0它的结果一定不是数但是属于数字类型,接下来我们用代码看看吧
@@ -361,10 +361,10 @@ let positiveNumber = +0 //正0等于0 let negativeNumber = -0 //负0等于0 (有
     
     <item>
       <title>JS的基本语法</title>
-      <link>https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <link>https://s-xiaoxiao.github.io/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Mon, 14 Oct 2019 11:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
       <description>1. 什么是表达式和语句？ 在 JavaScript 的里面,如果后面带有&amp;rsquo;;&amp;lsquo;代表这是一条语句。表达式更容易区辨别,一般带有返回值的都可以称为表达式。
 var a = 1; //这是一个语句 a + a;//这是一个表达式语句  2. 标识符的规则 在 JavaScript 里面标识符由&amp;rsquo;字母&amp;rsquo;和&amp;rsquo;符号&amp;rsquo;和&amp;rsquo;中文&amp;rsquo;组成.唯一特殊的是标识符开头不能是数字。
 var a123; //字母开头 var 中国; //中文开头 var _1; //符号开头 var 123; //数字开头是错的！！！！！！  3. if else 语句 例子：在 JavaScript 里,if else 用作判断条件为真假执行不同语句的。
@@ -375,20 +375,20 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     
     <item>
       <title>css知识总结</title>
-      <link>https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <link>https://s-xiaoxiao.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 09 Sep 2019 10:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
       <description> 1.浏览器渲染原理  浏览器在得到服务器的响应之后,会先根据HTML去渲染成一个结构图HTML树(DOM)所有的标签具有父子关系。 HTML标签是最大的,其次是head和body两个大儿子,依次渲染。 CSS会构建成CSS树(CSSOM)。CSS也是根据标签所具备的属性。在这里body是最大的。如果body所带的属性 如果标签是共有的属性,儿子会继承父子所带的属性 这时会将HTML CSS 合并在一起成为渲染树(render tree) Layout布局然后是计算标签的大小以及位置渲染布局。(文档流、盒模型、计算大小和位置) paint绘制接下来是绘制标签的背景颜色、边框、字体颜色、阴影的(所有美化属性在渲染) compose最后一步是层叠的合成,(例如拍照：就是把背景和人合成跟这个概念是一样的)  CSS 动画的两种做法（transition 和 animatioin） 1. transition 过渡 作用:补充中间帧
  语法： transition:属性名 时长 过渡方式 延迟 transition：left 200ms linear 可以用逗号分隔两个不同属性 transition:left 200ms,top 400ms 可以用 all 代表所有属性 transition:all 200ms 时长单位只有 s 和 ms 过渡方式有：linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier|step-start|step-end|steps  2. animation 动画  缩写语法： animation:时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名； 时长：1s 或者 1000ms 过渡方式：跟 transition 取值一样，如 linear 次数：3 或者 2.4 或者 infinite 方向：reverse|alternate|alternate-reverse 填充模式：none|forwards|backwards|both 是否暂停：paused|running 以上所有属性都有对应的单独属性。  </description>
     </item>
     
     <item>
       <title>浅析 URL</title>
-      <link>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/</link>
+      <link>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90url/</link>
       <pubDate>Sat, 07 Sep 2019 14:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/%E6%B5%85%E6%9E%90url/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/%E6%B5%85%E6%9E%90url/</guid>
       <description>URL (统一资源定位符) 
 1. URL 包含哪几部分，每部分分别有什么作用  1. 协议：规定请求以及响应具体过程的实现带有s则数据会被加密 2. 域名：由域名管理系统(Domain Name System)管理主要方便于人类记忆(相对于IP),跟公网IP绑定 3. 路径：当前路径页面 4. 参数：搜索关键字 5. 锚点：当有锚点时,浏览器可视窗口到元素ID为vue   上方图中的意思是：你我遵循 https 协议,我要访问 xiedaimala.com 去路径为 search 提供的搜索功能,搜索关键字“前端”。这是请求的部分。 xiedaimala.com 服务器会遵循 https 协议来解析请求。并且响应给我,然后浏览器会根据锚点去搜哪个元素的 ID 相等锚点
  2. DNS 的作用是什么，nslookup 命令怎么用  DNS的作用在于,当用户输入地址 xiedaimala.com,会先到DNS服务器询问xiedaimala.com 这个域名相对的IP 是多少? DNS解析后响应一个的IP。 nslookup命令是查询域名相对的IP是什么例如：在命令行输入nslookup xiedaimala.com 会得到这个域名的IP  3. IP 的作用是什么，ping 命令怎么用  IP分公网IP和内网IP。公网IP是你能上网的凭证，公网IP的作用是链接其他公网IP的身份凭证,例如：你要访问 baidu.com。首先你得有一个公网IP(由网络服务商提供服务)。baidu.com就知道是谁来访问啦。内网IP由路由 器分配的,管理终端一般由198.168.x.x开头 ping 命令要在命令行内配合域名/IP使用.例如： ping baidu.com 。主要目的是否能通过IP链接到主机。过程 中会发送数据包,主机是否由响应  4. 域名是什么，分别哪几类域名  要说域名是什么，得先说起IP。IP的存在是给每个终端分配的一个名字，IP是一串数字。但是一串数字不利于人类 记忆以及传播更不容易发生联想。域名是由字符组成显然优于数字。域名对应着IP。当我们访问某个域名时,也可以说访 问某个IP。 分别有顶级域名、一级域名以及二级域名例如：.</description>
@@ -396,10 +396,10 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     
     <item>
       <title>JavaScript的诞生</title>
-      <link>https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/</link>
+      <link>https://s-xiaoxiao.github.io/posts/javascript%E8%AF%9E%E7%94%9F/</link>
       <pubDate>Tue, 03 Sep 2019 20:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/javascript%E8%AF%9E%E7%94%9F/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/javascript%E8%AF%9E%E7%94%9F/</guid>
       <description>JavaScript 
 1. 1994年底一家名为网景公司发布第一个版本的网页浏览器Mosaic Netscape 0.9。 四个月内抢占当时浏览器市场份额四分之三,成为90年代互联网的主要浏览器。当时的网页只是静态页面的浏览，没有交互能力。网景预见到未来网络需要变得更加多态。 
 2. 1995.4 身为网景的程序员布兰登·艾克目标是把Scheme语言嵌入浏览器内。但在这之前浏览器就已经支持java。内部争论中，网景决定发明一种跟Java在语法上有相似的语言，这个决策导致把Perl、Python、Tcl或Scheme排除在外。 
@@ -410,11 +410,20 @@ if(表达式){ 语句 //为真执行 }else{ 语句 //为假执行 }   if else �
     </item>
     
     <item>
+      <title>css布局</title>
+      <link>https://s-xiaoxiao.github.io/posts/css%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Sat, 24 Aug 2019 14:10:36 +0800</pubDate>
+      
+      <guid>https://s-xiaoxiao.github.io/posts/css%E5%B8%83%E5%B1%80/</guid>
+      <description> css 布局 float 布局 </description>
+    </item>
+    
+    <item>
       <title>css基础</title>
-      <link>https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/</link>
+      <link>https://s-xiaoxiao.github.io/posts/css%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Thu, 22 Aug 2019 14:10:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/css%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/css%E5%9F%BA%E7%A1%80/</guid>
       <description>css 基础 文档流(normal flow) 文档流里有块、内联以及内联块
 1. block(块)：可自行设定宽度(width),高度(height)(不设定情况下,由内部文档流决定)并且独占一行 2. inline(内联)：由内容限定宽度,高度由 line-height 间接确定(跟 height 无关).跟其他内联占满一行(多余另起一行) 3. inline-block(内联块)：可自行设定宽度以及高度,但具有内联特性(不会独占一行)又具有块的特性(块不可分离)  注意要点: width and height 默认是：auto(自动伸缩); width 不可写：100%(会有 bug); 当内容大于宽度或者高度时,会发生溢出。overflow属性默认:visible(显示溢出部分)。hidden(溢出部分隐藏),auto(根据实际宽度和宽度出现滚动条),scroll(不管是否溢出直接除滚动条).当前是overflow:auto; 块级元素里没有content,height为0  脱离文档流 会使当前容器脱离父容器,父容器的宽高度计算则忽略有以下代码的子容器
 position:absolute/fixed; or float:left;
@@ -425,10 +434,10 @@ position:absolute/fixed; or float:left;
     
     <item>
       <title>vim命令参考笔记</title>
-      <link>https://sunxiaochuang.top/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</link>
+      <link>https://s-xiaoxiao.github.io/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</link>
       <pubDate>Tue, 20 Aug 2019 10:08:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/vim%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/</guid>
       <description> 切记！切记！ 一切命令皆在英文状态输入！ 在命令行内输入 vimtutor 自带的 vim 教程
 vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or vim 文件名 enter 进入文件编辑
 退出：ESC 一&amp;gt; : 一&amp;gt; q 一&amp;gt; enter 即可  q! 强制退出：丢失文件的改动 wq 保存退出  编辑：在普通模式下  i &amp;amp;在当前光标下,即会进入编辑模式/插入模式 I 则会在行的开头进行编辑模式  a 在当前下一个光标,即会进入编辑模式/插入模式 A 则会在行尾的进行编辑模式  移动：  数字 w (number word) 移动几个单词开始处 数字 e (number )移动几个单词的结尾处  删除：  在普通模式下 x 就会删除当前光标后面一个 dd 删除一行(可选参数：number delete delete 意味着连续删除几行) dw (delete a word) 删除单词 or 一串中文字符,须在单词 or 一串中文字符的起始处,删除后会到一下单词起始处 db (delete back)删除单词 or 一串中文字符,须在单词 or 一串中文字符的结尾处 di+() or {} (delete in () or {}) 删除 {} or () 内的字符,须在 () or {} 内 da+() or {} (delete at () or {}) 删除包括 () or {} 的字符,须在 () or {} 内 dit (delete in tag 删除标签内的内容) dat (delete at tag 删除标签包含内容) d\$ 从当前光标删到航末尾 de 从当前光标删到单词结尾 d number w (delete number word) 删除多个单词  删除修改:  ci+ t or () or {} or &amp;lt;&amp;gt; (change in tag or () or {} or &amp;lt;&amp;gt;) 删除&amp;lt;&amp;gt; &amp;lt;/&amp;gt; 包含的内容并且进入 insert 模式 ca+ t or () or {} or &amp;lt;&amp;gt; (change at tag or () or {} or &amp;lt;&amp;gt;) 删除标签包含你内容，并且进入 insert 模式  撤销：在普通模式下 按住 u 即会撤销上一次修改  number u (number undo 撤销多次) U 可撤销整行的修改  还原：在普通模式下 按住 ctrl+r 就会还原上一次撤销  number ctrl+r (可多次还原上一次修改)  复制：按 v 进入复制选取模式,选择 按 y 可复制 粘贴：在普通模式下,p 可直接到下方粘贴。  P 是粘贴到上方  快速上下翻页  ctrl+d (向下翻半页) ctrl+u (向上翻半页)  光标移动  k (上行键) l (右移) j (下行键) h (左移)  vim 有四种模式  按 ESC (处于正常模式 normal) 按 i (处于编辑模式 insert) 按 : (处于命令行模式) 按 v (处于复制选取模式)  基本单词  quit (退出) write/read (写/读) yank (复制) paste (粘贴) delete (删除) change (修改) line (一行) find (查找) word (单词) forward/backward (前进/后退) up/down (上/下) insert/append (插入/附加) undo (撤销) redo (还原)  </description>
@@ -436,10 +445,10 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>HTML 重难点</title>
-      <link>https://sunxiaochuang.top/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</link>
+      <link>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</link>
       <pubDate>Mon, 19 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9/</guid>
       <description>a 标签 1. a 标签属性  href  网址：href=&amp;ldquo;https://www.google.com&amp;quot; or href=&amp;ldquo;http://www.google.com&amp;quot; or //google.com 路径：href=&amp;ldquo;/a/b/c.html&amp;rdquo; 伪协议：href=&amp;ldquo;javascript:alert(1);&amp;rdquo; (value 要小写,点击会执行 javascript 代码) or javascript:;相对于页面来说,不会有视觉上的刷新 ID 当某个标签有 id 之后.例 :id=&amp;ldquo;xx&amp;rdquo; href=&amp;ldquo;#xx&amp;rdquo;.会定位到 id 为 xx mailto：href=&amp;ldquo;mailto:460046653@qq.com&amp;rdquo; ; tel：href=&amp;ldquo;tel:11 位电话号&amp;rdquo; ; 点击时会打电话    总结：可跳转到其他页面,可跳转到子页面，可跳转到邮箱、电话.
   target
  _blank :target 取值为:_blank
@@ -453,19 +462,19 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>HTML常用标签</title>
-      <link>https://sunxiaochuang.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <link>https://s-xiaoxiao.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 19 Aug 2019 10:00:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
       <description> HTML常用标签 1. a标签的用法  最基本的属性是跳转到其他页面 达到target有_blank _top _parent _self herf:可以设置为网址如：google.com 子页面路径等等。可以跳到邮箱 还有id设置为#点击到某某id。设置为#。点击可以到页面top a还可以下载当前页面   2. img标签的用法  最基本的用于图片展示，可以设置图片的大小，如果图片加载失败可以又文字代表图片含义   3. table标签的用法  用作于表格展示。是具有网格的标签。使用table时，默认每个单元格之间有间隙。设置table的collapse   4. 其他感想  感觉看完视频，跟着敲完代码。标签和一些用法就会忘记。我觉得单单这样写blog还是不够。希望接下来继续总结归纳  </description>
     </item>
     
     <item>
       <title>html入门笔记1</title>
-      <link>https://sunxiaochuang.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <link>https://s-xiaoxiao.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Sun, 18 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
       <description>  1. HTML 是谁发明的 蒂姆·伯纳斯-李(简称李爵士)
 2. HTML 起手应该写什么 emmet 插件：英文状态下输入“!” 回车 or tab 即可
 3. 常用有的表章节标签：  H1-H6(数字越小字体越大) section(章、节) article(文章) main(主要的) aside(旁边的) p(段落) header(头部) footer(脚部) div(划分 块级元素)  4. 全局属性有哪些？  class (引用 css 以.开头的样式) contenteditable(在浏览器可以编辑) hidden(隐藏) id(主要在 js 里,调取标签可用) style(内联样式) tabindex(增加用户体验多元化) title(增加可读性)  5. 常用的内容标签有哪些，分别是什么意思  a(anchor 超链接)：用作跳转其他页面 ol+li(ordered list 有序列表)：带有数字的列表 ul+li(unordered list 无序列表)：以·开头的列表 dl+dt+dd(description list 描述列表) pre(输出默认格式) hr(水平线) br(回车) em(强调语气,以斜体展示) strong(重要强调,以加粗展示) code(代码标签) quote(引用) blockquote(独自占一行块引用)  </description>
@@ -473,10 +482,10 @@ vim 的基本操作 进入：vi or vim 一&amp;gt; enter vi 文件名 enter or v
     
     <item>
       <title>hugo从入门到建站</title>
-      <link>https://sunxiaochuang.top/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</link>
+      <link>https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</link>
       <pubDate>Sun, 18 Aug 2019 12:58:36 +0800</pubDate>
       
-      <guid>https://sunxiaochuang.top/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</guid>
+      <guid>https://s-xiaoxiao.github.io/posts/hugo%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BB%BA%E7%AB%99/</guid>
       <description>hugo 快速创建 blog 教程 第一步：下载 hugo 下载地址
 1. 选择文件名为：hugo-版本号-系统-32bit/64/.zip 根据系统选择对应的
 例：windows-64 位：hugo_0.57.2_Windows-64bit.zip
